@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 //   href:'/', icon:, clickedIcon
 // }]
 export default function Navbar() {
-  const pathName = usePathname();
+  const pathname = usePathname();
   return (
     <div>
       <Link href='/'>

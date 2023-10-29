@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@sanity/client": "^6.7.0",
+    "material-symbols": "^0.13.2",
     "next": "14.0.0",
     "react": "^18",
     "react-dom": "^18"
