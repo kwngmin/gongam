@@ -7,6 +7,9 @@ import SearchIcon from './ui/icons/SearchIcon';
 import ArrowDropDownIcon from './ui/icons/ArrowDropDownIcon';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
+// const menu=[{
+//   href:'/', icon:, clickedIcon
+// }]
 export default function Navbar() {
   const pathName = usePathname();
   const { data: session } = useSession();

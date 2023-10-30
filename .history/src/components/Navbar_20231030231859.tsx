@@ -7,10 +7,13 @@ import SearchIcon from './ui/icons/SearchIcon';
 import ArrowDropDownIcon from './ui/icons/ArrowDropDownIcon';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
+// const menu=[{
+//   href:'/', icon:, clickedIcon
+// }]
 export default function Navbar() {
   const pathName = usePathname();
   const { data: session } = useSession();
-  console.log(process.env.GOOGLE_OAUTH_ID);
+
   return (
     <div className='h-16 flex items-center justify-between'>
       <Link href='/search'>
@@ -19,25 +22,16 @@ export default function Navbar() {
         </div>
       </Link>
       <Link href='/'>
-        <div className='flex items-center'>
+        <div className='flex'>
           <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
           <ArrowDropDownIcon />
         </div>
       </Link>
-      {session ? (
-        <div role='button' onClick={() => signOut()}>
+      <Link href='/new'>
+        <div>
           <AddIcon />
         </div>
-      ) : (
-        <div role='button' onClick={() => signIn()}>
-          <AddIcon />
-        </div>
-      )}
-      {/* <Link href='/new'>
-          <div>
-            <AddIcon />
-          </div>
-        </Link> */}
+      </Link>
     </div>
   );
 }
