@@ -14,7 +14,7 @@ export default function Navbar() {
   return (
     <div className='h-16 flex items-center justify-between'>
       <Link href='/search'>
-        <div className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'>
+        <div className='flex items-center w-9 h-9 bg-gray-50 justify-center rounded-2xl'>
           <SearchIcon />
         </div>
       </Link>
@@ -26,7 +26,7 @@ export default function Navbar() {
       </Link>
       {session ? (
         <div
-          className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'
+          className='flex items-center'
           role='button'
           onClick={() => signOut()}
         >
@@ -34,7 +34,7 @@ export default function Navbar() {
         </div>
       ) : (
         <div
-          className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'
+          className='flex items-center'
           role='button'
           onClick={() => signIn()}
         >
