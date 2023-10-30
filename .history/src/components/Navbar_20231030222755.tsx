@@ -19,7 +19,7 @@ export default function Navbar() {
       </Link>
       <Link href='/'>
         <div className='flex'>
-          <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
+          <h1>NoteShaker</h1>
           <ArrowDropDownIcon />
         </div>
       </Link>

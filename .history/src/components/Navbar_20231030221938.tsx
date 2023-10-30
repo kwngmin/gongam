@@ -11,18 +11,18 @@ import ArrowDropDownIcon from './ui/icons/ArrowDropDownIcon';
 export default function Navbar() {
   const pathName = usePathname();
   return (
-    <div className='h-16 flex items-center justify-between'>
+    <div className='flex'>
       <Link href='/search'>
         <div>
           <SearchIcon />
         </div>
       </Link>
-      <Link href='/'>
-        <div className='flex'>
-          <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
+      <div className='flex'>
+        <Link href='/'>
+          <h1>NoteShaker</h1>
           <ArrowDropDownIcon />
-        </div>
-      </Link>
+        </Link>
+      </div>
       <Link href='/new'>
         <div>
           <AddIcon />
