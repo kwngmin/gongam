@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/ui/Navbar';
 import 'material-symbols';
 import AuthContext from '../context/AuthContext';
+import Dockbar from '@/components/ui/Dockbar';
 import Footer from '@/components/ui/Footer';
 
 const inter = Inter({ subsets: ['latin'] });

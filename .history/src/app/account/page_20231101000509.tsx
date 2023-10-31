@@ -4,7 +4,9 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
 export default function AccountPage() {
+  const router = useRouter();
   const { data: session } = useSession();
+  if (!session) return router.push('/');
   return (
     <div>
       <p>account</p>

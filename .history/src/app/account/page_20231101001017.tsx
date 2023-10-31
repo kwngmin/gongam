@@ -5,6 +5,8 @@ import { useRouter } from 'next/router';
 
 export default function AccountPage() {
   const { data: session } = useSession();
+  if (!session) {
+  }
   return (
     <div>
       <p>account</p>

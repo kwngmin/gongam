@@ -1,10 +1,12 @@
+'use client';
+
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/ui/Navbar';
 import 'material-symbols';
 import AuthContext from '../context/AuthContext';
-import Footer from '@/components/ui/Footer';
+import Dockbar from '@/components/ui/Dockbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -28,7 +30,9 @@ export default function RootLayout({
           <main className='grow w-full max-w-screen-md mx-auto px-4'>
             {children}
           </main>
-          <Footer />
+          <footer className='sticky bottom-0 w-full max-w-screen-md mx-auto'>
+            <Dockbar />
+          </footer>
         </body>
       </AuthContext>
     </html>
