@@ -31,7 +31,7 @@ export default function Dockbar() {
       </Link>
       <Link href='/new'>
         <div>
-          <RoundIcon name='add_circle' filled style='large' />
+          <RoundIcon name='add_circle' filled style='xlarge' />
         </div>
       </Link>
       <Link href='/bookmarks'>

@@ -24,13 +24,13 @@ body {
   font-variation-settings: 'wght' 500;
   /* font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 48; */
   &.filled {
-    font-variation-settings: 'FILL' 1;
+    font-variation-settings: 'FILL' 1, 'wght' 600;
   }
   &.medium {
     font-size: 28px;
   }
   &.large {
-    font-size: 32px;
+    font-size: 28px;
   }
   &.xlarge {
     font-size: 36px;
