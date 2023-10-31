@@ -22,13 +22,11 @@ export default function RootLayout({
     <html lang='en' className={inter.className}>
       <AuthContext>
         <body className='h-screen flex relative flex-col'>
-          <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 '>
+          <header className='flex max-w-screen-md mx-auto px-4 sticky top-0'>
             <Navbar />
           </header>
-          <main className='grow w-full max-w-screen-md mx-auto px-4'>
-            {children}
-          </main>
-          <footer className='sticky bottom-0 w-full max-w-screen-md mx-auto'>
+          <main className='grow max-w-screen-md mx-auto px-4'>{children}</main>
+          <footer className='sticky bottom-0 max-w-screen-md mx-auto'>
             <Dockbar />
           </footer>
         </body>

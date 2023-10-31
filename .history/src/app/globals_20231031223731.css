@@ -27,7 +27,7 @@ body {
     font-variation-settings: 'FILL' 1, 'opsz' 40;
   }
   &.medium {
-    font-size: 34px;
+    font-size: 32px;
   }
   &.large {
     font-size: 36px;
