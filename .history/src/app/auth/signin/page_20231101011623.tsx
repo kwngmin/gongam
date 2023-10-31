@@ -1,14 +1,13 @@
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
 import { getServerSession } from 'next-auth';
 import { getProviders } from 'next-auth/react';
 // import { redirect } from 'next/dist/server/api-utils';
 import Signin from './Signin';
 import { redirect } from 'next/navigation';
-import { authOptions } from '@/components/commons/lib/auth';
 
 type Props = {
   searchParams: { callbackUrl: string };
 };
-
 export default async function SignInPage({
   searchParams: { callbackUrl },
 }: Props) {
@@ -17,5 +16,5 @@ export default async function SignInPage({
     redirect('/');
   }
   const providers = (await getProviders()) ?? {};
-  return <Signin providers={providers} callbackUrl={callbackUrl ?? '/'} />;
+  return <Signin providers={providers} />;
 }

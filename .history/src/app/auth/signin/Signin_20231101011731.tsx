@@ -9,10 +9,10 @@ type Props = {
 export default function Signin({ providers, callbackUrl }: Props) {
   return (
     <>
-      {Object.values(providers).map(({ name, id }) => (
-        <div key={name}>
-          <button onClick={() => signIn(id, { callbackUrl })}>
-            Sign in with {name}
+      {Object.values(providers).map(provider => (
+        <div key={provider.name}>
+          <button onClick={() => signIn(provider.id)}>
+            Sign in with {provider.name}
           </button>
         </div>
       ))}
