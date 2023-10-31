@@ -27,12 +27,12 @@ body {
     font-variation-settings: 'FILL' 1, 'opsz' 40;
   }
   &.medium {
-    font-size: 28px;
-  }
-  &.large {
     font-size: 32px;
   }
-  &.xlarge {
+  &.large {
     font-size: 36px;
+  }
+  &.xlarge {
+    font-size: 40px;
   }
 }
