@@ -26,7 +26,4 @@ body {
   &.filled {
     font-variation-settings: 'FILL' 1, 'opsz' 40;
   }
-  &.large {
-    font-size: 40px;
-  }
 }

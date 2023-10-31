@@ -4,7 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import 'material-symbols';
 import AuthContext from '../context/AuthContext';
-import Dockbar from '@/components/ui/Dockbar';
+import Dock from '@/components/ui/Dock';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -20,17 +20,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={inter.className}>
-      <AuthContext>
-        <body className='h-screen flex relative flex-col max-w-screen-md mx-auto px-4'>
-          <header className='sticky top-0'>
+      <body className='flex flex-col max-w-screen-md mx-auto px-4'>
+        <AuthContext>
+          <header className=''>
             <Navbar />
           </header>
-          <main className='grow'>{children}</main>
-          <footer className='sticky bottom-0'>
-            <Dockbar />
+          <main>{children}</main>
+          <footer>
+            <Dock />
           </footer>
-        </body>
-      </AuthContext>
+        </AuthContext>
+      </body>
     </html>
   );
 }

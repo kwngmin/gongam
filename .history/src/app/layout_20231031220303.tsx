@@ -20,8 +20,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={inter.className}>
-      <AuthContext>
-        <body className='h-screen flex relative flex-col max-w-screen-md mx-auto px-4'>
+      <body className='flex relative flex-col max-w-screen-md mx-auto px-4'>
+        <AuthContext>
           <header className='sticky top-0'>
             <Navbar />
           </header>
@@ -29,8 +29,8 @@ export default function RootLayout({
           <footer className='sticky bottom-0'>
             <Dockbar />
           </footer>
-        </body>
-      </AuthContext>
+        </AuthContext>
+      </body>
     </html>
   );
 }

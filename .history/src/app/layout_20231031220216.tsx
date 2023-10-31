@@ -20,17 +20,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className={inter.className}>
-      <AuthContext>
-        <body className='h-screen flex relative flex-col max-w-screen-md mx-auto px-4'>
-          <header className='sticky top-0'>
+      <body className='flex flex-col max-w-screen-md mx-auto px-4'>
+        <AuthContext>
+          <header className='sticky'>
             <Navbar />
           </header>
-          <main className='grow'>{children}</main>
-          <footer className='sticky bottom-0'>
+          <main>{children}</main>
+          <footer>
             <Dockbar />
           </footer>
-        </body>
-      </AuthContext>
+        </AuthContext>
+      </body>
     </html>
   );
 }
