@@ -8,12 +8,14 @@ export default function Dockbar() {
   const { data: session } = useSession();
 
   return (
-    <div className='h-16 flex items-center justify-around'>
+    <div className='h-16 flex items-center justify-between'>
       <div>
+        {' '}
+        style='xlarge'
         <RoundIcon name='home' style='large' />
       </div>
       <div>
-        <RoundIcon name='inbox' style='large' />
+        <RoundIcon name='inbox' style='xlarge' />
       </div>
       <Link href='/new'>
         <div>
@@ -21,10 +23,10 @@ export default function Dockbar() {
         </div>
       </Link>
       <div>
-        <RoundIcon name='bookmarks' style='large' />
+        <RoundIcon name='bookmarks' style='xlarge' />
       </div>
       <div>
-        <RoundIcon name='account_circle' style='large' />
+        <RoundIcon name='account_circle' style='xlarge' />
       </div>
       {/* {session ? (
         <div

@@ -8,7 +8,7 @@ export default function Dockbar() {
   const { data: session } = useSession();
 
   return (
-    <div className='h-16 flex items-center justify-around'>
+    <div className='h-16 flex items-center justify-between'>
       <div>
         <RoundIcon name='home' style='large' />
       </div>
