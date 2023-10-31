@@ -1,6 +1,7 @@
 'use client';
 import RoundIcon from '@/components/ui/icons/RoundIcon';
-import { signOut } from 'next-auth/react';
+import { useSession, signIn, signOut } from 'next-auth/react';
+import { redirect } from 'next/navigation';
 
 export default function AccountPage() {
   return (

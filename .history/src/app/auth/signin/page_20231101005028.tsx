@@ -1,0 +1,15 @@
+import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { getServerSession } from 'next-auth';
+import { getProviders } from 'next-auth/react';
+import { redirect } from 'next/navigation-types';
+// import { redirect } from 'next/dist/server/api-utils';
+import Signin from './Signin';
+
+export default async function SignInPage() {
+  const session = await getServerSession(authOptions);
+  if (session) {
+    RedirectType('/');
+  }
+  const providers = (await getProviders()) ?? {};
+  return <Signin providers={providers} />;
+}
