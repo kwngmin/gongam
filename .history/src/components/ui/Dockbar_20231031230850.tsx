@@ -37,9 +37,9 @@ export default function Dockbar() {
       <Link href='/bookmarks'>
         <div>
           {pathName === '/bookmarks' ? (
-            <RoundIcon name='bookmark' filled style='medium' />
+            <RoundIcon name='bookmarks' filled style='medium' />
           ) : (
-            <RoundIcon name='bookmark' style='medium' />
+            <RoundIcon name='bookmarks' style='medium' />
           )}
         </div>
       </Link>
