@@ -23,9 +23,9 @@ export default function Dockbar() {
       <Link href='/inbox'>
         <div>
           {pathName === '/inbox' ? (
-            <RoundIcon name='inbox' filled style='large' />
+            <RoundIcon name='inbox' filled style='medium' />
           ) : (
-            <RoundIcon name='inbox' style='large' />
+            <RoundIcon name='inbox' style='medium' />
           )}
         </div>
       </Link>
@@ -37,18 +37,18 @@ export default function Dockbar() {
       <Link href='/bookmarks'>
         <div>
           {pathName === '/bookmarks' ? (
-            <RoundIcon name='bookmarks' filled style='large' />
+            <RoundIcon name='bookmarks' filled style='medium' />
           ) : (
-            <RoundIcon name='bookmarks' style='large' />
+            <RoundIcon name='bookmarks' style='medium' />
           )}
         </div>
       </Link>
-      <Link href='/account'>
+      <Link href='/acount'>
         <div>
           {pathName === '/account' ? (
-            <RoundIcon name='account_circle' filled style='large' />
+            <RoundIcon name='account_circle' filled style='medium' />
           ) : (
-            <RoundIcon name='account_circle' style='large' />
+            <RoundIcon name='account_circle' style='medium' />
           )}
         </div>
       </Link>

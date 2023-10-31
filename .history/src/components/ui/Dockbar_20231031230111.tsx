@@ -43,7 +43,7 @@ export default function Dockbar() {
           )}
         </div>
       </Link>
-      <Link href='/account'>
+      <Link href='/acount'>
         <div>
           {pathName === '/account' ? (
             <RoundIcon name='account_circle' filled style='large' />

@@ -11,47 +11,39 @@ export default function Dockbar() {
   console.log(pathName);
   return (
     <div className='h-12 flex items-center justify-around'>
-      <Link href='/'>
-        <div>
-          {pathName === '/' ? (
-            <RoundIcon name='home' filled style='large' />
-          ) : (
-            <RoundIcon name='home' style='large' />
-          )}
-        </div>
-      </Link>
-      <Link href='/inbox'>
-        <div>
-          {pathName === '/inbox' ? (
-            <RoundIcon name='inbox' filled style='large' />
-          ) : (
-            <RoundIcon name='inbox' style='large' />
-          )}
-        </div>
-      </Link>
+      <div>
+        {pathName === '/' ? (
+          <RoundIcon name='home' filled style='large' />
+        ) : (
+          <RoundIcon name='home' style='large' />
+        )}
+      </div>
+      <div>
+        {pathName === '/inbox' ? (
+          <RoundIcon name='inbox' filled style='medium' />
+        ) : (
+          <RoundIcon name='inbox' style='medium' />
+        )}
+      </div>
       <Link href='/new'>
         <div>
           <RoundIcon name='add_circle' filled style='xlarge' />
         </div>
       </Link>
-      <Link href='/bookmarks'>
-        <div>
-          {pathName === '/bookmarks' ? (
-            <RoundIcon name='bookmarks' filled style='large' />
-          ) : (
-            <RoundIcon name='bookmarks' style='large' />
-          )}
-        </div>
-      </Link>
-      <Link href='/account'>
-        <div>
-          {pathName === '/account' ? (
-            <RoundIcon name='account_circle' filled style='large' />
-          ) : (
-            <RoundIcon name='account_circle' style='large' />
-          )}
-        </div>
-      </Link>
+      <div>
+        {pathName === '/bookmarks' ? (
+          <RoundIcon name='bookmarks' filled style='medium' />
+        ) : (
+          <RoundIcon name='bookmarks' style='medium' />
+        )}
+      </div>
+      <div>
+        {pathName === '/account' ? (
+          <RoundIcon name='account_circle' filled style='medium' />
+        ) : (
+          <RoundIcon name='account_circle' style='medium' />
+        )}
+      </div>
       {/* {session ? (
         <div
           className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'
