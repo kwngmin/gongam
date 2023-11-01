@@ -10,7 +10,7 @@ export default function Dockbar() {
   const { data: session } = useSession();
   // console.log(pathName);
   return (
-    <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2'>
+    <div className='h-12 flex items-center justify-around w-full max-w-screen-md inset-x-0 bg-white fixed bottom-0'>
       <Link href='/'>
         <div>
           {pathName === '/' ? (
