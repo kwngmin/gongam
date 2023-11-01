@@ -1,0 +1,10 @@
+type Props = { image?: string | null };
+
+export default function Avatar({ image }: Props) {
+  return (
+    <div className='rounded-full w-7 outline outline-2 overflow-hidden select-none'>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={image ?? undefined} alt='user profile' />
+    </div>
+  );
+}
