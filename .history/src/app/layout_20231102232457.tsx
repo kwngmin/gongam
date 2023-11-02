@@ -28,9 +28,9 @@ export default function RootLayout({
           content='initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width,viewport-fit=cover'
         />
       </Head>
-      <body className='fixed h-screen flex flex-col'>
+      <body className='h-screen flex relative flex-col'>
         <AuthContext>
-          <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 bg-white'>
+          <header className='fixed top-0 w-full max-w-screen-md mx-auto px-4 bg-white'>
             <Navbar />
           </header>
           <main className='grow w-full max-w-screen-md mx-auto px-4'>
