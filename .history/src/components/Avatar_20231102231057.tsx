@@ -7,7 +7,6 @@ export default function Avatar({ image }: Props) {
       <img
         src={image ?? undefined}
         alt='user profile'
-        // 외부 링크에서의 xbox 이슈 해결방법
         referrerPolicy='no-referrer'
       />
     </div>
