@@ -35,7 +35,7 @@ export default function Dockbar() {
         )}
       </Link>
       <Link href='/new'>
-        <div className='flex justify-center items-center w-14'>
+        <div className='flex justify-center items-center w-12'>
           <RoundIcon name='add_circle' filled style='large' />
         </div>
       </Link>
@@ -50,12 +50,12 @@ export default function Dockbar() {
           </div>
         )}
       </Link>
-      {/* <Link href={`/user/${user.username}`}> */}
-      {/* {session && user && (
+      {session && user && (
         <Link href='/account'>
+          {/* <Link href={`/user/${user.username}`}> */}
           <Avatar image={user.image} />
         </Link>
-      )} */}
+      )}
       {pathName === '/account' ? (
         <Link href='/account'>
           <div className='flex items-center justify-center w-16 h-8 rounded-full bg-slate-100'>

@@ -1,11 +1,11 @@
 'use client';
-import { useSession } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 
-export default function BookmarksPage() {
+export default function InboxPage() {
   const { data: session } = useSession();
   if (!session) {
     redirect('/auth/signin');
   }
-  return <p>bookmarks</p>;
+  return <p>inbox</p>;
 }

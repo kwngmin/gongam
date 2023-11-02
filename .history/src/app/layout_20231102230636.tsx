@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/ui/Navbar';
 import 'material-symbols';
 import AuthContext from '../context/AuthContext';
+import Footer from '@/components/ui/Footer';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import Dockbar from '@/components/ui/Dockbar';

@@ -35,7 +35,7 @@ export default function Dockbar() {
         )}
       </Link>
       <Link href='/new'>
-        <div className='flex justify-center items-center w-14'>
+        <div className='flex justify-center items-center w-16'>
           <RoundIcon name='add_circle' filled style='large' />
         </div>
       </Link>
