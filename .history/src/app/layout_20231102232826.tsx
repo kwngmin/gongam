@@ -28,7 +28,7 @@ export default function RootLayout({
           content='initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width,viewport-fit=cover'
         />
       </Head>
-      <body className='h-screen flex relative flex-col pb-safe'>
+      <body className='h-screen flex relative flex-col'>
         <AuthContext>
           <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 bg-white'>
             <Navbar />
@@ -36,7 +36,7 @@ export default function RootLayout({
           <main className='grow w-full max-w-screen-md mx-auto px-4'>
             {children}
           </main>
-          <footer className=''>
+          <footer className='pb-safe'>
             <Dockbar />
           </footer>
           <Analytics />

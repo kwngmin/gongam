@@ -36,7 +36,7 @@ export default function RootLayout({
           <main className='grow w-full max-w-screen-md mx-auto px-4'>
             {children}
           </main>
-          <footer className=''>
+          <footer className='pb-safe'>
             <Dockbar />
           </footer>
           <Analytics />
