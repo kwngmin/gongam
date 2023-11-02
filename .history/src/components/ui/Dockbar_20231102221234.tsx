@@ -11,7 +11,7 @@ export default function Dockbar() {
   const user = session?.user;
   console.log(session);
   return (
-    <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 footer'>
+    <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2'>
       <Link href='/'>
         {pathName === '/' ? (
           <div className='flex items-center justify-center w-16 h-8 rounded-full bg-slate-100'>
