@@ -1,5 +1,6 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
 import GoogleProvider from 'next-auth/providers/google';
+import CredentialsProvider from 'next-auth/providers/credentials';
 import { addUser } from '@/service/user';
 
 export const authOptions: NextAuthOptions = {
@@ -11,25 +12,17 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async signIn({ user: { id, name, image, email } }) {
-      if (!email) {
-        return false;
-      }
-      addUser({
-        id,
-        name: name || '',
-        image,
-        email,
-        username: email.split('@')[0],
-      });
+      console.log(user);
+      if (!meail) return false;
+      addUser({ id, name: name || '', image, email });
       return true;
     },
     async session({ session }) {
-      console.log(session);
       const user = session?.user;
       if (user) {
         session.user = {
           ...user,
-          username: user.email?.split('@')[0] || '',
+          username: user.email?.split('@')[0],
         };
       }
       return session;

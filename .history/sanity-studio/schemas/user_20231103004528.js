@@ -68,7 +68,15 @@ export default {
   preview: {
     select: {
       title: 'name',
-      subtitle: 'email',
+      username: 'username',
+      useremail: 'email',
+    },
+    prepare(selection) {
+      const {title, username, useremail} = selection
+      return {
+        title: `${title} (${username})`,
+        subtitle: `${useremail}`,
+      }
     },
   },
 }

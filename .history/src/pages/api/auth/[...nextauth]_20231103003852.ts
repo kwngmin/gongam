@@ -11,16 +11,17 @@ export const authOptions: NextAuthOptions = {
   ],
   callbacks: {
     async signIn({ user: { id, name, image, email } }) {
-      if (!email) {
-        return false;
-      }
-      addUser({
-        id,
-        name: name || '',
-        image,
-        email,
-        username: email.split('@')[0],
-      });
+      console.log(user);
+      //  if (!email) {
+      //   return false;
+      // }
+      // addUser({
+      //   id,
+      //   name: name || '',
+      //   image,
+      //   email,
+      //   username: email.split('@')[0],
+      // });
       return true;
     },
     async session({ session }) {

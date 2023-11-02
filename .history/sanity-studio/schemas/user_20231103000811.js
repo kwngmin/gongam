@@ -15,7 +15,7 @@ export default {
     },
     {
       title: 'Userid',
-      name: 'id',
+      name: 'userid',
       type: 'string',
     },
     {
@@ -67,8 +67,16 @@ export default {
   ],
   preview: {
     select: {
-      title: 'name',
-      subtitle: 'email',
+      title: 'userid',
+      username: 'username',
+      useremail: 'email',
+    },
+    prepare(selection) {
+      const {title, username, useremail} = selection
+      return {
+        title: `${title} (${username})`,
+        subtitle: `${useremail}`,
+      }
     },
   },
 }
