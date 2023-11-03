@@ -66,7 +66,7 @@ export default function Dockbar() {
           </Link>
         ) : (
           <Link href='/account'>
-            <Avatar image={user.image} />
+            <Avatar image={user.image} fill />
           </Link>
         )
       ) : pathName === '/account' ? (

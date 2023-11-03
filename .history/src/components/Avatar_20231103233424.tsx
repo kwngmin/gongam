@@ -3,11 +3,11 @@ type Props = { image?: string | null; fill?: boolean };
 export default function Avatar({ image, fill = false }: Props) {
   return (
     <div
-      className={`w-16 h-8 rounded-full flex justify-center items-center ${
+      className={`w-16 h-8 rounded-full flex justify-center ${
         fill ? 'bg-slate-100' : ''
       }`}
     >
-      <div className='rounded-full bg-white w-7 h-7 overflow-hidden select-none box-border border-2 border-gray-950 p-[2px]'>
+      <div className='rounded-full w-7 overflow-hidden select-none box-border border-2 border-gray-950 p-[2px]'>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image ?? undefined}

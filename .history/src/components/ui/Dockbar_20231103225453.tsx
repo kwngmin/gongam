@@ -4,26 +4,22 @@ import { useSession, signIn, signOut } from 'next-auth/react';
 import RoundIcon from './icons/RoundIcon';
 import { usePathname } from 'next/navigation';
 import Avatar from '../Avatar';
-import DockButtonWrapper from './DockButton';
 
 export default function Dockbar() {
   const pathName = usePathname();
   const { data: session } = useSession();
   const user = session?.user;
-  if (!session) {
-    return true;
-  }
   return (
     <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2'>
       <Link href='/'>
         {pathName === '/' ? (
-          <DockButtonWrapper fill>
+          <div className='flex items-center justify-center w-16 h-8 rounded-full bg-slate-100'>
             <RoundIcon name='home' filled style='medium' />
-          </DockButtonWrapper>
+          </div>
         ) : (
-          <DockButtonWrapper>
+          <div className='flex items-center justify-center w-16 h-8 rounded-full'>
             <RoundIcon name='home' style='medium' />
-          </DockButtonWrapper>
+          </div>
         )}
       </Link>
       <Link href='/inbox'>
@@ -59,17 +55,7 @@ export default function Dockbar() {
           <Avatar image={user.image} />
         </Link>
       )} */}
-      {user?.image && user.image !== null ? (
-        pathName === '/account' ? (
-          <Link href='/account'>
-            <Avatar image={user.image} fill />
-          </Link>
-        ) : (
-          <Link href='/account'>
-            <Avatar image={user.image} />
-          </Link>
-        )
-      ) : pathName === '/account' ? (
+      {pathName === '/account' ? (
         <Link href='/account'>
           <div className='flex items-center justify-center w-16 h-8 rounded-full bg-slate-100'>
             <RoundIcon name='account_circle' filled style='medium' />
@@ -85,3 +71,4 @@ export default function Dockbar() {
     </div>
   );
 }
+// && user

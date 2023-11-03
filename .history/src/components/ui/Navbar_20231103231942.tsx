@@ -21,11 +21,7 @@ export default async function Navbar() {
           </div>
         </Link>
       ) : (
-        <Link href='/auth/signin'>
-          <div className='bg-slate-100 hover:bg-slate-200 rounded-full px-4 h-8 flex items-center font-medium text-sm select-none'>
-            Sign In
-          </div>
-        </Link>
+        <div className='bg-slate-200'>signin</div>
       )}
     </div>
   );

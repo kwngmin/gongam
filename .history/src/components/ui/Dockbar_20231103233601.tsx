@@ -62,11 +62,11 @@ export default function Dockbar() {
       {user?.image && user.image !== null ? (
         pathName === '/account' ? (
           <Link href='/account'>
-            <Avatar image={user.image} fill />
+            <Avatar image={user.image} />
           </Link>
         ) : (
           <Link href='/account'>
-            <Avatar image={user.image} />
+            <Avatar image={user.image} fill />
           </Link>
         )
       ) : pathName === '/account' ? (

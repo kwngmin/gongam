@@ -59,16 +59,12 @@ export default function Dockbar() {
           <Avatar image={user.image} />
         </Link>
       )} */}
-      {user?.image && user.image !== null ? (
-        pathName === '/account' ? (
-          <Link href='/account'>
-            <Avatar image={user.image} fill />
-          </Link>
-        ) : (
-          <Link href='/account'>
-            <Avatar image={user.image} />
-          </Link>
-        )
+      {user?.image && user.image !== null ? pathName === '/account' ?(
+        <Link href='/account'>
+          <Avatar image={user.image} />
+        </Link>:<Link href='/account'>
+          <Avatar image={user.image} />
+        </Link>
       ) : pathName === '/account' ? (
         <Link href='/account'>
           <div className='flex items-center justify-center w-16 h-8 rounded-full bg-slate-100'>

@@ -7,7 +7,7 @@ export default function Avatar({ image, fill = false }: Props) {
         fill ? 'bg-slate-100' : ''
       }`}
     >
-      <div className='rounded-full bg-white w-7 h-7 overflow-hidden select-none box-border border-2 border-gray-950 p-[2px]'>
+      <div className='rounded-full w-7 h-7 overflow-hidden select-none box-border border-2 border-gray-950 p-[2px]'>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={image ?? undefined}

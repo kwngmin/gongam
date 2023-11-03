@@ -14,19 +14,11 @@ export default async function Navbar() {
           <ArrowDropDownIcon />
         </div>
       </Link>
-      {session ? (
-        <Link href='/search'>
-          <div className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'>
-            <SearchIcon />
-          </div>
-        </Link>
-      ) : (
-        <Link href='/auth/signin'>
-          <div className='bg-slate-100 hover:bg-slate-200 rounded-full px-4 h-8 flex items-center font-medium text-sm select-none'>
-            Sign In
-          </div>
-        </Link>
-      )}
+      <Link href='/search'>
+        <div className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'>
+          <SearchIcon />
+        </div>
+      </Link>
     </div>
   );
 }

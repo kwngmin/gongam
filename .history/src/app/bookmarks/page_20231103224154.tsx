@@ -1,11 +1,12 @@
+'use client';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { getServerSession } from 'next-auth';
 import { redirect } from 'next/navigation';
 
-export default async function NewPostPage() {
+export default async function BookmarksPage() {
   const session = await getServerSession(authOptions);
-  if (!session) {
+  if (session) {
     redirect('/auth/signin');
   }
-  return <p>new</p>;
+  return <p>bookmarks</p>;
 }
