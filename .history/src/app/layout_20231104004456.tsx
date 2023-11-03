@@ -7,7 +7,6 @@ import AuthContext from '../context/AuthContext';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import Dockbar from '@/components/ui/Dockbar';
-import SWRConfigContext from '@/context/SWRConfigContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -26,7 +25,7 @@ export default function RootLayout({
       <Head>
         <meta
           name='viewport'
-          content='initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width'
+          content='initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width,viewport-fit=contain'
         />
       </Head>
       <body className='h-screen flex relative flex-col'>
@@ -35,7 +34,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <main className='grow w-full max-w-screen-md mx-auto px-4'>
-            <SWRConfigContext>{children}</SWRConfigContext>
+            {children}
           </main>
           <footer className=''>
             <Dockbar />

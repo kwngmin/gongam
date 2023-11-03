@@ -10,7 +10,6 @@ export default function Dockbar() {
   const pathName = usePathname();
   const { data: session } = useSession();
   const user = session?.user;
-  console.log(session);
   if (!session) {
     return true;
   }

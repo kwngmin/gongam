@@ -6,7 +6,7 @@ import { authOptions } from '@/pages/api/auth/[...nextauth]';
 
 export default async function Navbar() {
   const session = await getServerSession(authOptions);
-  // console.log(session);
+  console.log(session);
   return (
     <div className='h-16 flex items-center justify-between'>
       <Link href='/'>

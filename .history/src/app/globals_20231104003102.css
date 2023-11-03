@@ -45,11 +45,15 @@
 @layer base {
   html {
     -webkit-tap-highlight-color: transparent;
+    height: -webkit-fill-available;
     /* 익스플로러 IE 10 확대 제어 */
     -ms-content-zooming: none;
     -ms-touch-action: pan-x pan-y;
   }
 }
+/* * {
+  -webkit-tap-highlight-color: transparent;
+} */
 
 // safe-area 하단 대응
 @layer utilities {
@@ -68,15 +72,31 @@
 } */
 
 // safe-area 상단 대응
+header {
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
 
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
 body {
   padding: 0;
   margin: 0;
   width: 100%;
+  height: var(--app-height);
+  height: -webkit-fill-available;
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-top);
+  padding-top: env(safe-area-inset-bottom);
+  padding-top: env(safe-area-inset-top);
   overflow: hidden;
   touch-action: none;
 }
 
 .dockbar {
   padding-bottom: env(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-top);
+  padding-bottom: calc(env(safe-area-inset-bottom) - 5px);
+  padding-top: env(safe-area-inset-bottom);
+  padding-top: env(safe-area-inset-top);
 }

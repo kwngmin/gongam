@@ -7,7 +7,6 @@ import AuthContext from '../context/AuthContext';
 import { Analytics } from '@vercel/analytics/react';
 import Head from 'next/head';
 import Dockbar from '@/components/ui/Dockbar';
-import SWRConfigContext from '@/context/SWRConfigContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -35,7 +34,7 @@ export default function RootLayout({
             <Navbar />
           </header>
           <main className='grow w-full max-w-screen-md mx-auto px-4'>
-            <SWRConfigContext>{children}</SWRConfigContext>
+            {children}
           </main>
           <footer className=''>
             <Dockbar />

@@ -10,12 +10,11 @@ export default function Dockbar() {
   const pathName = usePathname();
   const { data: session } = useSession();
   const user = session?.user;
-  console.log(session);
-  if (!session) {
-    return true;
-  }
+  // if (!session) {
+  //   return true;
+  // }
   return (
-    <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 dockbar'>
+    <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 pb-safe'>
       <Link href='/'>
         {pathName === '/' ? (
           <DockButtonWrapper fill>
