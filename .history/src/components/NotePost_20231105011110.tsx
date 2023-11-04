@@ -30,7 +30,7 @@ export default function NotePost() {
         </div>
       </div>
       <div className='flex flex-col gap-1'>
-        <div className='flex gap-2'>
+        <div className=''>
           <span className='text-slate-500 font-medium shrink-0'>
             6시간 전 댓글
           </span>
