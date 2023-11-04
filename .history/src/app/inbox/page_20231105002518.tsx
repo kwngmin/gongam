@@ -11,6 +11,6 @@ export default async function InboxPage() {
   return (
     <section className='max-w-screen-md mx-auto px-4 h-fit'>
       <NotePost />
-    </section>
+    </setioo>
   );
 }

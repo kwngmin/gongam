@@ -34,7 +34,7 @@ export default function RootLayout({
           <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 bg-white'>
             <Navbar />
           </header>
-          <main className='grow w-full overflow-auto'>
+          <main className='grow w-full'>
             <SWRConfigContext>{children}</SWRConfigContext>
           </main>
           <footer className=''>

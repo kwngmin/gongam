@@ -9,7 +9,7 @@ export default async function BookmarksPage() {
     redirect('/auth/signin');
   }
   return (
-    <section className='max-w-screen-md mx-auto px-4 h-fit pb-12'>
+    <section className='max-w-screen-md mx-auto px-4 h-fit'>
       <div className='flex flex-col gap-12'>
         <NotePost />
         <NotePost />
