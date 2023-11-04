@@ -7,7 +7,7 @@ export default function Home() {
     description: `Record of thought, moments, feelings that I don't want to forget.`,
   };
   return (
-    <section className='max-w-screen-md mx-auto px-4 h-fit pb-10'>
+    <section className='max-w-screen-md mx-auto px-4 h-fit pb-20'>
       <Title titleData={titleData} />
       <NotePost />
     </section>
