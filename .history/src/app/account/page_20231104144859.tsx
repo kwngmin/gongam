@@ -25,6 +25,13 @@ export default function AccountPage() {
       ) : (
         ''
       )}
+
+      <button
+        className='p-4 rounded text-center bg-slate-100 mx-auto w-80 font-medium'
+        onClick={() => signIn(id, { callbackUrl })}
+      >
+        Sign in with {name}
+      </button>
     </div>
   );
 }

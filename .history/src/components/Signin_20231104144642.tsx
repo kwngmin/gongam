@@ -15,7 +15,7 @@ export default function Signin({ providers, callbackUrl }: Props) {
           className='h-screen flex flex-col justify-center items-center gap-8'
         >
           <Link href='/'>
-            <h1 className='text-2xl md:text-3xl font-bold'>NoteShaker</h1>
+            <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
           </Link>
           <ul>
             <li>
