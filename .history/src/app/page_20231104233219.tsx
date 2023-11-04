@@ -1,4 +1,3 @@
-import NotePost from '@/components/NotePost';
 import Title from '@/components/ui/Title';
 
 export default function Home() {
@@ -9,7 +8,6 @@ export default function Home() {
   return (
     <section className='h-screen'>
       <Title titleData={titleData} />
-      <NotePost />
     </section>
   );
 }
