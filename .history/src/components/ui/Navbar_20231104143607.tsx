@@ -6,12 +6,10 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
 
 export default function Navbar() {
   const pathName = usePathname();
   const { data: session } = useSession();
-  const [isLoading, setIsLoading] = useState(true);
 
   // const session = await getServerSession(authOptions);
   // console.log(session);
@@ -28,11 +26,15 @@ export default function Navbar() {
         </div>
       </Link>
       {session ? (
-        <Link href='/search'>
-          <div className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'>
-            <SearchIcon />
-          </div>
-        </Link>
+        session === undefined ? (
+          ''
+        ) : (
+          <Link href='/search'>
+            <div className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'>
+              <SearchIcon />
+            </div>
+          </Link>
+        )
       ) : (
         <Link href='/auth/signin'>
           <div className='bg-slate-100 hover:bg-slate-200 rounded-full px-4 h-8 flex items-center font-medium text-sm select-none'>

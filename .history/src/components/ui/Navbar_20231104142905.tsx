@@ -6,19 +6,16 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
-import { useEffect, useState } from 'react';
 
 export default function Navbar() {
-  const pathName = usePathname();
+  // const pathName = usePathname();
   const { data: session } = useSession();
-  const [isLoading, setIsLoading] = useState(true);
 
   // const session = await getServerSession(authOptions);
   // console.log(session);
   if (pathName === '/auth/signin') {
     return true;
   }
-  console.log(session);
   return (
     <div className='h-16 flex items-center justify-between'>
       <Link href='/'>

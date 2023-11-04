@@ -11,19 +11,16 @@ export default function Signin({ providers, callbackUrl }: Props) {
       {Object.values(providers).map(({ name, id }) => (
         <div
           key={name}
-          className='flex flex-col justify-center items-center h-full gap-8'
+          className='flex flex-col justify-center items-center h-full'
         >
           <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
-          <ul>
-            <li>
-              <button
-                className='p-4 rounded text-center bg-slate-100 mx-auto w-80 font-medium'
-                onClick={() => signIn(id, { callbackUrl })}
-              >
-                Sign in with {name}
-              </button>
-            </li>
-          </ul>
+
+          <button
+            className='p-4 rounded text-center bg-slate-100 mx-auto w-80 font-medium'
+            onClick={() => signIn(id, { callbackUrl })}
+          >
+            Sign in with {name}
+          </button>
         </div>
       ))}
     </>

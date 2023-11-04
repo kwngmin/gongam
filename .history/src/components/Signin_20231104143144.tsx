@@ -11,7 +11,7 @@ export default function Signin({ providers, callbackUrl }: Props) {
       {Object.values(providers).map(({ name, id }) => (
         <div
           key={name}
-          className='flex flex-col justify-center items-center h-full gap-8'
+          className='flex flex-col justify-center items-center h-full'
         >
           <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
           <ul>

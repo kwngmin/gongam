@@ -18,6 +18,8 @@ export default function Navbar() {
   if (pathName === '/auth/signin') {
     return true;
   }
+
+  useEffect(() => {}, [session?]);
   console.log(session);
   return (
     <div className='h-16 flex items-center justify-between'>
@@ -28,11 +30,15 @@ export default function Navbar() {
         </div>
       </Link>
       {session ? (
-        <Link href='/search'>
-          <div className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'>
-            <SearchIcon />
-          </div>
-        </Link>
+        session === undefined ? (
+          ''
+        ) : (
+          <Link href='/search'>
+            <div className='flex items-center w-9 h-9 hover:bg-gray-100 justify-center rounded-2xl'>
+              <SearchIcon />
+            </div>
+          </Link>
+        )
       ) : (
         <Link href='/auth/signin'>
           <div className='bg-slate-100 hover:bg-slate-200 rounded-full px-4 h-8 flex items-center font-medium text-sm select-none'>

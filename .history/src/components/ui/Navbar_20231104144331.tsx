@@ -18,6 +18,12 @@ export default function Navbar() {
   if (pathName === '/auth/signin') {
     return true;
   }
+
+  useEffect(() => {
+    if (session && session !== undefined) {
+      setIsLoading(false);
+    }
+  }, [session]);
   console.log(session);
   return (
     <div className='h-16 flex items-center justify-between'>
