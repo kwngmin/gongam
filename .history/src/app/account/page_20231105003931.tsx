@@ -9,7 +9,7 @@ export default function AccountPage() {
   // const session = await getServerSession(authOptions);
   const { data: session } = useSession();
   const titleData = {
-    title: `Account`,
+    title: `Bookmarks`,
     description: `Record of thought, moments, feelings that I don't want to forget.`,
   };
   if (!session) {

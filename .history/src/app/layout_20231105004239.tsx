@@ -31,7 +31,7 @@ export default function RootLayout({
       </Head>
       <body className='h-screen flex relative flex-col'>
         <AuthContext>
-          <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4'>
+          <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 bg-white backdrop-blur-md'>
             <Navbar />
           </header>
           <main className='grow w-full overflow-auto'>

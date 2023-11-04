@@ -5,7 +5,7 @@ import { BsFillChatFill } from 'react-icons/bs';
 export default function NotePost() {
   return (
     <div className='py-8 border-t border-gray-300'>
-      <h2 className='text-xl lg:text-2xl font-bold lg:font-medium text-black/80'>
+      <h2 className='text-xl lg:text-2xl font-bold text-black/80'>
         블로그 시작하기
       </h2>
       <time className='text-black/60 text-sm'>2023년 4월 11일 (6개월 전)</time>
@@ -18,28 +18,21 @@ export default function NotePost() {
           들었다.
         </p>
       </div>
-      <div className='flex justify-between items-center my-3'>
+      <div className='flex justify-between items-center mt-2'>
         <div className='flex items-center gap-2'>
-          <RoundIcon name='favorite' style='' />
-          <span className='border-l border-gray-300 flex h-4' />
-          <span className='font-semibold text-black/70'>287</span>
+          <span className='py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>
+            {/* 댓글 달기 */}
+            댓글 <span className='font-medium'>19</span>개 보기
+          </span>
+          <span className='text-black/40'>
+            공감 <span className='font-semibold'>287</span>
+          </span>
         </div>
         <div className='flex items-center gap-3'>
-          <RoundIcon name='link' style='' />
+          <RoundIcon name='favorite' style='' />
+          <span className='border-l border-gray-300 flex h-4' />
           <RoundIcon name='bookmark' style='' />
         </div>
-      </div>
-      <div className='flex flex-col gap-1'>
-        <div className='flex items-center gap-2'>
-          <span className='text-slate-500 font-medium'>6시간 전 댓글</span>
-          {/* <RoundIcon filled name='chat' style='' /> */}
-          사이드 프로젝트로 하고 있는 reflow 반응이 점점 좋아지고 있다.
-        </div>
-        <span className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>
-          {/* 댓글 달기 */}
-          댓글 <span className='font-medium text-slate-700'>19</span>개 모두
-          보기
-        </span>
       </div>
     </div>
   );

@@ -30,9 +30,8 @@ export default function NotePost() {
         </div>
       </div>
       <div className='flex flex-col gap-1'>
-        <div className='flex items-center gap-2'>
-          <span className='text-slate-500 font-medium'>6시간 전 댓글</span>
-          {/* <RoundIcon filled name='chat' style='' /> */}
+        <div>
+          <RoundIcon name='chat' style='' />
           사이드 프로젝트로 하고 있는 reflow 반응이 점점 좋아지고 있다.
         </div>
         <span className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>

@@ -18,17 +18,6 @@ export default function NotePost() {
           들었다.
         </p>
       </div>
-      <div className='flex justify-between items-center my-3'>
-        <div className='flex items-center gap-2'>
-          <RoundIcon name='favorite' style='' />
-          <span className='border-l border-gray-300 flex h-4' />
-          <span className='font-semibold text-black/70'>287</span>
-        </div>
-        <div className='flex items-center gap-3'>
-          <RoundIcon name='link' style='' />
-          <RoundIcon name='bookmark' style='' />
-        </div>
-      </div>
       <div className='flex flex-col gap-1'>
         <div className='flex items-center gap-2'>
           <span className='text-slate-500 font-medium'>6시간 전 댓글</span>
@@ -40,6 +29,17 @@ export default function NotePost() {
           댓글 <span className='font-medium text-slate-700'>19</span>개 모두
           보기
         </span>
+      </div>
+      <div className='flex justify-between items-center my-3'>
+        <div className='flex items-center gap-2'>
+          <RoundIcon name='favorite' style='' />
+          <span className='border-l border-gray-300 flex h-4' />
+          <span className='font-semibold text-black/70'>287</span>
+        </div>
+        <div className='flex items-center gap-3'>
+          <RoundIcon name='link' style='' />
+          <RoundIcon name='bookmark' style='' />
+        </div>
       </div>
     </div>
   );

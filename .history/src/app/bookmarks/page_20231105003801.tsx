@@ -7,7 +7,7 @@ import { redirect } from 'next/navigation';
 export default async function BookmarksPage() {
   const session = await getServerSession(authOptions);
   const titleData = {
-    title: `Bookmarks`,
+    title: `Inbox`,
     description: `Record of thought, moments, feelings that I don't want to forget.`,
   };
   if (!session) {
@@ -16,6 +16,7 @@ export default async function BookmarksPage() {
   return (
     <section className='max-w-screen-md mx-auto px-4 h-fit pb-12'>
       <Title titleData={titleData} />
+
       <div className='flex flex-col'>
         <NotePost />
         <NotePost />
