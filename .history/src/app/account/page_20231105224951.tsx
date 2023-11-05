@@ -20,7 +20,7 @@ export default function AccountPage() {
   return (
     <section className='max-w-screen-md mx-auto px-4 h-fit pb-10'>
       <Title titleData={titleData} />
-      <div className='flex justify-center items-center border h-32 rounded'>
+      <div className='flex justify-center bg-slate-50 h-20'>
         {session ? (
           <button
             className='p-4 rounded text-center bg-slate-100 mx-auto w-80 font-medium h-fit'
