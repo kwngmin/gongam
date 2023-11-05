@@ -32,6 +32,7 @@ export default function NotePost() {
             <span className='font-semibold text-black/70'>287</span>
           </div>
           <span className='border-l border-gray-400 flex h-4' />
+
           <span className='h-6 flex items-center font-medium rounded-full  text-slate-600 text-sm'>
             구독하기
           </span>
