@@ -4,10 +4,11 @@ import Title from '@/components/ui/Title';
 // import { getServerSession } from 'next-auth';
 import { signOut, useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
-import { useEffect } from 'react';
 
 export default function AccountPage() {
-  // const session = await getServerSession(authOptions);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const { data: session } = useSession();
   const titleData = {
     title: `Account`,
@@ -17,10 +18,7 @@ export default function AccountPage() {
     redirect('/auth/signin');
   }
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
+  console.log(session);
   return (
     <section className='max-w-screen-md mx-auto px-4 h-fit pb-10'>
       <Title titleData={titleData} />

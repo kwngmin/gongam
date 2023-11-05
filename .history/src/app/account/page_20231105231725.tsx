@@ -17,10 +17,10 @@ export default function AccountPage() {
     redirect('/auth/signin');
   }
 
+  console.log(session);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return (
     <section className='max-w-screen-md mx-auto px-4 h-fit pb-10'>
       <Title titleData={titleData} />
