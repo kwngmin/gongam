@@ -5,7 +5,7 @@ import { BsFillChatFill } from 'react-icons/bs';
 export default function NotePost() {
   return (
     <div className='py-8 border-t border-gray-300'>
-      <h2 className='text-xl font-bold lg:font-semibold text-black/80'>
+      <h2 className='text-xl lg:text-xl font-bold text-black/80'>
         블로그 시작하기
       </h2>
       <time className='text-black/60 text-sm'>2023년 4월 11일 (6개월 전)</time>
