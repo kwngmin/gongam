@@ -54,7 +54,7 @@ export default function Navbar() {
           Cancel
         </div>
         <Link href='/'>
-          <div className='flex items-center absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2'>
+          <div className='flex items-center'>
             <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
           </div>
         </Link>
