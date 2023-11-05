@@ -5,12 +5,7 @@ import { BsFillChatFill } from 'react-icons/bs';
 export default function NotePost() {
   return (
     <div className='py-8 border-t border-gray-300'>
-      <div className='flex items-center'>
-        <h2 className='text-xl font-semibold text-black/80 grow'>
-          블로그 시작하기
-        </h2>
-        <RoundIcon name='more_vert' style='' />
-      </div>
+      <h2 className='text-xl font-semibold text-black/80'>블로그 시작하기</h2>
       <time className='text-black/60 text-sm'>2023년 4월 11일 (6개월 전)</time>
       <div className='text-black/80 mt-2 break-keep'>
         <p>
@@ -24,12 +19,12 @@ export default function NotePost() {
       <div className='flex justify-between items-center my-3'>
         <div className='flex items-center gap-2'>
           <RoundIcon name='favorite' style='' />
-          {/* <span className='border-l border-gray-300 flex h-4' /> */}
+          <span className='border-l border-gray-300 flex h-4' />
           <span className='font-semibold text-black/70'>287</span>
         </div>
         <div className='flex items-center gap-4'>
           <RoundIcon name='link' style='' />
-          <span className='border-l border-gray-300 flex h-3' />
+          <span className='border-l border-gray-300 flex h-4' />
           <RoundIcon name='bookmark' style='' />
         </div>
       </div>

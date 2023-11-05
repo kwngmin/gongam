@@ -9,7 +9,7 @@ export default function NotePost() {
         <h2 className='text-xl font-semibold text-black/80 grow'>
           블로그 시작하기
         </h2>
-        <RoundIcon name='more_vert' style='' />
+        <RoundIcon name='link' style='' />
       </div>
       <time className='text-black/60 text-sm'>2023년 4월 11일 (6개월 전)</time>
       <div className='text-black/80 mt-2 break-keep'>
