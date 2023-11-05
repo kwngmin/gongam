@@ -13,13 +13,12 @@ export default function Dockbar() {
   const { data: session } = useSession();
   const user = session?.user;
   console.log(session);
+  if (!session) {
+    return true;
+  }
   const handleClick = () => {
     router.push('/new');
   };
-
-  if (!session) {
-    return;
-  }
 
   if (pathName === '/new') {
     return;

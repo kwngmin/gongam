@@ -5,7 +5,7 @@ import RoundIcon from './icons/RoundIcon';
 import { usePathname } from 'next/navigation';
 import Avatar from '../Avatar';
 import DockButtonWrapper from './DockButton';
-import { useRouter } from 'next/navigation';
+import { useRouter } from 'next/router';
 
 export default function Dockbar() {
   const pathName = usePathname();
@@ -13,18 +13,13 @@ export default function Dockbar() {
   const { data: session } = useSession();
   const user = session?.user;
   console.log(session);
-  const handleClick = () => {
+  if (!session) {
+    return true;
+  }
+  const handleClick = e => {
+    e.preventDefault();
     router.push('/new');
   };
-
-  if (!session) {
-    return;
-  }
-
-  if (pathName === '/new') {
-    return;
-  }
-
   return (
     <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 dockbar'>
       <Link href='/'>
@@ -52,7 +47,7 @@ export default function Dockbar() {
       {/* <Link href='/new'> */}
       <button
         type='button'
-        onClick={() => handleClick()}
+        onClick={handleClick()}
         className='flex justify-center items-center w-14'
       >
         <RoundIcon name='add_circle' filled style='large' />

@@ -22,11 +22,11 @@ export default function NotePost() {
         <div className='flex items-center gap-2'>
           <RoundIcon name='favorite' style='' />
           <span className='border-l border-gray-300 flex h-4' />
+          <span className='border-l border-gray-300 flex h-4' />
           <span className='font-semibold text-black/70'>287</span>
         </div>
-        <div className='flex items-center gap-4'>
+        <div className='flex items-center gap-3'>
           <RoundIcon name='link' style='' />
-          <span className='border-l border-gray-300 flex h-4' />
           <RoundIcon name='bookmark' style='' />
         </div>
       </div>
