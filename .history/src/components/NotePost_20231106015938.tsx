@@ -32,8 +32,8 @@ export default function NotePost() {
             <span className='font-semibold text-black/70'>287</span>
           </div>
           <span className='border-l border-gray-400 flex h-4' />
-          <div className='flex items-center gap-1'>
-            <RoundIcon name='download' style='' />
+          <div className='flex items-center'>
+            <RoundIcon name='add' style='' />
             <span className='h-6 flex items-center font-medium rounded-full  text-slate-600 text-sm'>
               구독하기
             </span>

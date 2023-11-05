@@ -25,19 +25,16 @@ export default function NotePost() {
         </p>
       </div>
       <div className='flex justify-between items-center my-3'>
-        <div className='flex items-center gap-3'>
+        <div className='flex items-center'>
           <div className='flex items-center gap-2'>
             <RoundIcon name='favorite' style='' />
             {/* <span className='border-l border-gray-300 flex h-4' /> */}
             <span className='font-semibold text-black/70'>287</span>
           </div>
           <span className='border-l border-gray-400 flex h-4' />
-          <div className='flex items-center gap-1'>
-            <RoundIcon name='download' style='' />
-            <span className='h-6 flex items-center font-medium rounded-full  text-slate-600 text-sm'>
-              구독하기
-            </span>
-          </div>
+          <span className='px-2 h-6 flex items-center font-medium rounded-full bg-slate-100 text-slate-600 text-sm'>
+            구독하기
+          </span>
         </div>
         <div className='flex items-center gap-4'>
           <RoundIcon name='link' style='' />
