@@ -11,8 +11,7 @@ export default function NotePost() {
         <h2 className='text-xl font-semibold text-black/80 grow'>
           블로그 시작하기
         </h2>
-        {/* <RoundIcon name='more_vert' style='' /> */}
-        <RoundIcon name='more_horiz' style='' />
+        <RoundIcon name='more_vert' style='' />
       </div>
       <time className='text-black/60 text-sm'>2023년 4월 11일 (6개월 전)</time>
       <div className='text-black/80 mt-2 break-keep'>
@@ -25,15 +24,10 @@ export default function NotePost() {
         </p>
       </div>
       <div className='flex justify-between items-center my-3'>
-        <div className='flex items-center gap-5'>
-          <div className='flex items-center gap-2'>
-            <RoundIcon name='favorite' style='' />
-            {/* <span className='border-l border-gray-300 flex h-4' /> */}
-            <span className='font-semibold text-black/70'>287</span>
-          </div>
-          <span className='px-2 h-6 flex items-center font-medium rounded-full bg-slate-100 text-slate-600 text-sm'>
-            구독하기
-          </span>
+        <div className='flex items-center gap-2'>
+          <RoundIcon name='favorite' style='' />
+          {/* <span className='border-l border-gray-300 flex h-4' /> */}
+          <span className='font-semibold text-black/70'>287</span>
         </div>
         <div className='flex items-center gap-4'>
           <RoundIcon name='link' style='' />

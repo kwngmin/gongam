@@ -25,13 +25,13 @@ export default function NotePost() {
         </p>
       </div>
       <div className='flex justify-between items-center my-3'>
-        <div className='flex items-center gap-5'>
+        <div className='flex items-center gap-2'>
           <div className='flex items-center gap-2'>
             <RoundIcon name='favorite' style='' />
             {/* <span className='border-l border-gray-300 flex h-4' /> */}
             <span className='font-semibold text-black/70'>287</span>
           </div>
-          <span className='px-2 h-6 flex items-center font-medium rounded-full bg-slate-100 text-slate-600 text-sm'>
+          <span className='px-2 h-6 flex items-center rounded-full bg-slate-200 text-sm'>
             구독하기
           </span>
         </div>

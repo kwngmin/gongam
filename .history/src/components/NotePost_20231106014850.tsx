@@ -25,7 +25,7 @@ export default function NotePost() {
         </p>
       </div>
       <div className='flex justify-between items-center my-3'>
-        <div className='flex items-center gap-5'>
+        <div className='flex items-center gap-3'>
           <div className='flex items-center gap-2'>
             <RoundIcon name='favorite' style='' />
             {/* <span className='border-l border-gray-300 flex h-4' /> */}

@@ -22,11 +22,11 @@ export async function addUser({ username, id, email, image, name }: OAuthUser) {
 }
 export async function getUserByUsername(username: string) {
   return client.fetch(
-    `*[_type == "user" && username == "${username}"][0]{
+    `*[_type == "user" && username == &{username}]{
       ...,
       "id":_id,
-      following[] ->{username,image},
-      followers[] ->{username,image},
+      following[] ->{username.image},
+      followers[] ->{username.image},
       "bookmarks": bookmarks[] ->_id
     }`
   );
