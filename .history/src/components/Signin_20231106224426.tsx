@@ -20,7 +20,7 @@ export default function Signin({ providers, callbackUrl }: Props) {
             <Image
               src={noteshaker}
               alt='noteshaker logo'
-              className='w-6 h-6 mr-2'
+              className='w-4 h-4 mr-1'
             />
             <h1 className='text-2xl md:text-3xl font-bold tracking-tight'>
               NoteShaker

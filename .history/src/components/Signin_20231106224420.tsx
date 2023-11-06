@@ -16,11 +16,11 @@ export default function Signin({ providers, callbackUrl }: Props) {
           key={name}
           className='h-screen flex flex-col justify-center items-center gap-8'
         >
-          <Link href='/' className='flex items-center'>
+          <Link href='/' className='flex'>
             <Image
               src={noteshaker}
               alt='noteshaker logo'
-              className='w-6 h-6 mr-2'
+              className='w-4 h-4 mr-1'
             />
             <h1 className='text-2xl md:text-3xl font-bold tracking-tight'>
               NoteShaker
