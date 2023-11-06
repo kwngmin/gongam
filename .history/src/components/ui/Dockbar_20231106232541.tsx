@@ -48,6 +48,7 @@ export default function Dockbar() {
           </div>
         )}
       </Link>
+      {/* <Link href='/new'> */}
       <button
         type='button'
         onClick={() => handleClick()}
@@ -55,6 +56,7 @@ export default function Dockbar() {
       >
         <RoundIcon name='add_circle' filled style='large' />
       </button>
+      {/* </Link> */}
       <Link href='/bookmarks'>
         {pathName === '/bookmarks' ? (
           <div className='flex items-center justify-center w-16 h-8 rounded-full'>
