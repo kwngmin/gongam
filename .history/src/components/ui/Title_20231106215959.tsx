@@ -10,15 +10,8 @@ export default function Title({ titleData }: { titleData: TitleData }) {
   return (
     <div className='pt-14 pb-16'>
       <h1 className='text-2xl md:text-3xl font-bold mb-2'>
-        <span>{title}</span>
-        {subtitle ? (
-          <>
-            <span className='mx-2 text-gray-200'>/</span>
-            <span className='text-gray-400'>{subtitle}</span>
-          </>
-        ) : (
-          ''
-        )}
+        {title}
+        {subtitle ? <span>{subtitle}</span> : ''}
       </h1>
       <p className='text-black/50 break-keep'>{description}</p>
     </div>

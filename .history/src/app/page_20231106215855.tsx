@@ -4,7 +4,7 @@ import Title from '@/components/ui/Title';
 export default function Home() {
   const titleData = {
     title: `Notes`,
-    subtitle: 'Feeds',
+    subtitle: 'Feeds'
     description: `Record of thought, moments, feelings that I don't want to forget.`,
   };
   return (

@@ -13,7 +13,7 @@ export default function Title({ titleData }: { titleData: TitleData }) {
         <span>{title}</span>
         {subtitle ? (
           <>
-            <span className='mx-2 text-gray-200'>/</span>
+            <span className='mx-2'>/</span>
             <span className='text-gray-400'>{subtitle}</span>
           </>
         ) : (

@@ -9,7 +9,7 @@ export default function AccountPage() {
   // const session = await getServerSession(authOptions);
   const { data: session } = useSession();
   const titleData = {
-    title: `Hi, Jonathan`,
+    title: `Hi, Friday`,
     description: `sign up 2023.11.23 and sign in with Google.`,
   };
   if (!session) {

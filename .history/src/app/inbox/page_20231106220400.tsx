@@ -9,7 +9,7 @@ export default async function InboxPage() {
   const titleData = {
     title: `Inbox`,
     subtitle: 'Private',
-    description: `128 Note and 12 Private Notes.`,
+    description: `128 Note and 12 Private Notes .`,
   };
   if (!session) {
     redirect('/auth/signin');

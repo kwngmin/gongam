@@ -37,7 +37,7 @@ export default function NotePost() {
           </span>
         </div>
         <div className='flex items-center gap-4'>
-          <RoundIcon name='content_copy' style='' />
+          <RoundIcon name='copy' style='' />
           <span className='border-l border-gray-400 flex h-4' />
           <RoundIcon name='bookmark' style='' />
         </div>
