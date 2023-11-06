@@ -74,7 +74,7 @@ export default function Navbar() {
           <Image
             src={noteshaker}
             alt='noteshaker logo'
-            className='w-6 h-6 mr-1'
+            className='w-5 h-5 mr-1'
           />
           <h1 className='text-lg md:text-xl font-bold tracking-tight'>
             NoteShaker
