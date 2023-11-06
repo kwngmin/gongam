@@ -1,8 +1,6 @@
 'use client';
 import { ClientSafeProvider, signIn } from 'next-auth/react';
-import Image from 'next/image';
 import Link from 'next/link';
-import noteshaker from '../images/noteshaker.svg';
 
 type Props = {
   providers: Record<string, ClientSafeProvider>;
@@ -17,11 +15,6 @@ export default function Signin({ providers, callbackUrl }: Props) {
           className='h-screen flex flex-col justify-center items-center gap-8'
         >
           <Link href='/'>
-            <Image
-              src={noteshaker}
-              alt='noteshaker logo'
-              className='w-4 h-4 mr-1'
-            />
             <h1 className='text-2xl md:text-3xl font-bold tracking-tight'>
               NoteShaker
             </h1>

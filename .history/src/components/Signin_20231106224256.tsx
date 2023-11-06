@@ -1,8 +1,6 @@
 'use client';
 import { ClientSafeProvider, signIn } from 'next-auth/react';
-import Image from 'next/image';
 import Link from 'next/link';
-import noteshaker from '../images/noteshaker.svg';
 
 type Props = {
   providers: Record<string, ClientSafeProvider>;

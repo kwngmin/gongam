@@ -76,9 +76,7 @@ export default function Navbar() {
             alt='noteshaker logo'
             className='w-4 h-4 mr-1'
           />
-          <h1 className='text-lg md:text-xl font-bold tracking-tight'>
-            NoteShaker
-          </h1>
+          <h1 className='text-lg md:text-xl font-bold leading-4'>NoteShaker</h1>
           <ArrowDropDownIcon />
         </div>
       </Link>
