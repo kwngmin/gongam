@@ -5,8 +5,6 @@ import ArrowDropDownIcon from './icons/ArrowDropDownIcon';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import noteshaker from '../../images/noteshaker.svg';
-import Image from 'next/image';
 
 export default function Navbar() {
   const pathName = usePathname();
@@ -71,11 +69,6 @@ export default function Navbar() {
     <div className='h-16 flex items-center justify-between'>
       <Link href='/'>
         <div className='flex items-center'>
-          <Image
-            src={noteshaker}
-            alt='noteshaker logo'
-            className='w-4 h-4 mr-1'
-          />
           <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
           <ArrowDropDownIcon />
         </div>

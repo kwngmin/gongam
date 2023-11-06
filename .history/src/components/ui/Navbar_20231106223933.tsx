@@ -71,11 +71,7 @@ export default function Navbar() {
     <div className='h-16 flex items-center justify-between'>
       <Link href='/'>
         <div className='flex items-center'>
-          <Image
-            src={noteshaker}
-            alt='noteshaker logo'
-            className='w-4 h-4 mr-1'
-          />
+          <Image src={noteshaker} />
           <h1 className='text-lg md:text-xl font-bold'>NoteShaker</h1>
           <ArrowDropDownIcon />
         </div>
