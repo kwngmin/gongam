@@ -1,13 +1,21 @@
 'use client';
 import RoundIcon from './ui/icons/RoundIcon';
 import { FullNote } from '@/model/note';
-import { getDate } from '@/util/date';
 import { format, register } from 'timeago.js';
 import ko from 'timeago.js/lib/lang/ko';
 
 type Props = {
   note: FullNote;
 };
+
+export function getDate(date: string) {
+  const dateData = date.toString().split('-');
+  const year = dateData[0];
+  const month = dateData[1].replace('0', '');
+  const day = dateData[2].split('T')[0].replace('0', '');
+  const dateString = `${year}년 ${month}월 ${day}일`;
+  return dateString;
+}
 
 export default function NotePost({ note }: Props) {
   register('ko', ko);
