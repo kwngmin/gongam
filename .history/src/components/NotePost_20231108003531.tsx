@@ -72,12 +72,8 @@ export default function NotePost({ note }: Props) {
         <input
           className='grow rounded p-2 border-0 outline-0 bg-slate-50'
           type='text'
-          placeholder='send message...'
         />
-        <button className='px-2 flex justify-center items-center rounded-full bg-slate-100'>
-          {/* 댓글쓰기 */}
-          <RoundIcon name='emoticon' style='' />
-        </button>
+        <button className='px-2 rounded bg-slate-200'>댓글쓰기</button>
       </form>
     </article>
   );

@@ -10,11 +10,11 @@ export default function NoteList() {
   console.log(notes);
 
   return (
-    <ul>
+    <i;>
       {loading && (
-        <li className='w-full flex items-center justify-center h-36'>
+        <div className='w-full flex items-center justify-center h-36'>
           <PulseLoader size={10} color='gray' />
-        </li>
+        </div>
       )}
       {notes &&
         notes.map(note => (
@@ -22,7 +22,7 @@ export default function NoteList() {
             <NotePost note={note} />
           </li>
         ))}
-    </ul>
+    </i;>
   );
 }
 

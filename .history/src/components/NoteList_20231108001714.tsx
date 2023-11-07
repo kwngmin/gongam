@@ -12,9 +12,9 @@ export default function NoteList() {
   return (
     <ul>
       {loading && (
-        <li className='w-full flex items-center justify-center h-36'>
+        <div className='w-full flex items-center justify-center h-36'>
           <PulseLoader size={10} color='gray' />
-        </li>
+        </div>
       )}
       {notes &&
         notes.map(note => (
