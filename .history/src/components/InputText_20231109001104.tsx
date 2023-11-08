@@ -9,7 +9,7 @@ export default function InputText() {
           type='text'
           placeholder='send message...'
         />
-        <button className='w-9 h-9 flex justify-center items-center rounded-full text-sm font-medium bg-gray-200'>
+        <button className='px-1 h-9 flex justify-center items-center rounded-full text-sm font-medium bg-gray-200'>
           {/* 댓글 쓰기 */}
           <RoundIcon name='arrow_right_alt' filled style='' />
         </button>
