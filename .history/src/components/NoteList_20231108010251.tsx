@@ -4,11 +4,11 @@ import { PulseLoader } from 'react-spinners';
 import useSWR from 'swr';
 import { FullNote } from '@/model/note';
 import NotePost from './NotePost';
-// import LazySpinner from './lazySpinner';
+import LazySpinner from './lazySpinner';
 
 export default function NoteList() {
   const { data: notes, isLoading: loading } = useSWR<FullNote[]>('/api/notes');
-  // console.log(notes);
+  console.log(notes);
 
   return (
     <ul>

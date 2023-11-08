@@ -8,7 +8,7 @@ import NotePost from './NotePost';
 
 export default function NoteList() {
   const { data: notes, isLoading: loading } = useSWR<FullNote[]>('/api/notes');
-  // console.log(notes);
+  console.log(notes);
 
   return (
     <ul>

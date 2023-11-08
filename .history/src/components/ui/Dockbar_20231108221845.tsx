@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation';
 import Avatar from '../Avatar';
 import DockButtonWrapper from './DockButton';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 
 export default function Dockbar() {
   const pathName = usePathname();
