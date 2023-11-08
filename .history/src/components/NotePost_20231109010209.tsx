@@ -68,7 +68,7 @@ export default function NotePost({ note }: Props) {
           <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'>
             <RoundIcon name='subdirectory_arrow_right' style='small' />
             <span className='mx-1'>댓글</span>
-            <span className='font-semibold text-slate-600'>{23}</span>개 모두
+            <span className='font-semibold text-slate-700'>{23}</span>개 모두
             보기
           </span>
           {!openInput && (
@@ -79,7 +79,7 @@ export default function NotePost({ note }: Props) {
               <RoundIcon
                 name='sentiment_satisfied'
                 filled
-                style='small text-slate-600'
+                style='small text-slate-700'
               />
               댓글 쓰기
             </span>
