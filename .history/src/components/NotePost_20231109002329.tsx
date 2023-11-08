@@ -16,6 +16,7 @@ export default function NotePost({ note }: Props) {
   console.log(note);
   const { notetitle, notebody, likes, createdAt } = note;
   const [openInput, setOpenInput] = useState(false);
+  const inputRef = useRef(null);
   const focusInput = () => {
     setOpenInput(true);
   };
@@ -82,7 +83,7 @@ export default function NotePost({ note }: Props) {
           )}
         </div>
       </div>
-      {openInput && <InputText openInput={openInput} />}
+      {openInput && <InputText useRef={useRef} />}
     </article>
   );
 }

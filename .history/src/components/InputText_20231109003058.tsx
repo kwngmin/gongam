@@ -1,17 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { RefObject } from 'react';
 import RoundIcon from './ui/icons/RoundIcon';
 type Props = {
-  openInput: boolean;
+  inputRef: any;
 };
-export default function InputText({ openInput }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    if (inputRef.current !== null) {
-      inputRef.current.disabled = false;
-      inputRef.current.focus();
-    }
-  }, [openInput]);
-
+export default function InputText({ inputRef }: Props) {
   return (
     <form action='' className='py-2'>
       <div className='flex items-center py-1 px-2 border-0 outline-0 bg-slate-50 rounded-2xl gap-2'>

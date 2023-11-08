@@ -1,16 +1,14 @@
-import { useEffect, useRef } from 'react';
+import { RefObject, useRef } from 'react';
 import RoundIcon from './ui/icons/RoundIcon';
+import { Input } from 'postcss';
 type Props = {
   openInput: boolean;
 };
 export default function InputText({ openInput }: Props) {
-  const inputRef = useRef<HTMLInputElement>(null);
-  useEffect(() => {
-    if (inputRef.current !== null) {
-      inputRef.current.disabled = false;
-      inputRef.current.focus();
-    }
-  }, [openInput]);
+  const inputRef = useRef();
+  if (openInput) {
+    inputRef.current.focus();
+  }
 
   return (
     <form action='' className='py-2'>

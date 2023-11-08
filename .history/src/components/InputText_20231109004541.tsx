@@ -5,6 +5,7 @@ type Props = {
 };
 export default function InputText({ openInput }: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
+  console.log(openInput);
   useEffect(() => {
     if (inputRef.current !== null) {
       inputRef.current.disabled = false;
