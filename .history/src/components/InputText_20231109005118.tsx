@@ -9,7 +9,7 @@ export default function InputText({ openInput }: Props) {
     if (inputRef.current !== null) {
       inputRef.current.disabled = false;
       inputRef.current.focus();
-      inputRef.current.scrollIntoView({ block: 'end' });
+      inputRef.current.scrollIntoView(false);
     }
   }, [openInput]);
 
