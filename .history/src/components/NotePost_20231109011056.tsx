@@ -1,11 +1,11 @@
 'use client';
-import { useState } from 'react';
-import { format, register } from 'timeago.js';
-import { getDate } from '@/util/date';
-import { FullNote } from '@/model/note';
 import RoundIcon from './ui/icons/RoundIcon';
+import { FullNote } from '@/model/note';
+import { getDate } from '@/util/date';
+import { format, register } from 'timeago.js';
 import ko from 'timeago.js/lib/lang/ko';
 import InputText from './InputText';
+import { useRef, useState } from 'react';
 
 type Props = {
   note: FullNote;
@@ -26,9 +26,11 @@ export default function NotePost({ note }: Props) {
         <h2 className='text-xl font-semibold text-black/80 grow'>
           {notetitle}
         </h2>
+        {/* <RoundIcon name='more_vert' style='' /> */}
         <RoundIcon name='more_horiz' style='' />
       </div>
       <time className='text-black/60 text-sm'>
+        {/* 2023년 4월 11일 (6개월 전) */}
         {getDate(createdAt)} ({format(createdAt, 'ko')})
       </time>
       <div className='text-black/80 mt-2 break-keep'>

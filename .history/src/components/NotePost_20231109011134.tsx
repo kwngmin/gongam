@@ -1,11 +1,11 @@
 'use client';
-import { useState } from 'react';
-import { format, register } from 'timeago.js';
-import { getDate } from '@/util/date';
-import { FullNote } from '@/model/note';
 import RoundIcon from './ui/icons/RoundIcon';
+import { FullNote } from '@/model/note';
+import { getDate } from '@/util/date';
+import { format, register } from 'timeago.js';
 import ko from 'timeago.js/lib/lang/ko';
 import InputText from './InputText';
+import { useState } from 'react';
 
 type Props = {
   note: FullNote;

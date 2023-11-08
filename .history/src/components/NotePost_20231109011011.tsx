@@ -1,11 +1,11 @@
 'use client';
-import { useState } from 'react';
-import { format, register } from 'timeago.js';
-import { getDate } from '@/util/date';
-import { FullNote } from '@/model/note';
 import RoundIcon from './ui/icons/RoundIcon';
+import { FullNote } from '@/model/note';
+import { getDate } from '@/util/date';
+import { format, register } from 'timeago.js';
 import ko from 'timeago.js/lib/lang/ko';
 import InputText from './InputText';
+import { useRef, useState } from 'react';
 
 type Props = {
   note: FullNote;
@@ -26,9 +26,11 @@ export default function NotePost({ note }: Props) {
         <h2 className='text-xl font-semibold text-black/80 grow'>
           {notetitle}
         </h2>
+        {/* <RoundIcon name='more_vert' style='' /> */}
         <RoundIcon name='more_horiz' style='' />
       </div>
       <time className='text-black/60 text-sm'>
+        {/* 2023년 4월 11일 (6개월 전) */}
         {getDate(createdAt)} ({format(createdAt, 'ko')})
       </time>
       <div className='text-black/80 mt-2 break-keep'>
@@ -63,6 +65,10 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex gap-2 my-2 items-center'>
+          {/* <RoundIcon
+            name='subdirectory_arrow_right'
+            style='small text-slate-400'
+          /> */}
           <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium border'>
             <span className='mx-1'>댓글</span>
             <span className='font-semibold text-slate-600'>{23}</span>개 전체
