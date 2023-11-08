@@ -65,11 +65,11 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex gap-2 my-2 items-center'>
-          {/* <RoundIcon
+          <RoundIcon
             name='subdirectory_arrow_right'
             style='small text-slate-400'
-          /> */}
-          <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium border'>
+          />
+          <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'>
             <span className='mx-1'>댓글</span>
             <span className='font-semibold text-slate-600'>{23}</span>개 모두
             보기
@@ -77,7 +77,7 @@ export default function NotePost({ note }: Props) {
           {!openInput && (
             <span
               onClick={() => focusInput()}
-              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium border'
+              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'
             >
               <RoundIcon
                 name='sentiment_satisfied'

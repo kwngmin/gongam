@@ -64,12 +64,9 @@ export default function NotePost({ note }: Props) {
             사이드 프로젝트로 하고 있는 reflow 반응이 점점 좋아지고 있다.
           </span>
         </div>
-        <div className='flex gap-2 my-2 items-center'>
-          {/* <RoundIcon
-            name='subdirectory_arrow_right'
-            style='small text-slate-400'
-          /> */}
-          <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium border'>
+        <div className='flex gap-2 my-2'>
+          <RoundIcon name='subdirectory_arrow_right' style='small' />
+          <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'>
             <span className='mx-1'>댓글</span>
             <span className='font-semibold text-slate-600'>{23}</span>개 모두
             보기
@@ -77,7 +74,7 @@ export default function NotePost({ note }: Props) {
           {!openInput && (
             <span
               onClick={() => focusInput()}
-              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium border'
+              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'
             >
               <RoundIcon
                 name='sentiment_satisfied'

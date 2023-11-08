@@ -77,7 +77,7 @@ export default function NotePost({ note }: Props) {
           {!openInput && (
             <span
               onClick={() => focusInput()}
-              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium border'
+              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'
             >
               <RoundIcon
                 name='sentiment_satisfied'
