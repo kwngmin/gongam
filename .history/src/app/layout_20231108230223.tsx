@@ -41,6 +41,7 @@ export default function RootLayout({
             <Dockbar />
           </footer>
           <div id='scrollable' />
+
           <Analytics />
         </AuthContext>
       </body>
