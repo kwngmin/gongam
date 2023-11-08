@@ -37,7 +37,7 @@ export default function RootLayout({
           <main className='grow w-full overflow-auto'>
             <SWRConfigContext>{children}</SWRConfigContext>
           </main>
-          <div id='scrollable' />
+          <div className='' />
           <footer className=''>
             <Dockbar />
           </footer>
