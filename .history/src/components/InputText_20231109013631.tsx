@@ -15,7 +15,7 @@ export default function InputText({ openInput }: Props) {
 
   return (
     <form action='' className='py-2'>
-      <div className='flex items-center py-1 px-2 border outline-0 bg-slate-50 rounded-2xl gap-2'>
+      <div className='flex items-center py-1 px-2 border-0 outline-0 bg-slate-50 rounded-2xl gap-2 border'>
         <input
           className='grow rounded p-2 focus:border-none focus:outline-none bg-transparent'
           type='text'
