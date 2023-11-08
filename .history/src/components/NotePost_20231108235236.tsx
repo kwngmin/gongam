@@ -75,7 +75,7 @@ export default function NotePost({ note }: Props) {
               onClick={() => focusInput()}
               className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'
             >
-              댓글 쓰기
+              댓글 달기
             </span>
           )}
           <span className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>

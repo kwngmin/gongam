@@ -70,18 +70,18 @@ export default function NotePost({ note }: Props) {
         </div>
         <div className='flex gap-2'>
           <RoundIcon name='subdirectory_arrow_right' style='' />
+          <span className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>
+            댓글 <span className='font-medium text-slate-700'>{23}</span>개 모두
+            보기
+          </span>
           {!openInput && (
             <span
               onClick={() => focusInput()}
               className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'
             >
-              댓글 쓰기
+              댓글 달기
             </span>
           )}
-          <span className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>
-            댓글 <span className='font-medium text-slate-700'>{23}</span>개 모두
-            보기
-          </span>
         </div>
       </div>
       {openInput && <InputText />}

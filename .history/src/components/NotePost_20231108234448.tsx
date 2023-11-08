@@ -5,7 +5,6 @@ import { getDate } from '@/util/date';
 import { format, register } from 'timeago.js';
 import ko from 'timeago.js/lib/lang/ko';
 import InputText from './InputText';
-import { useState } from 'react';
 
 type Props = {
   note: FullNote;
@@ -15,10 +14,6 @@ export default function NotePost({ note }: Props) {
   register('ko', ko);
   console.log(note);
   const { notetitle, notebody, likes, createdAt } = note;
-  const [openInput, setOpenInput] = useState(false);
-  const focusInput = () => {
-    setOpenInput(true);
-  };
   // console.log(note);
   // console.log(data);
   // const { data, isLoading, error } = useSWR('/api/me');
@@ -68,23 +63,16 @@ export default function NotePost({ note }: Props) {
           </span>
           {/* <RoundIcon filled name='chat' style='' /> */}
         </div>
-        <div className='flex gap-2'>
-          <RoundIcon name='subdirectory_arrow_right' style='' />
-          {!openInput && (
-            <span
-              onClick={() => focusInput()}
-              className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'
-            >
-              댓글 쓰기
-            </span>
-          )}
-          <span className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>
-            댓글 <span className='font-medium text-slate-700'>{23}</span>개 모두
-            보기
-          </span>
-        </div>
+        <span className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>
+          {/* 댓글 달기 */}
+          댓글 <span className='font-medium text-slate-700'>{23}</span>개 모두
+          보기
+        </span>
+        <span className='w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>
+          댓글 달기
+        </span>
       </div>
-      {openInput && <InputText />}
+      <InputText />
     </article>
   );
 }
