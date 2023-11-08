@@ -23,7 +23,7 @@ export default function InputText({ openInput }: Props) {
           ref={inputRef}
         />
         <button className='w-9 h-9 flex justify-center items-center rounded-full text-sm font-medium bg-gray-700'>
-          <RoundIcon name='arrow_right_alt' filled style='text-white' />
+          <RoundIcon name='arrow_right_alt' filled style='' />
         </button>
       </div>
     </form>
