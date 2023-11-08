@@ -20,6 +20,9 @@ export default function NotePost({ note }: Props) {
     setOpenInput(true);
   };
   // console.log(note);
+  // console.log(data);
+  // const { data, isLoading, error } = useSWR('/api/me');
+  // console.log(data);
   return (
     <article className='py-8 border-t border-gray-300'>
       <div className='flex items-center'>

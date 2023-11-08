@@ -20,6 +20,9 @@ export default function NotePost({ note }: Props) {
     setOpenInput(true);
   };
   // console.log(note);
+  // console.log(data);
+  // const { data, isLoading, error } = useSWR('/api/me');
+  // console.log(data);
   return (
     <article className='py-8 border-t border-gray-300'>
       <div className='flex items-center'>
@@ -67,10 +70,10 @@ export default function NotePost({ note }: Props) {
         <div className='flex gap-2'>
           <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-100 rounded text-slate-500 select-none font-medium'>
             <RoundIcon name='subdirectory_arrow_right' style='small' />
-            <span className='mx-1'>댓글</span>
-            <span className='font-semibold text-slate-700'>{23}</span>개 모두
+            댓글 <span className='font-medium text-slate-700'>{23}</span>개 모두
             보기
           </span>
+
           {!openInput && (
             <span
               onClick={() => focusInput()}
