@@ -68,14 +68,14 @@ export default function NotePost({ note }: Props) {
           보기
         </span>
       </div>
-      <form action='' className='py-2 gap-3'>
-        <div className='flex p-2 border-0 outline-0 bg-slate-50 rounded-2xl'>
+      <form action='' className='flex py-2 gap-3'>
+        <div className=' p-2 border-0 outline-0 bg-slate-50 rounded-2xl'>
           <input
             className='grow rounded p-2 border-0 outline-0 bg-transparent'
             type='text'
             placeholder='send message...'
           />
-          <button className='px-2 flex justify-center items-center rounded-full bg-white'>
+          <button className='px-2 flex justify-center items-center rounded-full bg-slate-100'>
             {/* 댓글쓰기 */}
             <RoundIcon name='emoticon' style='' />
           </button>

@@ -75,7 +75,7 @@ export default function NotePost({ note }: Props) {
             type='text'
             placeholder='send message...'
           />
-          <button className='px-2 flex justify-center items-center rounded-full bg-white'>
+          <button className='px-2 flex justify-center items-center rounded-full bg-slate-100'>
             {/* 댓글쓰기 */}
             <RoundIcon name='emoticon' style='' />
           </button>
