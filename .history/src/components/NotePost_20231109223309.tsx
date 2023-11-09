@@ -71,6 +71,13 @@ export default function NotePost({ note }: Props) {
           </span>
           {/* <span className='border-l-2 border-gray-300 flex h-4' /> */}
           <span className='flex gap-2'>
+            <span
+              onClick={() => {}}
+              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none text-sm font-medium'
+            >
+              <RoundIcon name='forum' filled style='small text-slate-500' />
+              전체 보기
+            </span>
             <SmallButton func={() => {}} icon='forum' text='전체 보기' />
             {!openInput && (
               <SmallButton

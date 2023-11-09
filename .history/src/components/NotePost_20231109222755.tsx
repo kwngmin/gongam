@@ -6,7 +6,6 @@ import { FullNote } from '@/model/note';
 import RoundIcon from './ui/icons/RoundIcon';
 import ko from 'timeago.js/lib/lang/ko';
 import InputText from './InputText';
-import SmallButton from './SmallButton';
 
 type Props = {
   note: FullNote;
@@ -64,20 +63,32 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex gap-3 my-2 items-center'>
-          <span className='flex items-center w-fit text-slate-600 select-none font-medium text-sm'>
+          <span className='flex items-center w-fit text-slate-500 select-none font-semibold text-sm'>
             댓글
             <span className='mx-1 text-xs text-slate-400'>•</span>
             <span className='font-medium text-slate-600 text-sm'>{23}</span>
           </span>
           {/* <span className='border-l-2 border-gray-300 flex h-4' /> */}
           <span className='flex gap-2'>
-            <SmallButton func={() => {}} icon='forum' text='전체 보기' />
+            <span
+              onClick={() => {}}
+              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none text-sm font-medium'
+            >
+              <RoundIcon name='forum' filled style='small text-slate-500' />
+              전체 보기
+            </span>
             {!openInput && (
-              <SmallButton
-                func={focusInput}
-                icon='sentiment_satisfied'
-                text='댓글 쓰기'
-              />
+              <span
+                onClick={() => focusInput()}
+                className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none text-sm font-medium'
+              >
+                <RoundIcon
+                  name='sentiment_satisfied'
+                  filled
+                  style='small text-slate-500'
+                />
+                댓글 쓰기
+              </span>
             )}
           </span>
         </div>
