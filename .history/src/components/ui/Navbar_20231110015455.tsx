@@ -59,7 +59,7 @@ export default function Navbar() {
         {/* <span className='font-medium absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2'>
           New Note
         </span> */}
-        <div className='bg-slate-900 active:bg-slate-700 text-white rounded-full px-4 h-8 flex items-center font-medium text-sm select-none cursor-pointer'>
+        <div className='bg-slate-900 hover:bg-slate-700 text-white rounded-full px-4 h-8 flex items-center font-medium text-sm select-none cursor-pointer'>
           Post
         </div>
       </div>

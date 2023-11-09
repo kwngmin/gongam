@@ -18,7 +18,7 @@ export default function Navbar() {
     if (session === null) {
       return (
         <Link href='/auth/signin'>
-          <div className='bg-slate-100 active:bg-slate-200 rounded-full px-4 h-8 flex items-center font-medium text-sm select-none'>
+          <div className='bg-slate-100 hover:bg-slate-200 rounded-full px-4 h-8 flex items-center font-medium text-sm select-none'>
             Sign In
           </div>
         </Link>
@@ -47,7 +47,7 @@ export default function Navbar() {
       <div className='h-16 flex items-center justify-between relative'>
         <div
           onClick={() => router.back()}
-          className='bg-slate-100 active:bg-slate-200 rounded-full px-4 h-8 flex items-center font-medium text-sm select-none text-black/70 cursor-pointer'
+          className='bg-slate-100 hover:bg-slate-200 rounded-full px-4 h-8 flex items-center font-medium text-sm select-none text-black/70 cursor-pointer'
         >
           Cancel
         </div>
@@ -59,7 +59,7 @@ export default function Navbar() {
         {/* <span className='font-medium absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2'>
           New Note
         </span> */}
-        <div className='bg-slate-900 active:bg-slate-700 text-white rounded-full px-4 h-8 flex items-center font-medium text-sm select-none cursor-pointer'>
+        <div className='bg-slate-900 hover:bg-slate-700 text-white rounded-full px-4 h-8 flex items-center font-medium text-sm select-none cursor-pointer'>
           Post
         </div>
       </div>
