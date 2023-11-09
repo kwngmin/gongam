@@ -42,7 +42,7 @@ export default function NotePost({ note }: Props) {
               {likes ? likes : '0'}
             </span>
           </div>
-          <span className='border-l border-gray-300 flex h-4' />
+          <span className='border-l border-gray-400 flex h-4' />
           <span className='h-6 flex items-center font-medium rounded-full  text-slate-600 text-sm'>
             구독하기
           </span>
@@ -50,7 +50,7 @@ export default function NotePost({ note }: Props) {
         <div className='flex items-center gap-4'>
           <RoundIcon name='bookmark' style='' />
           {/* <RoundIcon name='content_copy' style='' /> */}
-          <span className='border-l border-gray-300 flex h-4' />
+          <span className='border-l border-gray-400 flex h-4' />
           <RoundIcon name='ios_share' style='' />
         </div>
       </div>
@@ -63,35 +63,33 @@ export default function NotePost({ note }: Props) {
             사이드 프로젝트로 하고 있는 reflow 반응이 점점 좋아지고 있다.
           </span>
         </div>
-        <div className='flex gap-3 my-2 items-center'>
-          <span className='flex items-center w-fit  text-slate-500 select-none font-medium text-sm'>
+        <div className='flex gap-2 my-2 items-center'>
+          <span className='flex items-center w-fit  text-slate-500 select-none font-medium'>
             댓글
-            <span className='mx-1 text-xs text-slate-400'>•</span>
-            <span className='font-medium text-slate-600 text-sm'>{23}</span>
+            <span className='mx-1 text-xs'>•</span>
+            <span className='font-semibold text-slate-600'>{23}</span>
           </span>
-          {/* <span className='border-l-2 border-gray-300 flex h-4' /> */}
-          <span className='flex gap-2'>
+          {/* <span className='border-l border-gray-400 flex h-4' /> */}
+          <span
+            onClick={() => {}}
+            className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'
+          >
+            <RoundIcon name='forum' filled style='small text-slate-600' />
+            전체 보기
+          </span>
+          {!openInput && (
             <span
-              onClick={() => {}}
-              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none font-medium'
+              onClick={() => focusInput()}
+              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'
             >
-              <RoundIcon name='forum' filled style='small text-slate-500' />
-              전체 보기
+              <RoundIcon
+                name='sentiment_satisfied'
+                filled
+                style='small text-slate-600'
+              />
+              댓글 쓰기
             </span>
-            {!openInput && (
-              <span
-                onClick={() => focusInput()}
-                className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none font-medium'
-              >
-                <RoundIcon
-                  name='sentiment_satisfied'
-                  filled
-                  style='small text-slate-500'
-                />
-                댓글 쓰기
-              </span>
-            )}
-          </span>
+          )}
         </div>
       </div>
       {openInput && <InputText openInput={openInput} />}
