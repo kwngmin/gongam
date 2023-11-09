@@ -7,7 +7,7 @@ export async function getAllNotes(username: string) {
     "likes":count(likes),
     "notetitle":notetitle,
     "notebody":notebody,
-    "comments":count(comments),
+    "comments":comments,
     "comment":comments[0],
     "id":_id,
     "createdAt":_createdAt

@@ -94,13 +94,10 @@ export default function NotePost({ note }: Props) {
       {openInput && <InputText openInput={openInput} />}
       {openModal && (
         <ModalPortal>
-          <div className='fixed top-0 left-0 w-full h-full bg-gray-900'>
-            difidhfisdjfisdjf
-          </div>
-          {/* <PostModal onClose={() => setOpenModal(false)}>
-            <NoteDetail note={note} />
+          <PostModal onClose={() => setOpenModal(false)}>
+            {/* <NoteDetail note={note} /> */}
             <div>hihihih</div>
-          </PostModal> */}
+          </PostModal>
         </ModalPortal>
       )}
     </article>

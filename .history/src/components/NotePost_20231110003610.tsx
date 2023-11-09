@@ -9,8 +9,6 @@ import InputText from './InputText';
 import Seperator from './ui/Seperator';
 import SmallTextIconButton from './SmallTextIconButton';
 import ModalPortal from './ui/ModalPortal';
-import PostModal from './PostModal';
-import NoteDetail from './NoteDetail';
 
 type Props = {
   note: FullNote;
@@ -18,10 +16,13 @@ type Props = {
 
 export default function NotePost({ note }: Props) {
   register('ko', ko);
+  console.log(note);
   const { notetitle, notebody, likes, createdAt } = note;
   const [openInput, setOpenInput] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-
+  const inputReverse = () => {
+    setOpenInput(!openInput);
+  };
   // console.log(note);
   return (
     <article className='py-8 border-t border-gray-300'>
@@ -94,13 +95,11 @@ export default function NotePost({ note }: Props) {
       {openInput && <InputText openInput={openInput} />}
       {openModal && (
         <ModalPortal>
-          <div className='fixed top-0 left-0 w-full h-full bg-gray-900'>
-            difidhfisdjfisdjf
+          <div className='fixed top-0 left-0 w-full h-full bg-slate-300'>
+            <PostModal onClose={() => setOpenModal(false)}>
+              <div>hi</div>
+            </PostModal>
           </div>
-          {/* <PostModal onClose={() => setOpenModal(false)}>
-            <NoteDetail note={note} />
-            <div>hihihih</div>
-          </PostModal> */}
         </ModalPortal>
       )}
     </article>
