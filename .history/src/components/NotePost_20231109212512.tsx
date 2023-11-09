@@ -64,23 +64,15 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex gap-2 my-2 items-center'>
-          <span className='flex items-center w-fit  text-slate-500 select-none font-medium'>
+          <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'>
             댓글
-            <span className='mx-1 text-xs'>•</span>
-            <span className='font-semibold text-slate-600'>{23}</span>
+            <span className='font-semibold text-slate-600 ml-1'>{23}</span>개
           </span>
-          {/* <span className='border-l border-gray-400 flex h-4' /> */}
-          <span
-            onClick={() => {}}
-            className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none'
-          >
-            <RoundIcon
-              name='subdirectory_arrow_right'
-              filled
-              style='small text-slate-600'
-            />
-            전체 보기
+          <span className='flex items-center w-fit cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'>
+            댓글
+            <span className='font-semibold text-slate-600 ml-1'>{23}</span>개
           </span>
+          <span>전체 보기</span>
           {!openInput && (
             <span
               onClick={() => focusInput()}

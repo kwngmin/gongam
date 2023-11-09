@@ -69,10 +69,9 @@ export default function NotePost({ note }: Props) {
             <span className='mx-1 text-xs'>•</span>
             <span className='font-semibold text-slate-600'>{23}</span>
           </span>
-          {/* <span className='border-l border-gray-400 flex h-4' /> */}
           <span
             onClick={() => {}}
-            className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none'
+            className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-50 rounded text-slate-500 select-none font-medium'
           >
             <RoundIcon
               name='subdirectory_arrow_right'
