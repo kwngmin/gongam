@@ -44,7 +44,7 @@ export default function NotePost({ note }: Props) {
               {likes ? likes : '0'}
             </span>
           </div>
-          <span className='bg-slate-100 active:bg-slate-200 px-2 h-8 flex items-center font-medium rounded text-slate-600 text-sm select-none'>
+          <span className='bg-slate-100 active:bg-slate-200 px-2 h-8 flex items-center font-medium rounded text-slate-600 text-sm'>
             구독하기
           </span>
         </div>
