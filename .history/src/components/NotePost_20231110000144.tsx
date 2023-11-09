@@ -33,7 +33,7 @@ export default function NotePost({ note }: Props) {
         <time className='text-black/60 text-sm'>
           {getDate(createdAt)} ({format(createdAt, 'ko')})
         </time>
-        <div className='flex'>
+        <div className='flex p-0.5'>
           <RoundIcon name='more_horiz' style='' />
         </div>
         {/* <span className='text-sm text-slate-400 select-none'>수정하기</span> */}

@@ -28,15 +28,15 @@ export default function NotePost({ note }: Props) {
         <h2 className='text-xl font-semibold text-black/80 grow break-keep'>
           {notetitle}
         </h2>
+        {/* <div className='flex p-0.5'>
+          <RoundIcon name='more_horiz' style='' />
+        </div> */}
       </div>
-      <div className='flex justify-between items-center'>
+      <div className='flex justify-between'>
         <time className='text-black/60 text-sm'>
           {getDate(createdAt)} ({format(createdAt, 'ko')})
         </time>
-        <div className='flex'>
-          <RoundIcon name='more_horiz' style='' />
-        </div>
-        {/* <span className='text-sm text-slate-400 select-none'>수정하기</span> */}
+        <span>수정하기</span>
       </div>
       <div className='text-black/80 mt-2 break-keep'>
         <p>{notebody}</p>
