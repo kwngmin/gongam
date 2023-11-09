@@ -48,9 +48,9 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex items-center gap-4'>
-          <RoundIcon name='bookmark' style='' />
-          <span className='border-l border-gray-300 flex h-4' />
           <RoundIcon name='content_copy' style='' />
+          <span className='border-l border-gray-300 flex h-4' />
+          <RoundIcon name='bookmark' style='' />
           {/* <RoundIcon name='ios_share' style='' /> */}
           {/* <RoundIcon name='share' style='' /> */}
         </div>

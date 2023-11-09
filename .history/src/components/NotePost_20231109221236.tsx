@@ -50,9 +50,9 @@ export default function NotePost({ note }: Props) {
         <div className='flex items-center gap-4'>
           <RoundIcon name='bookmark' style='' />
           <span className='border-l border-gray-300 flex h-4' />
-          <RoundIcon name='content_copy' style='' />
           {/* <RoundIcon name='ios_share' style='' /> */}
-          {/* <RoundIcon name='share' style='' /> */}
+          {/* <RoundIcon name='content_copy' style='' /> */}
+          <RoundIcon name='share' style='' />
         </div>
       </div>
       <div className='flex flex-col gap-1'>

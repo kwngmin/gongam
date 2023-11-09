@@ -49,10 +49,9 @@ export default function NotePost({ note }: Props) {
         </div>
         <div className='flex items-center gap-4'>
           <RoundIcon name='bookmark' style='' />
+          {/* <RoundIcon name='content_copy' style='' /> */}
           <span className='border-l border-gray-300 flex h-4' />
-          <RoundIcon name='content_copy' style='' />
-          {/* <RoundIcon name='ios_share' style='' /> */}
-          {/* <RoundIcon name='share' style='' /> */}
+          <RoundIcon name='ios_share' style='' />
         </div>
       </div>
       <div className='flex flex-col gap-1'>
@@ -74,7 +73,7 @@ export default function NotePost({ note }: Props) {
           <span className='flex gap-2'>
             <span
               onClick={() => {}}
-              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none text-sm font-medium'
+              className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none'
             >
               <RoundIcon name='forum' filled style='small text-slate-500' />
               전체 보기
@@ -82,7 +81,7 @@ export default function NotePost({ note }: Props) {
             {!openInput && (
               <span
                 onClick={() => focusInput()}
-                className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none text-sm font-medium'
+                className='w-fit flex items-center gap-1 cursor-pointer py-1 px-2 bg-slate-100 active:bg-slate-200 rounded text-slate-500 select-none'
               >
                 <RoundIcon
                   name='sentiment_satisfied'
