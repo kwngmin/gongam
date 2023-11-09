@@ -29,13 +29,13 @@ export default function NotePost({ note }: Props) {
           {notetitle}
         </h2>
       </div>
-      <div className='flex justify-between items-center py-0.5'>
+      <div className='flex justify-between items-center'>
         <time className='text-black/60 text-sm'>
           {getDate(createdAt)} ({format(createdAt, 'ko')})
         </time>
-        {/* <div className='flex'>
+        <div className='flex'>
           <RoundIcon name='more_horiz' style='' />
-        </div> */}
+        </div>
         {/* <span className='text-sm text-slate-400 select-none'>수정하기</span> */}
       </div>
       <div className='text-black/80 mt-2 break-keep'>

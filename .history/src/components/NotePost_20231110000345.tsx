@@ -29,7 +29,7 @@ export default function NotePost({ note }: Props) {
           {notetitle}
         </h2>
       </div>
-      <div className='flex justify-between items-center py-0.5'>
+      <div className='flex justify-between items-center'>
         <time className='text-black/60 text-sm'>
           {getDate(createdAt)} ({format(createdAt, 'ko')})
         </time>
