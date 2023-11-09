@@ -49,7 +49,7 @@ export default function NotePost({ note }: Props) {
             구독하기
           </span>
         </div>
-        <div className='flex items-center gap-6'>
+        <div className='flex items-center gap-4'>
           <RoundIcon name='bookmark' style='' />
           {/* <Seperator /> */}
           <RoundIcon name='content_copy' style='' />
