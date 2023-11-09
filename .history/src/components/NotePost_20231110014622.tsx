@@ -56,16 +56,12 @@ export default function NotePost({ note }: Props) {
         </div>
       </div>
       <div className='flex flex-col gap-1'>
-        {comment !== null && (
-          <div className='flex gap-2'>
-            <span className='text-slate-500 font-medium shrink-0'>
-              6시간 전
-            </span>
-            <span className='text-ellipsis overflow-hidden whitespace-nowrap'>
-              {comment.comment}
-            </span>
-          </div>
-        )}
+        <div className='flex gap-2'>
+          <span className='text-slate-500 font-medium shrink-0'>6시간 전</span>
+          <span className='text-ellipsis overflow-hidden whitespace-nowrap'>
+            {comment !== null && comment.comment}
+          </span>
+        </div>
         <div className='flex gap-2 items-center'>
           <span className='flex items-center w-fit py-2 pr-2 text-slate-600 select-none font-medium text-sm'>
             댓글

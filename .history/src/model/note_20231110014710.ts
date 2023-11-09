@@ -13,7 +13,7 @@ export type FullNote = {
   notebody: string;
   username: string;
   createdAt: string;
-  comments: number | null;
+  comment: number | null;
   // comments: Comment[];
   comment: { comment: string };
 };
