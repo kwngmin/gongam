@@ -24,11 +24,11 @@ export default function NotePost({ note }: Props) {
   // console.log(note);
   return (
     <article className='py-8 border-t border-gray-300'>
-      <div className='flex items-start'>
+      <div className='flex items-center'>
         <h2 className='text-xl font-semibold text-black/80 grow break-keep'>
           {notetitle}
         </h2>
-        <div className='flex p-0.5'>
+        <div className='p-2'>
           <RoundIcon name='more_horiz' style='' />
         </div>
       </div>
