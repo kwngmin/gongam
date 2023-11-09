@@ -63,7 +63,7 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex gap-2 my-2 items-center'>
-          <span className='flex items-center w-fit py-1 px-2 bg-slate-50 text-slate-500 select-none font-medium text-sm'>
+          <span className='flex items-center w-fit py-1 px-2 bg-slate-50 text-slate-500 select-none font-medium text-sm border'>
             댓글
             <span className='mx-1 text-xs text-slate-400'>•</span>
             <span className='font-medium text-slate-600 text-sm'>{23}</span>

@@ -62,7 +62,7 @@ export default function NotePost({ note }: Props) {
             사이드 프로젝트로 하고 있는 reflow 반응이 점점 좋아지고 있다.
           </span>
         </div>
-        <div className='flex gap-2 my-2 items-center'>
+        <div className='flex gap-4 my-2 items-center'>
           <span className='flex items-center w-fit py-1 px-2 bg-slate-50 text-slate-500 select-none font-medium text-sm'>
             댓글
             <span className='mx-1 text-xs text-slate-400'>•</span>
