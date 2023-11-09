@@ -44,14 +44,14 @@ export default function NotePost({ note }: Props) {
               {likes ? likes : '0'}
             </span>
           </div>
-          {/* <Seperator /> */}
-          <span className='bg-slate-100 px-2 h-6 flex items-center font-medium rounded text-slate-600 text-sm'>
+          <Seperator />
+          <span className='h-6 flex items-center font-medium rounded-full  text-slate-600 text-sm'>
             구독하기
           </span>
         </div>
         <div className='flex items-center gap-4'>
           <RoundIcon name='bookmark' style='' />
-          {/* <Seperator /> */}
+          <Seperator />
           <RoundIcon name='content_copy' style='' />
           {/* <RoundIcon name='ios_share' style='' /> */}
           {/* <RoundIcon name='share' style='' /> */}
@@ -64,7 +64,7 @@ export default function NotePost({ note }: Props) {
             사이드 프로젝트로 하고 있는 reflow 반응이 점점 좋아지고 있다.
           </span>
         </div>
-        <div className='flex gap-3 my-2 items-center'>
+        <div className='flex gap-1 my-2 items-center'>
           <span className='flex items-center w-fit text-slate-600 select-none font-medium text-sm'>
             댓글
             <span className='mx-1 text-xs text-slate-400'>•</span>

@@ -45,7 +45,7 @@ export default function NotePost({ note }: Props) {
             </span>
           </div>
           {/* <Seperator /> */}
-          <span className='bg-slate-100 px-2 h-6 flex items-center font-medium rounded text-slate-600 text-sm'>
+          <span className='bg-slate-100 h-6 flex items-center font-medium rounded-full  text-slate-600 text-sm'>
             구독하기
           </span>
         </div>

@@ -44,14 +44,14 @@ export default function NotePost({ note }: Props) {
               {likes ? likes : '0'}
             </span>
           </div>
-          {/* <Seperator /> */}
-          <span className='bg-slate-100 px-2 h-6 flex items-center font-medium rounded text-slate-600 text-sm'>
+          <Seperator />
+          <span className='h-6 flex items-center font-medium rounded-full  text-slate-600 text-sm'>
             구독하기
           </span>
         </div>
         <div className='flex items-center gap-4'>
           <RoundIcon name='bookmark' style='' />
-          {/* <Seperator /> */}
+          <Seperator />
           <RoundIcon name='content_copy' style='' />
           {/* <RoundIcon name='ios_share' style='' /> */}
           {/* <RoundIcon name='share' style='' /> */}
