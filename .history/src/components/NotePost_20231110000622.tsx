@@ -57,7 +57,7 @@ export default function NotePost({ note }: Props) {
           <RoundIcon name='bookmark' style='' />
           <RoundIcon name='content_copy' style='' />
           {/* <RoundIcon name='more_vert' style='' /> */}
-          {/* <RoundIcon name='more_horiz' style='' /> */}
+          <RoundIcon name='more_horiz' style='' />
         </div>
       </div>
       <div className='flex flex-col gap-1'>
