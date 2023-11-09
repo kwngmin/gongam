@@ -6,8 +6,8 @@ import { FullNote } from '@/model/note';
 import RoundIcon from './ui/icons/RoundIcon';
 import ko from 'timeago.js/lib/lang/ko';
 import InputText from './InputText';
+import SmallButton from './SmallButton';
 import Seperator from './ui/Seperator';
-import SmallTextIconButton from './SmallTextIconButton';
 
 type Props = {
   note: FullNote;
@@ -64,23 +64,23 @@ export default function NotePost({ note }: Props) {
             사이드 프로젝트로 하고 있는 reflow 반응이 점점 좋아지고 있다.
           </span>
         </div>
-        <div className='flex gap-2 items-center'>
-          <span className='flex items-center w-fit py-2 pr-2 text-slate-600 select-none font-medium text-sm'>
+        <div className='flex gap-2 my-2 items-center'>
+          <span className='flex items-center w-fit py-2 text-slate-600 select-none font-medium text-sm'>
             댓글
             <span className='mx-1 text-xs text-slate-400'>•</span>
             <span className='font-medium text-slate-600 text-sm'>{23}</span>
           </span>
+          <SmallButton func={() => {}} icon='forum' text='전체 보기' />
           <Seperator />
-          <SmallTextIconButton func={() => {}} icon='forum' text='전체 보기' />
-          <Seperator />
+
           {!openInput ? (
-            <SmallTextIconButton
+            <SmallButton
               func={() => setOpenInput(true)}
               icon='sentiment_satisfied'
               text='댓글 쓰기'
             />
           ) : (
-            <SmallTextIconButton
+            <SmallButton
               func={() => setOpenInput(false)}
               icon='sentiment_satisfied'
               text='입력상자 감추기'
