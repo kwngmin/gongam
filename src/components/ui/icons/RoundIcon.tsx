@@ -3,7 +3,11 @@ type Props = {
   style?: string;
   name: string;
 };
-export default function RoundIcon({ filled = false, style, name }: Props) {
+export default function RoundIcon({
+  filled = false,
+  style,
+  name = 'add',
+}: Props) {
   return (
     <span
       className={`material-symbols-rounded ${

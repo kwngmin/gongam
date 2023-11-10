@@ -6,6 +6,7 @@ import SmallTextIconButton from './SmallTextIconButton';
 import { getDate } from '@/util/date';
 import translateDate from '@/util/translateDate';
 import Dot from './ui/Dot';
+import RoundIcon from './ui/icons/RoundIcon';
 
 type Props = {
   note: SimpleNote;
@@ -18,15 +19,27 @@ export default function CommentsDetail({ note, onClose }: Props) {
   console.log(comments);
   return (
     <section className='w-full h-full bg-neutral-50 z-50'>
-      <ul className='h-full p-4 flex flex-col gap-4'>
+      <div className='px-4 h-16 flex items-center justify-between relative'>
+        <span className='flex items-center w-fit py-2 pr-2 text-slate-600 select-none font-medium text-lg'>
+          댓글
+          <Dot size='base' />
+          <span className='font-medium text-slate-600 text-lg'>
+            {commentsNumber !== null ? commentsNumber : 0}
+          </span>
+        </span>
+        <button onClick={() => onClose()} className='flex'>
+          <RoundIcon name='close' />
+        </button>
+      </div>
+      <ul className='h-full px-4 flex flex-col'>
         {comments &&
-          comments.map((comment, index) => (
-            <li key={index}>
-              <div className='break-keep'>{comment.comment}</div>
-              <span className='text-sm'>
-                {getDate(comment.commentAt)}
+          comments.map(({ comment, commentAt }, index) => (
+            <li key={index} className='py-4 border-t'>
+              <div className='break-keep'>{comment}</div>
+              <span className='text-sm text-slate-600'>
+                {getDate(commentAt)}
                 <Dot />
-                {translateDate(comment.commentAt)}
+                {translateDate(commentAt)}
               </span>
             </li>
           ))}
