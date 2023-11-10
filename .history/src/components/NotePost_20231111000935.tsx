@@ -11,7 +11,6 @@ import SmallTextIconButton from './SmallTextIconButton';
 import ModalPortal from './ui/ModalPortal';
 import PostModal from './PostModal';
 import NoteDetail from './NoteDetail';
-import Dot from './ui/Dot';
 
 type Props = {
   note: FullNote;
@@ -41,9 +40,7 @@ export default function NotePost({ note }: Props) {
       </div>
       <div className='flex justify-between items-center py-0.5'>
         <time className='text-black/60 text-sm'>
-          {getDate(createdAt)}
-          <Dot />
-          {format(createdAt, 'ko')}
+          {getDate(createdAt)} ({format(createdAt, 'ko')})
         </time>
       </div>
       <div className='text-black/80 mt-2 break-keep'>
@@ -80,7 +77,7 @@ export default function NotePost({ note }: Props) {
         <div className='flex gap-2 items-center'>
           <span className='flex items-center w-fit py-2 pr-2 text-slate-600 select-none font-medium text-sm'>
             댓글
-            <Dot />
+            <span className='mx-1 text-xs text-slate-400'>•</span>
             <span className='font-medium text-slate-600 text-sm'>
               {comments !== null ? comments : 0}
             </span>
@@ -88,8 +85,7 @@ export default function NotePost({ note }: Props) {
           <Seperator />
           <SmallTextIconButton
             func={() => setOpenModal(true)}
-            // icon='forum'
-            icon='tooltip'
+            icon='forum'
             text='전체 보기'
           />
           <Seperator />

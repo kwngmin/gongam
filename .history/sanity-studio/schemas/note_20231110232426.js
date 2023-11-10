@@ -52,11 +52,6 @@ export default {
               name: 'comment',
               type: 'string',
             },
-            {
-              title: 'Comment Created At',
-              name: 'commentAt',
-              type: 'datetime',
-            },
           ],
         },
       ],
@@ -65,13 +60,17 @@ export default {
   preview: {
     select: {
       title: 'notetitle',
+      likes: 'likes',
+      comments: 'comments',
       authorname: 'author.username',
     },
     prepare(selection) {
-      const {title, authorname} = selection
+      const {title, likes, comments, authorname} = selection
       return {
         title,
-        subtitle: `by ${authorname}`,
+        subtitle: `by ${authorname} ♥${likes ? likes.length : 0} | 🗨${
+          comments ? comments.length : 0
+        }`,
       }
     },
   },

@@ -41,8 +41,7 @@ export default function NotePost({ note }: Props) {
       </div>
       <div className='flex justify-between items-center py-0.5'>
         <time className='text-black/60 text-sm'>
-          {getDate(createdAt)}
-          <Dot />
+          {getDate(createdAt)} <Dot />
           {format(createdAt, 'ko')}
         </time>
       </div>
@@ -88,8 +87,7 @@ export default function NotePost({ note }: Props) {
           <Seperator />
           <SmallTextIconButton
             func={() => setOpenModal(true)}
-            // icon='forum'
-            icon='tooltip'
+            icon='forum'
             text='전체 보기'
           />
           <Seperator />

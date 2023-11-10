@@ -9,7 +9,7 @@ export async function getAllNotes(username: string) {
     "notebody":notebody,
     "comments":count(comments),
     "comment":comments[0],
-    "commentAt": comments[0].commentAt,
+    "commentAt": comments[0] -> commentAt,
     "id":_id,
     "createdAt":_createdAt
     `;

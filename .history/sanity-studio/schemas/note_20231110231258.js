@@ -1,3 +1,5 @@
+import {count} from 'console'
+
 export default {
   title: 'Note',
   name: 'note',
@@ -51,11 +53,6 @@ export default {
               title: 'Comment',
               name: 'comment',
               type: 'string',
-            },
-            {
-              title: 'Comment Created At',
-              name: 'commentAt',
-              type: 'datetime',
             },
           ],
         },

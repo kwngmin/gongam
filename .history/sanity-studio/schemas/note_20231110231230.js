@@ -1,3 +1,5 @@
+import {count} from 'console'
+
 export default {
   title: 'Note',
   name: 'note',
@@ -52,11 +54,6 @@ export default {
               name: 'comment',
               type: 'string',
             },
-            {
-              title: 'Comment Created At',
-              name: 'commentAt',
-              type: 'datetime',
-            },
           ],
         },
       ],
@@ -66,12 +63,13 @@ export default {
     select: {
       title: 'notetitle',
       authorname: 'author.username',
+      // likes: 'likes.length',
     },
     prepare(selection) {
-      const {title, authorname} = selection
+      const {title, , authorname} = selection
       return {
         title,
-        subtitle: `by ${authorname}`,
+        subtitle: `by ${authorname} ♥`,
       }
     },
   },

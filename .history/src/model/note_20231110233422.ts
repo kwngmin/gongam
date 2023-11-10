@@ -16,5 +16,4 @@ export type FullNote = {
   comments: number | null;
   // comments: Comment[];
   comment: { comment: string; createdAt: string };
-  commentAt: string;
 };

@@ -57,6 +57,11 @@ export default {
               name: 'commentAt',
               type: 'datetime',
             },
+            {
+              title: 'Comment Created At2',
+              name: 'commentAt2',
+              type: '_createdAt',
+            },
           ],
         },
       ],
