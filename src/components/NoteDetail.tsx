@@ -42,7 +42,14 @@ export default function CommentsDetail({ note, onClose }: Props) {
             <PulseLoader size={10} color='gray' />
           </li>
         )}
-        {comments ? (
+        {!(loading && comments) && (
+          <li className='text-center h-full flex flex-col justify-center'>
+            <p className='text-6xl pb-6 text-neutral-300'>:(</p>
+            <p>댓글이 존재하지 않습니다</p>
+            {/* <p>첫번째 댓글을 남겨보세요</p> */}
+          </li>
+        )}
+        {comments &&
           comments.map(({ comment, commentAt }, index) => (
             <li key={index} className='py-4 border-t'>
               <div className='break-keep'>{comment}</div>
@@ -52,14 +59,7 @@ export default function CommentsDetail({ note, onClose }: Props) {
                 {translateDate(commentAt)}
               </span>
             </li>
-          ))
-        ) : (
-          <li className='text-center h-full flex flex-col justify-center'>
-            <p className='text-6xl pb-6 text-neutral-300'>:(</p>
-            <p>댓글이 존재하지 않습니다</p>
-            {/* <p>첫번째 댓글을 남겨보세요</p> */}
-          </li>
-        )}
+          ))}
       </ul>
       <div
         className={`w-full shrink-0 bg-neutral-50 ${
