@@ -9,6 +9,7 @@ import Dot from './ui/Dot';
 import RoundIcon from './ui/icons/RoundIcon';
 import { useState } from 'react';
 import Seperator from './ui/Seperator';
+import { PulseLoader } from 'react-spinners';
 
 type Props = {
   note: SimpleNote;
@@ -16,7 +17,7 @@ type Props = {
 };
 export default function CommentsDetail({ note, onClose }: Props) {
   const { id, notetitle, createdAt, comments: commentsNumber } = note;
-  const { data } = useSWR<FullNote>(`/api/notes/${id}`);
+  const { data, isLoading: loading } = useSWR<FullNote>(`/api/notes/${id}`);
   const comments = data?.comments;
   const [openInput, setOpenInput] = useState(false);
 
@@ -36,6 +37,11 @@ export default function CommentsDetail({ note, onClose }: Props) {
         </button>
       </div>
       <ul className='h-full px-4 flex flex-col overflow-auto'>
+        {loading && (
+          <li className='w-full flex items-center justify-center h-36'>
+            <PulseLoader size={10} color='gray' />
+          </li>
+        )}
         {comments &&
           comments.map(({ comment, commentAt }, index) => (
             <li key={index} className='py-4 border-t'>
