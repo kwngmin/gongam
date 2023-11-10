@@ -88,7 +88,7 @@ export default function NotePost({ note }: Props) {
           <Seperator />
           <SmallTextIconButton
             func={() => setOpenModal(true)}
-            icon='comment'
+            icon='quick_phrases'
             // icon='forum'
             // icon='tooltip'
             text='전체 보기'
