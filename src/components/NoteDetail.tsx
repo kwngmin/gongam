@@ -35,7 +35,7 @@ export default function CommentsDetail({ note, onClose }: Props) {
           <RoundIcon name='close' />
         </button>
       </div>
-      <ul className='h-full px-4 flex flex-col'>
+      <ul className='h-full px-4 flex flex-col overflow-auto'>
         {comments &&
           comments.map(({ comment, commentAt }, index) => (
             <li key={index} className='py-4 border-t'>
@@ -49,7 +49,7 @@ export default function CommentsDetail({ note, onClose }: Props) {
           ))}
       </ul>
 
-      <div className='px-4 py-2 fixed bottom-0 left-0 right-0 flex items-center flex-col'>
+      <div className='px-4 py-2 fixed bottom-0 left-0 right-0 flex items-center flex-col bg-neutral-50'>
         <span className='flex gap-2 items-center'>
           <SmallTextIconButton
             func={() => onClose()}
