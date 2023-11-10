@@ -26,7 +26,7 @@ export default function InputText({ openInput }: Props) {
           <RoundIcon
             name='arrow_right_alt'
             filled
-            style='active:text-white text-slate-700'
+            style='active:text-white text-slate-800'
           />
         </button>
       </div>
