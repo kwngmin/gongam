@@ -44,9 +44,8 @@ export default function CommentsDetail({ note, onClose }: Props) {
         ) : (
           !comments && (
             <li className='text-center h-full flex flex-col justify-center'>
-              <p className='text-6xl pb-6 text-neutral-300'>:(</p>
+              <p className='text-8xl pb-10 text-neutral-300'>:(</p>
               <p>댓글이 존재하지 않습니다</p>
-              {/* <p>첫번째 댓글을 남겨보세요</p> */}
             </li>
           )
         )}
