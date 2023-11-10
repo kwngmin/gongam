@@ -37,3 +37,6 @@ next-env.d.ts
 
 # sanity-studio
 /sanity-studio
+
+# Local History for Visual Studio Code
+.history/
