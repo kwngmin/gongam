@@ -1,6 +1,7 @@
 export type Comment = {
   comment: string;
   username: string;
+  commentAt: string;
 };
 export type SimpleNote = Omit<FullNote, 'comments'> & {
   comments: number | null;
@@ -14,6 +15,6 @@ export type FullNote = {
   username: string;
   createdAt: string;
   comments: Comment[];
-  comment: { comment: string; createdAt: string };
+  comment: { comment: string; commentAt: string };
   commentAt: string;
 };

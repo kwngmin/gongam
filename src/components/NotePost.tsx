@@ -1,10 +1,8 @@
 'use client';
 import { useState } from 'react';
-import { format, register } from 'timeago.js';
 import { getDate } from '@/util/date';
 import { SimpleNote } from '@/model/note';
 import RoundIcon from './ui/icons/RoundIcon';
-import ko from 'timeago.js/lib/lang/ko';
 import InputText from './InputText';
 import Seperator from './ui/Seperator';
 import SmallTextIconButton from './SmallTextIconButton';
@@ -12,13 +10,13 @@ import ModalPortal from './ui/ModalPortal';
 import PostModal from './PostModal';
 import Dot from './ui/Dot';
 import CommentsDetail from './NoteDetail';
+import translateDate from '@/util/translateDate';
 
 type Props = {
   note: SimpleNote;
 };
 
 export default function NotePost({ note }: Props) {
-  register('ko', ko);
   const {
     notetitle,
     notebody,
@@ -43,7 +41,7 @@ export default function NotePost({ note }: Props) {
         <time className='text-black/60 text-sm'>
           {getDate(createdAt)}
           <Dot />
-          {format(createdAt, 'ko')}
+          {translateDate(createdAt)}
         </time>
       </div>
       <div className='text-black/80 mt-2 break-keep'>
@@ -70,7 +68,7 @@ export default function NotePost({ note }: Props) {
         {comment !== null && (
           <div className='flex gap-2'>
             <span className='text-slate-500 font-medium shrink-0'>
-              {format(commentAt, 'ko')}
+              {translateDate(commentAt)}
             </span>
             <span className='text-ellipsis overflow-hidden whitespace-nowrap'>
               {comment.comment}
@@ -114,7 +112,7 @@ export default function NotePost({ note }: Props) {
       {openModal && (
         <ModalPortal>
           <PostModal onClose={() => setOpenModal(false)}>
-            <CommentsDetail note={note} />
+            <CommentsDetail note={note} onClose={() => setOpenModal(false)} />
           </PostModal>
         </ModalPortal>
       )}
