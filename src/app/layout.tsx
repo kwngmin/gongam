@@ -26,7 +26,7 @@ export default function RootLayout({
       <Head>
         <meta
           name='viewport'
-          content='initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width'
+          content='initial-scale=1.0,user-scalable=no,maximum-scale=1,width=device-width'
         />
       </Head>
       <body className='h-screen flex relative flex-col'>
