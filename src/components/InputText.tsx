@@ -15,9 +15,9 @@ export default function InputText({ openInput }: Props) {
 
   return (
     <form action='' className='py-2'>
-      <div className='flex items-center p-1 ring-1 ring-slate-300 bg-slate-50 rounded-lg gap-2 focus-within:ring'>
+      <div className='flex items-center py-1 px-2 ring-1 ring-slate-300 bg-slate-50 rounded-lg gap-2 focus-within:ring'>
         <input
-          className='grow rounded p-1 focus:border-none focus:outline-none bg-transparent text-sm'
+          className='grow rounded p-2 focus:border-none focus:outline-none bg-transparent text-sm'
           type='text'
           placeholder='send message...'
           ref={inputRef}
