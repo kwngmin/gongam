@@ -1,7 +1,6 @@
 import { client } from './sanity';
 
-export async function getAllNotes() {
-  // export async function getAllNotes(username: string) {
+export async function getAllNotes(username: string) {
   const simplePostProjection = `
     ...,
     "username":author->username,
@@ -22,7 +21,7 @@ export async function getNoteComments(id: string) {
   return client.fetch(`
     *[_type =="note" && _id == "${id}"][0]{
       ...,
-      comments[]{comment, commentAt},
+      comment[]{comment, commentAt},
       "id":_id,
       "createdAt":_createdAt,
       "likes":likes[] -> username,

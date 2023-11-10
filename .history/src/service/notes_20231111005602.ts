@@ -1,7 +1,6 @@
 import { client } from './sanity';
 
-export async function getAllNotes() {
-  // export async function getAllNotes(username: string) {
+export async function getAllNotes(username: string) {
   const simplePostProjection = `
     ...,
     "username":author->username,

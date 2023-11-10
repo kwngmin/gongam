@@ -10,8 +10,8 @@ import Seperator from './ui/Seperator';
 import SmallTextIconButton from './SmallTextIconButton';
 import ModalPortal from './ui/ModalPortal';
 import PostModal from './PostModal';
+import NoteDetail from './NoteDetail';
 import Dot from './ui/Dot';
-import CommentsDetail from './NoteDetail';
 
 type Props = {
   note: SimpleNote;
@@ -31,7 +31,7 @@ export default function NotePost({ note }: Props) {
   const [openInput, setOpenInput] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  // console.log(note);
+  console.log(note);
   return (
     <article className='py-8 border-t border-gray-300'>
       <div className='flex items-start'>
@@ -114,7 +114,7 @@ export default function NotePost({ note }: Props) {
       {openModal && (
         <ModalPortal>
           <PostModal onClose={() => setOpenModal(false)}>
-            <CommentsDetail note={note} />
+            <NoteDetail note={note} />
           </PostModal>
         </ModalPortal>
       )}

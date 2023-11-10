@@ -9,6 +9,5 @@ export async function GET() {
   // if (!user) {
   //   return new Response('Authentication Error', { status: 401 });
   // }
-  return getAllNotes().then(data => NextResponse.json(data));
-  // return getAllNotes(user.username).then(data => NextResponse.json(data));
+  return getAllNotes(user.username).then(data => NextResponse.json(data));
 }

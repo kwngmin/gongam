@@ -7,10 +7,9 @@ type Props = {
   note: SimpleNote;
 };
 export default function CommentsDetail({ note }: Props) {
-  const { id, notetitle, createdAt, comments: commentsNumber } = note;
+  const { id, notetitle, createdAt, comments: commentsCount } = note;
   const { data } = useSWR<FullNote>(`/api/notes/${id}`);
-  const comments = data?.comments;
-  console.log(comments);
+  const comments = data.comments;
   return (
     <div>
       <InputText />

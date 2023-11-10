@@ -2,7 +2,7 @@
 
 import { PulseLoader } from 'react-spinners';
 import useSWR from 'swr';
-import { SimpleNote } from '@/model/note';
+import { FullNote, SimpleNote } from '@/model/note';
 import NotePost from './NotePost';
 // import LazySpinner from './lazySpinner';
 
