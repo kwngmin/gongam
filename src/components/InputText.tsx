@@ -2,14 +2,18 @@ import { useEffect, useRef } from 'react';
 import RoundIcon from './ui/icons/RoundIcon';
 type Props = {
   openInput?: boolean;
+  viewPosition?: 'center' | 'end';
 };
-export default function InputText({ openInput }: Props) {
+export default function InputText({
+  openInput,
+  viewPosition = 'center',
+}: Props) {
   const inputRef = useRef<HTMLInputElement>(null);
   useEffect(() => {
     if (inputRef.current !== null) {
       inputRef.current.disabled = false;
       inputRef.current.focus();
-      inputRef.current.scrollIntoView({ block: 'center' });
+      inputRef.current.scrollIntoView({ block: viewPosition });
     }
   }, [openInput]);
 

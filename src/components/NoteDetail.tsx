@@ -77,7 +77,7 @@ export default function CommentsDetail({ note, onClose }: Props) {
 
         {openInput && (
           <div className='w-full'>
-            <InputText openInput={openInput} />
+            <InputText openInput={openInput} viewPosition='end' />
           </div>
         )}
       </div>
