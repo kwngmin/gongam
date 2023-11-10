@@ -37,17 +37,18 @@ export default function CommentsDetail({ note, onClose }: Props) {
         </button>
       </div>
       <ul className='grow px-4 flex flex-col overflow-auto pb-4'>
-        {loading && (
+        {loading ? (
           <li className='w-full flex items-center justify-center h-36'>
             <PulseLoader size={10} color='gray' />
           </li>
-        )}
-        {!(loading && comments) && (
-          <li className='text-center h-full flex flex-col justify-center'>
-            <p className='text-6xl pb-6 text-neutral-300'>:(</p>
-            <p>댓글이 존재하지 않습니다</p>
-            {/* <p>첫번째 댓글을 남겨보세요</p> */}
-          </li>
+        ) : (
+          !comments && (
+            <li className='text-center h-full flex flex-col justify-center'>
+              <p className='text-6xl pb-6 text-neutral-300'>:(</p>
+              <p>댓글이 존재하지 않습니다</p>
+              {/* <p>첫번째 댓글을 남겨보세요</p> */}
+            </li>
+          )
         )}
         {comments &&
           comments.map(({ comment, commentAt }, index) => (
