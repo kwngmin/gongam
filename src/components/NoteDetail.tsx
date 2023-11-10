@@ -7,6 +7,8 @@ import { getDate } from '@/util/date';
 import translateDate from '@/util/translateDate';
 import Dot from './ui/Dot';
 import RoundIcon from './ui/icons/RoundIcon';
+import { useState } from 'react';
+import Seperator from './ui/Seperator';
 
 type Props = {
   note: SimpleNote;
@@ -16,6 +18,8 @@ export default function CommentsDetail({ note, onClose }: Props) {
   const { id, notetitle, createdAt, comments: commentsNumber } = note;
   const { data } = useSWR<FullNote>(`/api/notes/${id}`);
   const comments = data?.comments;
+  const [openInput, setOpenInput] = useState(false);
+
   console.log(comments);
   return (
     <section className='w-full h-full bg-neutral-50 z-50'>
@@ -46,15 +50,36 @@ export default function CommentsDetail({ note, onClose }: Props) {
       </ul>
 
       <div className='px-4 py-2 fixed bottom-0 left-0 right-0 flex items-center flex-col'>
-        <SmallTextIconButton
-          func={() => onClose()}
-          icon='cancel'
-          text='댓글창 닫기'
-          filled
-        />
-        <div className='w-full'>
-          <InputText />
-        </div>
+        <span className='flex gap-2 items-center'>
+          <SmallTextIconButton
+            func={() => onClose()}
+            icon='cancel'
+            text='댓글창 닫기'
+            filled
+          />
+          <Seperator />
+          {!openInput ? (
+            <SmallTextIconButton
+              func={() => setOpenInput(true)}
+              icon='sentiment_satisfied'
+              text='댓글 쓰기'
+              filled
+            />
+          ) : (
+            <SmallTextIconButton
+              func={() => setOpenInput(false)}
+              icon='mood_bad'
+              text='입력상자 감추기'
+              filled
+            />
+          )}
+        </span>
+
+        {openInput && (
+          <div className='w-full'>
+            <InputText openInput={openInput} />
+          </div>
+        )}
       </div>
     </section>
   );
