@@ -37,8 +37,9 @@ export default function CommentsDetail({ note, onClose }: Props) {
         </button>
       </div>
       <ul className='grow px-4 flex flex-col overflow-auto pb-4'>
-        {loading ? (
-          <li className='w-full flex items-center justify-center absolute left-0 top-1/2'>
+        {loading !== null ? (
+          <li className='text-center h-full flex flex-col justify-center items-center'>
+            {/* <li className='w-full flex items-center justify-center absolute left-0 top-1/2'> */}
             <PulseLoader size={10} color='gray' />
           </li>
         ) : (
@@ -49,7 +50,7 @@ export default function CommentsDetail({ note, onClose }: Props) {
             </li>
           )
         )}
-        {comments &&
+        {/* {comments &&
           comments.map(({ comment, commentAt }, index) => (
             <li key={index} className='py-4 border-t'>
               <div className='break-keep'>{comment}</div>
@@ -59,7 +60,7 @@ export default function CommentsDetail({ note, onClose }: Props) {
                 {translateDate(commentAt)}
               </span>
             </li>
-          ))}
+          ))} */}
       </ul>
       <div
         className={`w-full shrink-0 bg-neutral-50 ${
