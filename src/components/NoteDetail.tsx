@@ -38,7 +38,7 @@ export default function CommentsDetail({ note, onClose }: Props) {
       </div>
       <ul className='grow px-4 flex flex-col overflow-auto pb-4'>
         {loading ? (
-          <li className='w-full flex items-center justify-center h-36'>
+          <li className='w-full flex items-center justify-center absolute left-0 top-1/2'>
             <PulseLoader size={10} color='gray' />
           </li>
         ) : (
