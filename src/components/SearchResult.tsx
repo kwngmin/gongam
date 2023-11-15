@@ -14,10 +14,10 @@ export default function SearchResult({
   console.log(createdAt);
   return (
     <section className='w-full h-full z-50 flex flex-col py-4 border-t border-gray-300'>
-      <h3 className='text-md font-medium text-black/80 grow break-keep'>
+      <h3 className='text-md font-semibold text-black/80 grow break-keep leading-tight mb-0.5'>
         {notetitle}
       </h3>
-      <p className='text-black/80 text-sm break-keep mb-2'>{notebody}</p>
+      <p className='text-gray-500 break-keep mb-2'>{notebody}</p>
       <div className='flex justify-between items-center py-0.5'>
         <time className='text-black/60 text-sm'>
           {getDate(createdAt)}
