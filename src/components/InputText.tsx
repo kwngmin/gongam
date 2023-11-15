@@ -15,7 +15,7 @@ export default function InputText({
       inputRef.current.focus();
       inputRef.current.scrollIntoView({ block: viewPosition });
     }
-  }, [openInput]);
+  }, [openInput, viewPosition]);
 
   return (
     <form action='' className='py-2'>

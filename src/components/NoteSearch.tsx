@@ -1,28 +1,31 @@
 'use client';
 
-import { FullNote } from '@/model/note';
+import { FullNote, SimpleNote } from '@/model/note';
 import { FormEvent, useState } from 'react';
 import { PulseLoader } from 'react-spinners';
 import useSWR from 'swr';
 import SearchResult from './SearchResult';
 import RoundIcon from './ui/icons/RoundIcon';
 import { useRouter } from 'next/navigation';
+import useDebounce from '@/hooks/debounce';
+// import useDebounce from '@/hooks/Debounce';
 
 export default function NoteSearch() {
   const [keyword, setKeyword] = useState('');
+  const debounceKeyword = useDebounce(keyword);
   const router = useRouter();
   const {
     data: notes,
     isLoading,
     error,
-  } = useSWR<FullNote[]>(`/api/search/${keyword}`);
+  } = useSWR<SimpleNote[]>(`/api/search/${debounceKeyword}`);
   console.log(notes);
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
   return (
     <>
-      <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4'>
+      <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 backdrop-blur-lg bg-white/60'>
         <div className='h-16 flex items-center justify-betwee gap-4'>
           <form
             onSubmit={onSubmit}

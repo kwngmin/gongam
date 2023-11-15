@@ -46,9 +46,24 @@ export async function getNoteComments(id: string) {
 // "comments":count(comments),
 export async function searchNotes(keyword?: string) {
   const query = keyword ? `&& ([notetitle, notebody] match "${keyword}*")` : '';
-  return client.fetch(`
-    *[_type =="note" ${query}]
-    `);
+  return client
+    .fetch(
+      `
+    *[_type =="note" ${query}]{
+      ...,
+      "createdAt":_createdAt,
+      "likes":count(likes),
+      "comments":count(comments),
+    }
+    `
+    )
+    .then(notes =>
+      notes.map((note: SimpleNote) => ({
+        ...note,
+        comments: note.comments ?? 0,
+        likes: note.likes ?? 0,
+      }))
+    );
 }
 // {...,
 // "following":count(following),

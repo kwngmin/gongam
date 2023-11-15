@@ -32,6 +32,9 @@
   &.filled {
     font-variation-settings: 'FILL' 1;
   }
+  &.x-small {
+    font-size: 18px;
+  }
   &.small {
     font-size: 20px;
   }
