@@ -29,7 +29,7 @@ export default function NoteSearch() {
         <div className='h-16 flex items-center justify-betwee gap-4'>
           <form
             onSubmit={onSubmit}
-            className='grow flex items-center gap-2 rounded bg-neutral-100 h-10 px-2'
+            className='grow flex items-center gap-2 rounded bg-white border border-neutral-300 h-10 px-2'
           >
             <RoundIcon name='search' style='small' />
             <input
@@ -38,7 +38,7 @@ export default function NoteSearch() {
               placeholder='Search for a note'
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
-              className='w-full bg-transparent outline-none'
+              className='w-full bg-transparent outline-none text-sm'
             />
           </form>
           <button onClick={() => router.back()} className='select-none'>
