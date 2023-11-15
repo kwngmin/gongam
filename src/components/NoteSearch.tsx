@@ -38,7 +38,7 @@ export default function NoteSearch() {
               placeholder='Search for a note'
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
-              className='w-full bg-transparent outline-none text-sm'
+              className='w-full bg-transparent outline-none'
             />
           </form>
           <button onClick={() => router.back()} className='select-none'>
