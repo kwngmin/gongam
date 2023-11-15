@@ -40,6 +40,9 @@ export default function Navbar() {
   if (pathName === '/auth/signin') {
     return true;
   }
+  if (pathName === '/search') {
+    return true;
+  }
 
   // new 화면이면 취소, 포스트 버튼 보여주기
   if (pathName === '/new') {

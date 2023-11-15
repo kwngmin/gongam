@@ -1,3 +1,9 @@
+import NoteSearch from '@/components/NoteSearch';
+
 export default function SearchPage() {
-  return <p>search</p>;
+  return (
+    <section>
+      <NoteSearch />
+    </section>
+  );
 }

@@ -33,3 +33,13 @@ export async function getNoteComments(id: string) {
 // *[_type =="note" && author->username =="${username}" || author._ref in *[_type =="user" && username == "${username}"].following[].ref] | order(_createdAt desc){${simplePostProjection}}
 // "likes":likes[]->username,
 // "comments":count(comments),
+export async function searchNotes(keyword?: string) {
+  const query = keyword ? `&& ([notetitle, notebody] match "${keyword}*")` : '';
+  return client.fetch(`
+    *[_type =="note" ${query}]
+    `);
+}
+// {...,
+// "following":count(following),
+// "followers":count(followers)}
+//     }
