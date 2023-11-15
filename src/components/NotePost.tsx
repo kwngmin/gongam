@@ -51,9 +51,7 @@ export default function NotePost({ note }: Props) {
         <div className='flex items-center gap-4'>
           <div className='flex items-center gap-2'>
             <RoundIcon name='favorite' style='' />
-            <span className='font-semibold text-black/70'>
-              {likes ? likes : '0'}
-            </span>
+            <span className='font-semibold text-black/70'>{likes}</span>
           </div>
           <span className='bg-slate-100 active:bg-slate-200 px-2 h-8 flex items-center font-medium rounded text-slate-600 text-sm select-none cursor-pointer'>
             구독하기
@@ -80,7 +78,7 @@ export default function NotePost({ note }: Props) {
             댓글
             <Dot />
             <span className='font-medium text-slate-600 text-sm'>
-              {comments !== null ? comments : 0}
+              {comments}
             </span>
           </span>
           <Seperator />

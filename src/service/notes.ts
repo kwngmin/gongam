@@ -1,3 +1,4 @@
+import { SimpleNote } from '@/model/note';
 import { client } from './sanity';
 
 export async function getAllNotes() {
@@ -14,9 +15,19 @@ export async function getAllNotes() {
     "id":_id,
     "createdAt":_createdAt
     `;
-  return client.fetch(`
+  return client
+    .fetch(
+      `
     *[_type =="note"] | order(_createdAt desc){${simplePostProjection}}
-    `);
+    `
+    )
+    .then(notes =>
+      notes.map((note: SimpleNote) => ({
+        ...note,
+        comments: note.comments ?? 0,
+        likes: note.likes ?? 0,
+      }))
+    );
 }
 export async function getNoteComments(id: string) {
   return client.fetch(`

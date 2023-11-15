@@ -4,7 +4,7 @@ export type Comment = {
   commentAt: string;
 };
 export type SimpleNote = Omit<FullNote, 'comments'> & {
-  comments: number | null;
+  comments: number;
 };
 
 export type FullNote = {

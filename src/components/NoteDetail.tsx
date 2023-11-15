@@ -29,7 +29,8 @@ export default function CommentsDetail({ note, onClose }: Props) {
           댓글
           <Dot size='base' />
           <span className='font-medium text-slate-600 text-lg'>
-            {commentsNumber !== null ? commentsNumber : 0}
+            {/* {commentsNumber !== null ? commentsNumber : 0} */}
+            {commentsNumber}
           </span>
         </span>
         <button onClick={() => onClose()} className='flex'>

@@ -26,11 +26,11 @@ export default function Navbar() {
     }
     if (typeof session === 'object') {
       return (
-        <Link href='/search'>
+        <button onClick={() => router.push('/search')}>
           <div className='flex items-center w-9 h-9 active:bg-gray-100 justify-center rounded-2xl'>
             <SearchIcon />
           </div>
-        </Link>
+        </button>
       );
     }
     return;
