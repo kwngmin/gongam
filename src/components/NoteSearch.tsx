@@ -29,20 +29,24 @@ export default function NoteSearch() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // input focus
-  // useEffect(() => {
-  //   if (inputRef.current !== null) {
-  //     inputRef.current.disabled = false;
-  //     inputRef.current.focus();
-  //     inputRef.current.scrollIntoView({ block: 'start' });
-  //   }
-  // }, [inputRef]);
-  // console.log(inputRef);
-  const handleBlur = () => {
-    if (inputRef?.current !== null) {
-      inputRef.current.disabled = false;
+  useEffect(() => {
+    if (inputRef.current !== null) {
       inputRef.current.focus();
     }
-  };
+    if ('ontouchstart' in document.documentElement && inputRef.current) {
+      // 터치 디바이스인 경우에만 실행
+      inputRef.current.addEventListener('focus', () => {
+        setTimeout(() => {
+          // 가상 키보드가 나타나는 딜레이를 고려하여 setTimeout 사용
+          inputRef.current!.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest',
+          });
+        }, 300); // 300ms 딜레이 (가상 키보드가 나타날 때까지 대략적으로 설정)
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -55,15 +59,13 @@ export default function NoteSearch() {
             <RoundIcon name='search' style='small' />
             <input
               type='text'
-              // autoFocus
+              autoFocus
               placeholder='Search for a note'
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               className='w-full bg-transparent outline-none'
               ref={inputRef}
-              onBlur={handleBlur}
             />
-            <InputText openInput viewPosition='center' />
           </form>
           <button onClick={() => router.back()} className='select-none'>
             취소
