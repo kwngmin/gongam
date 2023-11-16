@@ -8,6 +8,7 @@ import SearchResult from './SearchResult';
 import RoundIcon from './ui/icons/RoundIcon';
 import { useRouter } from 'next/navigation';
 import useDebounce from '@/hooks/debounce';
+import InputText from './InputText';
 // import useDebounce from '@/hooks/Debounce';
 
 export default function NoteSearch() {
@@ -62,6 +63,7 @@ export default function NoteSearch() {
               ref={inputRef}
               onBlur={handleBlur}
             />
+            <InputText openInput viewPosition='center' />
           </form>
           <button onClick={() => router.back()} className='select-none'>
             취소
