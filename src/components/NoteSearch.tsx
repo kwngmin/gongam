@@ -1,7 +1,7 @@
 'use client';
 
 import { SimpleNote } from '@/model/note';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useRef, useState } from 'react';
 import { PulseLoader } from 'react-spinners';
 import useSWR from 'swr';
 import SearchResult from './SearchResult';
@@ -19,11 +19,23 @@ export default function NoteSearch() {
     isLoading,
     error,
   } = useSWR<SimpleNote[]>(`/api/search/${debounceKeyword}`);
-  // console.log(notes?.length);
-  console.log(`error ${error}`);
+
+  // 새로고침 방지
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
+
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // input focus
+  useEffect(() => {
+    if (inputRef.current !== null) {
+      inputRef.current.disabled = false;
+      inputRef.current.focus();
+      inputRef.current.scrollIntoView({ block: 'start' });
+    }
+  }, []);
+
   return (
     <>
       <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 backdrop-blur-lg bg-white/60'>
@@ -40,6 +52,7 @@ export default function NoteSearch() {
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               className='w-full bg-transparent outline-none'
+              ref={inputRef}
             />
           </form>
           <button onClick={() => router.back()} className='select-none'>
