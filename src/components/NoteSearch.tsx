@@ -43,6 +43,9 @@ export default function NoteSearch() {
             block: 'center',
             inline: 'nearest',
           });
+          if (inputRef.current !== null) {
+            inputRef.current.focus();
+          }
         }, 300); // 300ms 딜레이 (가상 키보드가 나타날 때까지 대략적으로 설정)
       });
     }
