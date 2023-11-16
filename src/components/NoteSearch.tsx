@@ -28,14 +28,18 @@ export default function NoteSearch() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // input focus
-  useEffect(() => {
-    if (inputRef.current !== null) {
-      inputRef.current.disabled = false;
-      inputRef.current.focus();
-      inputRef.current.scrollIntoView({ block: 'start' });
-    }
-  }, [inputRef]);
-  console.log(inputRef.current);
+  // useEffect(() => {
+  //   if (inputRef.current !== null) {
+  //     inputRef.current.disabled = false;
+  //     inputRef.current.focus();
+  //     inputRef.current.scrollIntoView({ block: 'start' });
+  //   }
+  // }, [inputRef]);
+  // console.log(inputRef);
+  if (inputRef?.current !== null) {
+    inputRef.current.focus();
+  }
+
   return (
     <>
       <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 backdrop-blur-lg bg-white/60'>
