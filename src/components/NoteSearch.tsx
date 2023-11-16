@@ -34,7 +34,7 @@ export default function NoteSearch() {
       inputRef.current.focus();
       inputRef.current.scrollIntoView({ block: 'start' });
     }
-  }, []);
+  }, [inputRef]);
   console.log(inputRef.current);
   return (
     <>
