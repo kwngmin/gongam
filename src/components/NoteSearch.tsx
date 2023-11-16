@@ -43,9 +43,6 @@ export default function NoteSearch() {
             block: 'center',
             inline: 'nearest',
           });
-          if (inputRef.current !== null) {
-            inputRef.current.focus();
-          }
         }, 300); // 300ms 딜레이 (가상 키보드가 나타날 때까지 대략적으로 설정)
       });
     }
@@ -61,13 +58,13 @@ export default function NoteSearch() {
           >
             <RoundIcon name='search' style='small' />
             <input
+              ref={inputRef}
               type='text'
               autoFocus
               placeholder='Search for a note'
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               className='w-full bg-transparent outline-none'
-              ref={inputRef}
             />
           </form>
           <button onClick={() => router.back()} className='select-none'>
