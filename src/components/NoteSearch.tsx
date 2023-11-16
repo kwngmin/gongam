@@ -36,10 +36,12 @@ export default function NoteSearch() {
   //   }
   // }, [inputRef]);
   // console.log(inputRef);
-  if (inputRef?.current !== null) {
-    inputRef.current.disabled = false;
-    inputRef.current.focus();
-  }
+  const handleBlur = () => {
+    if (inputRef?.current !== null) {
+      inputRef.current.disabled = false;
+      inputRef.current.focus();
+    }
+  };
 
   return (
     <>
@@ -58,6 +60,7 @@ export default function NoteSearch() {
               onChange={e => setKeyword(e.target.value)}
               className='w-full bg-transparent outline-none'
               ref={inputRef}
+              onBlur={handleBlur}
             />
           </form>
           <button onClick={() => router.back()} className='select-none'>
