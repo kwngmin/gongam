@@ -32,18 +32,10 @@ export default function NoteSearch() {
   useEffect(() => {
     if (inputRef.current !== null) {
       inputRef.current.focus();
-    }
-    if ('ontouchstart' in document.documentElement && inputRef.current) {
-      // 터치 디바이스인 경우에만 실행
-      inputRef.current.addEventListener('focus', () => {
-        setTimeout(() => {
-          // 가상 키보드가 나타나는 딜레이를 고려하여 setTimeout 사용
-          inputRef.current!.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'nearest',
-          });
-        }, 300); // 300ms 딜레이 (가상 키보드가 나타날 때까지 대략적으로 설정)
+      inputRef.current!.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+        inline: 'nearest',
       });
     }
   }, []);
