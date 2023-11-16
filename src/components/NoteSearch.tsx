@@ -35,7 +35,7 @@ export default function NoteSearch() {
       inputRef.current.scrollIntoView({ block: 'start' });
     }
   }, []);
-
+  console.log(inputRef.current);
   return (
     <>
       <header className='sticky top-0 w-full max-w-screen-md mx-auto px-4 backdrop-blur-lg bg-white/60'>
@@ -47,7 +47,7 @@ export default function NoteSearch() {
             <RoundIcon name='search' style='small' />
             <input
               type='text'
-              autoFocus
+              // autoFocus
               placeholder='Search for a note'
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
