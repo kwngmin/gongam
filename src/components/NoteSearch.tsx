@@ -52,7 +52,7 @@ export default function NoteSearch() {
             <RoundIcon name='search' style='small' />
             <input
               type='text'
-              autoFocus
+              // autoFocus
               placeholder='Search for a note'
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
