@@ -1,6 +1,6 @@
 'use client';
 
-import { FullNote, SimpleNote } from '@/model/note';
+import { SimpleNote } from '@/model/note';
 import { FormEvent, useState } from 'react';
 import { PulseLoader } from 'react-spinners';
 import useSWR from 'swr';
@@ -19,7 +19,8 @@ export default function NoteSearch() {
     isLoading,
     error,
   } = useSWR<SimpleNote[]>(`/api/search/${debounceKeyword}`);
-  console.log(notes);
+  // console.log(notes?.length);
+  console.log(`error ${error}`);
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
@@ -47,16 +48,22 @@ export default function NoteSearch() {
         </div>
       </header>
       <section className='max-w-screen-md mx-auto px-4 h-fit pb-10'>
-        {error && <p>무언가가 잘못 되었음</p>}
         {isLoading && (
-          <div className='text-center h-full flex flex-col justify-center items-center'>
+          <div className='fixed left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'>
             <PulseLoader size={10} color='gray' />
           </div>
         )}
-        {isLoading && !error && notes?.length === 0 && (
-          <div className='text-center h-full flex flex-col justify-center'>
-            <p className='text-8xl pb-10 text-neutral-300'>:(</p>
-            <p>댓글이 존재하지 않습니다</p>
+        {!isLoading && error && (
+          <div className='fixed left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2'>
+            무언가가 잘못 되었음
+          </div>
+        )}
+        {!isLoading && !error && notes?.length === 0 && (
+          <div className='fixed left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 flex flex-col items-center justify-center'>
+            <p className='text-7xl pb-10 text-neutral-300'>:(</p>
+            <p className='text-neutral-500 font-medium'>
+              검색 결과가 존재하지 않습니다
+            </p>
           </div>
         )}
         <ul>

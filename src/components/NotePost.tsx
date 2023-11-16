@@ -33,7 +33,7 @@ export default function NotePost({ note }: Props) {
   return (
     <article className='py-8 border-t border-gray-300'>
       <div className='flex items-start'>
-        <h2 className='text-xl font-semibold text-black/80 grow break-keep'>
+        <h2 className='text-lg leading-snug font-semibold text-black/80 grow break-keep'>
           {notetitle}
         </h2>
       </div>
@@ -44,8 +44,8 @@ export default function NotePost({ note }: Props) {
           {translateDate(createdAt)}
         </time>
       </div>
-      <div className='text-black/80 mt-2 break-keep'>
-        <p>{notebody}</p>
+      <div className='text-neutral-800 mt-2 break-keep'>
+        <p className='text-neutral-600'>{notebody}</p>
       </div>
       <div className='flex justify-between items-center my-3'>
         <div className='flex items-center gap-4'>
@@ -58,8 +58,8 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex items-center gap-6 px-2'>
-          <RoundIcon name='bookmark' style='' />
           <RoundIcon name='content_copy' style='' />
+          <RoundIcon name='bookmark' style='' />
         </div>
       </div>
       <div className='flex flex-col gap-1'>

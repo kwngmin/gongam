@@ -1,7 +1,6 @@
 import { searchNotes } from '@/service/notes';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET() {
-  // return;
-  return searchNotes().then(data => NextResponse.json(data));
+  return await new Response('Authentication Error', { status: 401 });
 }
