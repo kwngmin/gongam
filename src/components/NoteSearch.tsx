@@ -37,6 +37,7 @@ export default function NoteSearch() {
   // }, [inputRef]);
   // console.log(inputRef);
   if (inputRef?.current !== null) {
+    inputRef.current.disabled = false;
     inputRef.current.focus();
   }
 
@@ -51,7 +52,7 @@ export default function NoteSearch() {
             <RoundIcon name='search' style='small' />
             <input
               type='text'
-              // autoFocus
+              autoFocus
               placeholder='Search for a note'
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
