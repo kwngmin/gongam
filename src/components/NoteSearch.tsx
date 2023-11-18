@@ -1,7 +1,7 @@
 'use client';
 
 import { SimpleNote } from '@/model/note';
-import { FormEvent, useEffect, useRef, useState } from 'react';
+import React, { FormEvent, useEffect, useRef, useState } from 'react';
 import { PulseLoader } from 'react-spinners';
 import useSWR from 'swr';
 import SearchResult from './SearchResult';
@@ -13,6 +13,8 @@ export default function NoteSearch() {
   const [keyword, setKeyword] = useState('');
   const debounceKeyword = useDebounce(keyword);
   const router = useRouter();
+  const inputRef = useRef<HTMLInputElement>(null);
+
   const {
     data: notes,
     isLoading,
@@ -23,19 +25,7 @@ export default function NoteSearch() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
-  const inputRef = useRef<HTMLInputElement>(null);
 
-  // input focus
-  // useEffect(() => {
-  //   if (inputRef.current !== null) {
-  //     inputRef.current.focus();
-  //     inputRef.current!.scrollIntoView({
-  //       behavior: 'smooth',
-  //       block: 'start',
-  //       inline: 'nearest',
-  //     });
-  //   }
-  // }, []);
   useEffect(() => {
     const handleFocus = () => {
       // 가상 키보드가 나타나는 딜레이를 고려하여 setTimeout 사용
@@ -50,17 +40,29 @@ export default function NoteSearch() {
       }, 300); // 300ms 딜레이 (가상 키보드가 나타날 때까지 대략적으로 설정)
     };
 
+    // 페이지 이동 시 input 창에 focus
+    const handleRouteChange = () => {
+      if (inputRef.current) {
+        inputRef.current.focus();
+        handleFocus(); // focus 이벤트에 대한 핸들러도 실행
+      }
+    };
+
     // 페이지가 로드될 때 가상 키보드 나타나도록
     if ('ontouchstart' in document.documentElement && inputRef.current) {
       // 터치 디바이스인 경우에만 실행
       inputRef.current.addEventListener('focus', handleFocus);
     }
 
+    // 페이지 이동 이벤트 리스너 등록
+    window.addEventListener('popstate', handleRouteChange);
+
     return () => {
       // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
       if (inputRef.current) {
         inputRef.current.removeEventListener('focus', handleFocus);
       }
+      window.removeEventListener('popstate', handleRouteChange);
     };
   }, []);
 
