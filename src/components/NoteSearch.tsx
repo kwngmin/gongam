@@ -8,6 +8,7 @@ import SearchResult from './SearchResult';
 import RoundIcon from './ui/icons/RoundIcon';
 import { useRouter } from 'next/navigation';
 import useDebounce from '@/hooks/debounce';
+import InputText from './InputText';
 
 export default function NoteSearch() {
   const [keyword, setKeyword] = useState('');
@@ -59,7 +60,7 @@ export default function NoteSearch() {
             className='grow flex items-center gap-2 rounded bg-white border border-neutral-300 h-10 px-2'
           >
             <RoundIcon name='search' style='small' />
-            <input
+            {/* <input
               ref={inputRef}
               type='text'
               autoFocus
@@ -67,7 +68,12 @@ export default function NoteSearch() {
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               className='w-full bg-transparent outline-none'
-            />
+            /> */}
+            {!isLoading && (
+              <div className='w-full'>
+                <InputText openInput={isLoading} viewPosition='end' />
+              </div>
+            )}
           </form>
           <button onClick={() => router.back()} className='select-none'>
             취소
