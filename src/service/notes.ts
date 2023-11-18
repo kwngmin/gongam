@@ -54,6 +54,7 @@ export async function searchNotes(keyword?: string) {
       "createdAt":_createdAt,
       "likes":count(likes),
       "comments":count(comments),
+      "id":_id,
     }
     `
     )

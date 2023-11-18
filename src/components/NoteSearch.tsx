@@ -8,8 +8,6 @@ import SearchResult from './SearchResult';
 import RoundIcon from './ui/icons/RoundIcon';
 import { useRouter } from 'next/navigation';
 import useDebounce from '@/hooks/debounce';
-import InputText from './InputText';
-// import useDebounce from '@/hooks/Debounce';
 
 export default function NoteSearch() {
   const [keyword, setKeyword] = useState('');
@@ -25,7 +23,6 @@ export default function NoteSearch() {
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
   };
-
   const inputRef = useRef<HTMLInputElement>(null);
 
   // input focus

@@ -1,12 +1,11 @@
 'use client';
 import Link from 'next/link';
 import SearchIcon from './icons/SearchIcon';
-import ArrowDropDownIcon from './icons/ArrowDropDownIcon';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
-import noteshaker from '../../images/noteshaker.svg';
-import Image from 'next/image';
+import Logotype from '../Logotype';
+import NoteshakerLogo from '../NoteshakerLogo';
 
 export default function Navbar() {
   const pathName = usePathname();
@@ -55,9 +54,7 @@ export default function Navbar() {
           Cancel
         </div>
         <Link href='/'>
-          <h1 className='text-lg md:text-xl font-bold absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 tracking-tight'>
-            NoteShaker
-          </h1>
+          <Logotype />
         </Link>
         {/* <span className='font-medium absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2'>
           New Note
@@ -73,17 +70,7 @@ export default function Navbar() {
   return (
     <div className='h-16 flex items-center justify-between'>
       <Link href='/'>
-        <div className='flex items-center'>
-          <Image
-            src={noteshaker}
-            alt='noteshaker logo'
-            className='w-6 h-6 mr-1'
-          />
-          <h1 className='text-xl md:text-2xl font-bold tracking-tight'>
-            NoteShaker
-          </h1>
-          {/* <ArrowDropDownIcon /> */}
-        </div>
+        <NoteshakerLogo />
       </Link>
       {renderRightSide()}
     </div>

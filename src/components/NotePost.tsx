@@ -11,6 +11,7 @@ import PostModal from './PostModal';
 import Dot from './ui/Dot';
 import CommentsDetail from './NoteDetail';
 import translateDate from '@/util/translateDate';
+import { useRouter } from 'next/navigation';
 
 type Props = {
   note: SimpleNote;
@@ -25,15 +26,21 @@ export default function NotePost({ note }: Props) {
     comments,
     comment,
     commentAt,
+    id,
   } = note;
   const [openInput, setOpenInput] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-
-  // console.log(note);
+  const router = useRouter();
+  const handleClick = () => {
+    router.push(`/notes/${id}`);
+  };
   return (
     <article className='py-8 border-t border-gray-300'>
       <div className='flex items-start'>
-        <h2 className='text-lg leading-snug font-semibold text-black/80 grow break-keep'>
+        <h2
+          onClick={handleClick}
+          className='text-lg leading-snug font-semibold text-black/80 grow break-keep'
+        >
           {notetitle}
         </h2>
       </div>
@@ -45,7 +52,9 @@ export default function NotePost({ note }: Props) {
         </time>
       </div>
       <div className='text-neutral-800 mt-2 break-keep'>
-        <p className='text-neutral-600'>{notebody}</p>
+        <p onClick={handleClick} className='text-neutral-600'>
+          {notebody}
+        </p>
       </div>
       <div className='flex justify-between items-center my-3'>
         <div className='flex items-center gap-4'>

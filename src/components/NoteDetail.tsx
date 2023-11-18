@@ -21,7 +21,6 @@ export default function CommentsDetail({ note, onClose }: Props) {
   const comments = data?.comments;
   const [openInput, setOpenInput] = useState(false);
 
-  console.log(comments);
   return (
     <section className='w-full h-full bg-neutral-50 z-50 flex flex-col'>
       <div className='px-4 h-16 flex items-center justify-between relative shrink-0'>
