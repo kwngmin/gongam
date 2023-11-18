@@ -26,15 +26,42 @@ export default function NoteSearch() {
   const inputRef = useRef<HTMLInputElement>(null);
 
   // input focus
+  // useEffect(() => {
+  //   if (inputRef.current !== null) {
+  //     inputRef.current.focus();
+  //     inputRef.current!.scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'start',
+  //       inline: 'nearest',
+  //     });
+  //   }
+  // }, []);
   useEffect(() => {
-    if (inputRef.current !== null) {
-      inputRef.current.focus();
-      inputRef.current!.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-        inline: 'nearest',
-      });
+    const handleFocus = () => {
+      // 가상 키보드가 나타나는 딜레이를 고려하여 setTimeout 사용
+      setTimeout(() => {
+        if (inputRef.current) {
+          inputRef.current.scrollIntoView({
+            behavior: 'smooth',
+            block: 'center',
+            inline: 'nearest',
+          });
+        }
+      }, 300); // 300ms 딜레이 (가상 키보드가 나타날 때까지 대략적으로 설정)
+    };
+
+    // 페이지가 로드될 때 가상 키보드 나타나도록
+    if ('ontouchstart' in document.documentElement && inputRef.current) {
+      // 터치 디바이스인 경우에만 실행
+      inputRef.current.addEventListener('focus', handleFocus);
     }
+
+    return () => {
+      // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
+      if (inputRef.current) {
+        inputRef.current.removeEventListener('focus', handleFocus);
+      }
+    };
   }, []);
 
   return (
