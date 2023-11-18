@@ -26,6 +26,18 @@ export default function NoteSearch() {
     e.preventDefault();
   };
 
+  const [readyFocus, setReadyFocus] = useState(false);
+
+  useEffect(() => {
+    if (!isLoading) {
+      setReadyFocus(true);
+    }
+  }, [isLoading]);
+
+  if (isLoading && readyFocus && inputRef.current !== null) {
+    inputRef.current.focus();
+  }
+
   // input focus
   // useEffect(() => {
   //   if (inputRef.current !== null) {
@@ -37,46 +49,6 @@ export default function NoteSearch() {
   //     });
   //   }
   // }, []);
-
-  useEffect(() => {
-    const handleClick = () => {
-      // 가상 키보드가 나타나는 딜레이를 고려하여 setTimeout 사용
-      setTimeout(() => {
-        if (inputRef.current) {
-          inputRef.current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'center',
-            inline: 'nearest',
-          });
-        }
-      }, 300); // 300ms 딜레이 (가상 키보드가 나타날 때까지 대략적으로 설정)
-    };
-
-    // 페이지 이동 시 input 창에 focus
-    const handleRouteChange = () => {
-      if (inputRef.current) {
-        inputRef.current.focus();
-        handleClick(); // click 이벤트에 대한 핸들러도 실행
-      }
-    };
-
-    // 페이지가 로드될 때 가상 키보드 나타나도록
-    if ('ontouchstart' in document.documentElement && inputRef.current) {
-      // 터치 디바이스인 경우에만 실행
-      inputRef.current.addEventListener('click', handleClick);
-    }
-
-    // 페이지 이동 이벤트 리스너 등록
-    window.addEventListener('popstate', handleRouteChange);
-
-    return () => {
-      // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
-      if (inputRef.current) {
-        inputRef.current.removeEventListener('click', handleClick);
-      }
-      window.removeEventListener('popstate', handleRouteChange);
-    };
-  }, []);
 
   return (
     <>
