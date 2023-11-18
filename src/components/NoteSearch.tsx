@@ -26,8 +26,20 @@ export default function NoteSearch() {
     e.preventDefault();
   };
 
+  // input focus
+  // useEffect(() => {
+  //   if (inputRef.current !== null) {
+  //     inputRef.current.focus();
+  //     inputRef.current!.scrollIntoView({
+  //       behavior: 'smooth',
+  //       block: 'start',
+  //       inline: 'nearest',
+  //     });
+  //   }
+  // }, []);
+
   useEffect(() => {
-    const handleFocus = () => {
+    const handleClick = () => {
       // 가상 키보드가 나타나는 딜레이를 고려하여 setTimeout 사용
       setTimeout(() => {
         if (inputRef.current) {
@@ -44,14 +56,14 @@ export default function NoteSearch() {
     const handleRouteChange = () => {
       if (inputRef.current) {
         inputRef.current.focus();
-        handleFocus(); // focus 이벤트에 대한 핸들러도 실행
+        handleClick(); // click 이벤트에 대한 핸들러도 실행
       }
     };
 
     // 페이지가 로드될 때 가상 키보드 나타나도록
     if ('ontouchstart' in document.documentElement && inputRef.current) {
       // 터치 디바이스인 경우에만 실행
-      inputRef.current.addEventListener('focus', handleFocus);
+      inputRef.current.addEventListener('click', handleClick);
     }
 
     // 페이지 이동 이벤트 리스너 등록
@@ -60,7 +72,7 @@ export default function NoteSearch() {
     return () => {
       // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
       if (inputRef.current) {
-        inputRef.current.removeEventListener('focus', handleFocus);
+        inputRef.current.removeEventListener('click', handleClick);
       }
       window.removeEventListener('popstate', handleRouteChange);
     };
