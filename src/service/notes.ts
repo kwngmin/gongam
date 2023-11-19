@@ -70,3 +70,27 @@ export async function searchNotes(keyword?: string) {
 // "following":count(following),
 // "followers":count(followers)}
 //     }
+
+export async function getNoteDetail(id: string) {
+  return client
+    .fetch(
+      `
+    *[_type =="note" && _id =="${id}"][0]{
+      ...,
+      "createdAt":_createdAt,
+      "likes": count(likes),
+  }
+    `
+    )
+    .then(note => ({
+      ...note,
+      likes: note.likes ?? 0,
+    }));
+  // .then(notes =>
+  //   notes.map((note: SimpleNote) => ({
+  //     ...note,
+  //     comments: note.comments ?? 0,
+  //     likes: note.likes ?? 0,
+  //   }))
+  // );
+}

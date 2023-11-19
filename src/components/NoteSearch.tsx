@@ -60,12 +60,9 @@ export default function NoteSearch() {
 
     return () => {
       // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
-      if (inputRef.current) {
-        inputRef.current.removeEventListener('click', handleClick);
-      }
       window.removeEventListener('popstate', handleRouteChange);
     };
-  }, []);
+  }, [isLoading]);
 
   // input focus
   // useEffect(() => {
