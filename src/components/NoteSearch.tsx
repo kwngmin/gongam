@@ -43,6 +43,7 @@ export default function NoteSearch() {
 
   if (isLoading && readyFocus && inputRef.current !== null) {
     inputRef.current.focus();
+    inputRef.current.click();
     FocusEvent();
   }
 
