@@ -33,7 +33,11 @@ export default function NoteSearch() {
     if (!isLoading) {
       setReadyFocus(true);
     }
-  }, [isLoading]);
+    if (readyFocus && inputRef.current !== null) {
+      inputRef.current.focus();
+      inputRef.current.click();
+    }
+  }, [isLoading, readyFocus]);
 
   const FocusEvent = () => {
     if (inputRef.current !== null) {
@@ -70,13 +74,13 @@ export default function NoteSearch() {
             <RoundIcon name='search' style='small' />
             <input
               ref={inputRef}
+              onClick={() => FocusEvent()}
               type='text'
               autoFocus
               placeholder='Search for a note'
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               className='w-full bg-transparent outline-none'
-              onClick={() => FocusEvent()}
             />
           </form>
           <button onClick={() => router.back()} className='select-none'>
