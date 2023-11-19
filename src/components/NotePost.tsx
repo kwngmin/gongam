@@ -52,13 +52,11 @@ export default function NotePost({ note }: Props) {
         </time>
       </div>
       <div className='text-neutral-800 mt-2 break-keep'>
-        <p onClick={handleClick} className='text-neutral-600'>
-          {notebody}
-        </p>
+        <p className='text-neutral-600'>{notebody}</p>
       </div>
       <div className='flex justify-between items-center my-3'>
         <div className='flex items-center gap-4'>
-          <div className='flex items-center gap-2'>
+          <div className='flex items-center gap-1'>
             <RoundIcon name='favorite' style='' />
             <span className='font-semibold text-black/70'>{likes}</span>
           </div>
@@ -67,7 +65,6 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex items-center gap-6 px-2'>
-          <RoundIcon name='content_copy' style='' />
           <RoundIcon name='bookmark' style='' />
         </div>
       </div>
@@ -90,14 +87,18 @@ export default function NotePost({ note }: Props) {
               {comments}
             </span>
           </span>
-          <Seperator />
-          <SmallTextIconButton
-            func={() => setOpenModal(true)}
-            icon='comment'
-            // icon='forum'
-            // icon='tooltip'
-            text='전체 보기'
-          />
+          {comments !== 0 && (
+            <>
+              <Seperator />
+              <SmallTextIconButton
+                func={() => setOpenModal(true)}
+                icon='comment'
+                // icon='forum'
+                // icon='tooltip'
+                text='전체 보기'
+              />
+            </>
+          )}
           <Seperator />
           {!openInput ? (
             <SmallTextIconButton

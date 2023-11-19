@@ -32,7 +32,7 @@ export default function ExpandNote({ note }: Props) {
         </div>
         <div className='flex justify-between items-center my-3'>
           <div className='flex items-center gap-4'>
-            <div className='flex items-center gap-2'>
+            <div className='flex items-center gap-1'>
               <RoundIcon name='favorite' style='' />
               <span className='font-semibold text-black/70'>{likes}</span>
             </div>
@@ -41,7 +41,7 @@ export default function ExpandNote({ note }: Props) {
             </span>
           </div>
           <div className='flex items-center gap-6 px-2'>
-            <RoundIcon name='content_copy' style='' />
+            {/* <RoundIcon name='content_copy' style='' /> */}
             <RoundIcon name='bookmark' style='' />
           </div>
         </div>
@@ -51,11 +51,12 @@ export default function ExpandNote({ note }: Props) {
         {comments &&
           comments.map(({ comment, commentAt }, index) => (
             <li key={index} className='py-4 border-t'>
-              <div className='break-keep'>{comment}</div>
-              <span className='text-sm text-slate-600'>
-                {getDate(commentAt)}
-                <Dot />
+              <p className='break-keep leading-snug text-sm'>{comment}</p>
+              <span className='text-sm text-slate-600 flex items-center'>
+                <RoundIcon name='subdirectory_arrow_right' style='small' />
                 {translateDate(commentAt)}
+                <Dot />
+                {getDate(commentAt)}
               </span>
             </li>
           ))}
