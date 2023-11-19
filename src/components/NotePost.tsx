@@ -82,11 +82,11 @@ export default function NotePost({ note }: Props) {
             </span>
           </div>
         )}
-        <div className='flex gap-2 items-center'>
+        <div className='flex gap-1 items-center'>
           <span className='flex items-center w-fit py-2 pr-2 text-slate-600 select-none font-medium text-sm'>
             댓글
-            <Dot />
-            <span className='font-medium text-slate-600 text-sm'>
+            {/* <Dot /> */}
+            <span className='font-medium text-slate-600 text-sm ml-1'>
               {comments}
             </span>
           </span>

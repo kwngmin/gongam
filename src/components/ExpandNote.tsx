@@ -11,7 +11,7 @@ type Props = {
 };
 export default function ExpandNote({ note }: Props) {
   console.log(note);
-  const { notetitle, notebody, createdAt, likes } = note;
+  const { notetitle, notebody, createdAt, likes, comments } = note;
   return (
     <section className='max-w-screen-md mx-auto px-4 h-fit pb-10'>
       <article className='py-8 border-t border-gray-300'>
@@ -45,7 +45,20 @@ export default function ExpandNote({ note }: Props) {
             <RoundIcon name='bookmark' style='' />
           </div>
         </div>
-        <InputText />
+        <div className='fixed bottom-0 left-0 right-0 px-4 py-2 bg-white'>
+          <InputText />
+        </div>
+        {comments &&
+          comments.map(({ comment, commentAt }, index) => (
+            <li key={index} className='py-4 border-t'>
+              <div className='break-keep'>{comment}</div>
+              <span className='text-sm text-slate-600'>
+                {getDate(commentAt)}
+                <Dot />
+                {translateDate(commentAt)}
+              </span>
+            </li>
+          ))}
         {/* <div className='flex flex-col gap-1'>
         {comment !== null && (
           <div className='flex gap-2'>

@@ -35,6 +35,10 @@ export default function Dockbar() {
     return;
   }
 
+  if (pathName?.includes('/notes/')) {
+    return;
+  }
+
   return (
     <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 dockbar'>
       <Link href='/'>
