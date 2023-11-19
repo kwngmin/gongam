@@ -35,8 +35,15 @@ export default function NoteSearch() {
     }
   }, [isLoading]);
 
+  const FocusEvent = () => {
+    if (inputRef.current !== null) {
+      inputRef.current.focus();
+    }
+  };
+
   if (isLoading && readyFocus && inputRef.current !== null) {
     inputRef.current.focus();
+    FocusEvent();
   }
 
   // input focus
@@ -60,7 +67,7 @@ export default function NoteSearch() {
             className='grow flex items-center gap-2 rounded bg-white border border-neutral-300 h-10 px-2'
           >
             <RoundIcon name='search' style='small' />
-            {/* <input
+            <input
               ref={inputRef}
               type='text'
               autoFocus
@@ -68,12 +75,8 @@ export default function NoteSearch() {
               value={keyword}
               onChange={e => setKeyword(e.target.value)}
               className='w-full bg-transparent outline-none'
-            /> */}
-            {!isLoading && (
-              <div className='w-full'>
-                <InputText openInput={isLoading} viewPosition='end' />
-              </div>
-            )}
+              onClick={() => FocusEvent()}
+            />
           </form>
           <button onClick={() => router.back()} className='select-none'>
             취소
