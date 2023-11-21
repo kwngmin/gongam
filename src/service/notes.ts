@@ -13,7 +13,8 @@ export async function getAllNotes() {
     "comment":comments[0],
     "commentAt": comments[0].commentAt,
     "id":_id,
-    "createdAt":_createdAt
+    "createdAt":_createdAt,
+    "updatedAt":_updatedAt,
     `;
   return client
     .fetch(
@@ -36,6 +37,7 @@ export async function getNoteComments(id: string) {
       comments[]{comment, commentAt},
       "id":_id,
       "createdAt":_createdAt,
+      "updatedAt":_updatedAt,
       "likes":likes[] -> username,
       "username": author -> username
     }
@@ -52,6 +54,7 @@ export async function searchNotes(keyword?: string) {
     *[_type =="note" ${query}]{
       ...,
       "createdAt":_createdAt,
+      "updatedAt":_updatedAt,
       "likes":count(likes),
       "comments":count(comments),
       "id":_id,

@@ -17,4 +17,5 @@ export type FullNote = {
   comments: Comment[];
   comment: { comment: string; commentAt: string };
   commentAt: string;
+  updatedAt: string;
 };

@@ -27,6 +27,7 @@ export default function NotePost({ note }: Props) {
     comment,
     commentAt,
     id,
+    updatedAt,
   } = note;
   const [openInput, setOpenInput] = useState(false);
   const [openModal, setOpenModal] = useState(false);
@@ -34,33 +35,37 @@ export default function NotePost({ note }: Props) {
   const handleClick = () => {
     router.push(`/notes/${id}`);
   };
+  console.log(note);
   return (
     <article className='py-8 border-t border-gray-300'>
       <div className='flex items-start'>
         <h2
           onClick={handleClick}
-          className='text-lg leading-snug font-semibold text-black/80 grow break-keep'
+          className='leading-snug font-semibold text-black/80 grow break-keep text-lg md:text-base'
         >
           {notetitle}
         </h2>
       </div>
       <div className='flex justify-between items-center py-0.5'>
-        <time className='text-black/60 text-sm'>
+        <time className='text-black/60 text-sm flex items-center'>
+          <span className='mr-1'>
+            {createdAt == updatedAt ? '작성일 :' : '최근 수정일 :'}
+          </span>
           {getDate(createdAt)}
           <Dot />
           {translateDate(createdAt)}
         </time>
       </div>
-      <div className='text-neutral-800 mt-2 break-keep'>
-        <p className='text-neutral-600'>{notebody}</p>
+      <div className='mt-2 break-keep'>
+        <p className='text-neutral-600 md:text-sm'>{notebody}</p>
       </div>
       <div className='flex justify-between items-center my-3'>
         <div className='flex items-center gap-4'>
           <div className='flex items-center gap-1'>
             <RoundIcon name='favorite' style='' />
-            <span className='font-semibold text-black/70'>{likes}</span>
+            <span className='font-semibold text-black/70 text-sm'>{likes}</span>
           </div>
-          <span className='bg-slate-100 active:bg-slate-200 px-2 h-8 flex items-center font-medium rounded text-slate-600 text-sm select-none cursor-pointer'>
+          <span className='bg-slate-100 active:bg-slate-200 px-2 h-7 flex items-center font-medium rounded text-slate-600 text-xs select-none cursor-pointer'>
             구독하기
           </span>
         </div>
@@ -71,10 +76,10 @@ export default function NotePost({ note }: Props) {
       <div className='flex flex-col gap-1'>
         {comment !== null && (
           <div className='flex gap-2'>
-            <span className='text-slate-500 font-medium shrink-0'>
+            <span className='text-slate-500 font-medium shrink-0 md:text-sm'>
               {translateDate(commentAt)}
             </span>
-            <span className='text-ellipsis overflow-hidden whitespace-nowrap'>
+            <span className='text-ellipsis overflow-hidden whitespace-nowrap md:text-sm'>
               {comment.comment}
             </span>
           </div>
@@ -82,7 +87,6 @@ export default function NotePost({ note }: Props) {
         <div className='flex gap-1 items-center'>
           <span className='flex items-center w-fit py-2 pr-2 text-slate-600 select-none font-medium text-sm'>
             댓글
-            {/* <Dot /> */}
             <span className='font-medium text-slate-600 text-sm ml-1'>
               {comments}
             </span>
