@@ -13,6 +13,22 @@ import Dockbar from '@/components/ui/Dockbar';
 const inter = Inter({ subsets: ['latin'] });
 const pretendard = localFont({
   src: './PretendardVariable.woff2',
+  fallback: [
+    'Pretendard',
+    '-apple-system',
+    'BlinkMacSystemFont',
+    'system-ui',
+    'Roboto',
+    'Helvetica Neue',
+    'Segoe UI',
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    'Malgun Gothic',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'sans-serif',
+  ],
 });
 export const metadata: Metadata = {
   title: 'NoteShaker',
@@ -25,7 +41,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={pretendard.className}>
+    <html lang='en' className={inter.className}>
       <Head>
         <meta
           name='viewport'
