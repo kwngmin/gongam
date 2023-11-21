@@ -16,7 +16,7 @@ export default function SmallTextIconButton({
   return (
     <span
       onClick={func}
-      className='w-fit py-1 px-1.5 flex shrink-0 items-center gap-1 cursor-pointer active:bg-slate-100 rounded text-slate-500 select-none text-sm font-medium'
+      className='w-fit py-1 px-1.5 flex shrink-0 items-center gap-1 cursor-pointer active:bg-slate-100 rounded text-slate-500 select-none text-xs font-medium'
     >
       <RoundIcon
         name={icon}
