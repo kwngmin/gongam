@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/react';
 import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import 'material-symbols';
 import AuthContext from '../context/AuthContext';
@@ -10,7 +11,9 @@ import Navbar from '@/components/ui/Navbar';
 import Dockbar from '@/components/ui/Dockbar';
 
 const inter = Inter({ subsets: ['latin'] });
-
+const pretendard = localFont({
+  src: './PretendardVariable.woff2',
+});
 export const metadata: Metadata = {
   title: 'NoteShaker',
   description: 'Record of thought, moments, feelings',
@@ -22,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={inter.className}>
+    <html lang='en' className={pretendard.className}>
       <Head>
         <meta
           name='viewport'
