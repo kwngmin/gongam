@@ -1,15 +1,15 @@
 'use client';
 import Link from 'next/link';
-import { useSession, signIn, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import RoundIcon from './icons/RoundIcon';
 import { usePathname } from 'next/navigation';
 import Avatar from '../Avatar';
-import DockButtonWrapper from './DockButton';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import MenuButton from '../MenuButton';
 
 export default function Dockbar() {
-  const pathName = usePathname();
+  const pathName: string | null = usePathname();
   const router = useRouter();
   const { data: session } = useSession();
   const user = session?.user;
@@ -39,30 +39,17 @@ export default function Dockbar() {
     return;
   }
 
+  const menuArray = {
+    home: { path: '/', icon: 'home' },
+    inbox: { path: '/inbox', icon: 'inbox' },
+    bookmarks: { path: '/bookmarks', icon: 'bookmark' },
+    account: { path: '/account', icon: 'account_circle' },
+  };
+
   return (
     <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 dockbar'>
-      <Link href='/'>
-        {pathName === '/' ? (
-          <DockButtonWrapper>
-            <RoundIcon name='home' filled style='medium' />
-          </DockButtonWrapper>
-        ) : (
-          <DockButtonWrapper>
-            <RoundIcon name='home' style='medium' />
-          </DockButtonWrapper>
-        )}
-      </Link>
-      <Link href='/inbox'>
-        {pathName === '/inbox' ? (
-          <div className='flex items-center justify-center w-16 h-8 rounded-full'>
-            <RoundIcon name='inbox' filled style='medium' />
-          </div>
-        ) : (
-          <div className='flex items-center justify-center w-16 h-8 rounded-full '>
-            <RoundIcon name='inbox' style='medium' />
-          </div>
-        )}
-      </Link>
+      <MenuButton menu={menuArray.home} size='medium' />
+      <MenuButton menu={menuArray.inbox} size='medium' />
       <button
         type='button'
         onClick={() => handleClick()}
@@ -70,39 +57,16 @@ export default function Dockbar() {
       >
         <RoundIcon name='add_circle' filled style='large' />
       </button>
-      <Link href='/bookmarks'>
-        {pathName === '/bookmarks' ? (
-          <div className='flex items-center justify-center w-16 h-8 rounded-full'>
-            <RoundIcon name='bookmark' filled style='medium' />
-          </div>
-        ) : (
-          <div className='flex items-center justify-center w-16 h-8 rounded-full '>
-            <RoundIcon name='bookmark' style='medium' />
-          </div>
-        )}
-      </Link>
+      <MenuButton menu={menuArray.bookmarks} size='medium' />
       {user?.image && user.image !== null ? (
-        pathName === '/account' ? (
-          <Link href='/account'>
-            <Avatar image={user.image} fill />
-          </Link>
-        ) : (
-          <Link href='/account'>
-            <Avatar image={user.image} />
-          </Link>
-        )
-      ) : pathName === '/account' ? (
         <Link href='/account'>
-          <div className='flex items-center justify-center w-16 h-8 rounded-full'>
-            <RoundIcon name='account_circle' filled style='medium' />
-          </div>{' '}
+          <Avatar
+            image={user.image}
+            fill={pathName === '/account' ? true : false}
+          />
         </Link>
       ) : (
-        <Link href='/account'>
-          <div className='flex items-center justify-center w-16 h-8 rounded-full'>
-            <RoundIcon name='account_circle' style='medium' />
-          </div>
-        </Link>
+        <MenuButton menu={menuArray.account} size='medium' />
       )}
     </div>
   );
