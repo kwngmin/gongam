@@ -1,11 +1,12 @@
 'use client';
 import Link from 'next/link';
 import { useSession } from 'next-auth/react';
-import RoundIcon from './icons/RoundIcon';
 import { usePathname } from 'next/navigation';
-import Avatar from '../Avatar';
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { menuArray } from '@/service/menu';
+import RoundIcon from './icons/RoundIcon';
+import Avatar from '../Avatar';
 import MenuButton from '../MenuButton';
 
 export default function Dockbar() {
@@ -38,13 +39,6 @@ export default function Dockbar() {
   if (pathName?.includes('/notes/')) {
     return;
   }
-
-  const menuArray = {
-    home: { path: '/', icon: 'home' },
-    inbox: { path: '/inbox', icon: 'inbox' },
-    bookmarks: { path: '/bookmarks', icon: 'bookmark' },
-    account: { path: '/account', icon: 'account_circle' },
-  };
 
   return (
     <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 dockbar'>
