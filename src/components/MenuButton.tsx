@@ -3,22 +3,27 @@ import DockButtonWrapper from './ui/DockButton';
 import RoundIcon from './ui/icons/RoundIcon';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { IconSize } from '@/model/icon';
 
-type Props = {
+type Props = IconSize & {
   menu: { path: string; icon: string };
-  size: string;
+  dock?: boolean;
 };
-export default function MenuButton({ menu, size }: Props) {
+export default function MenuButton({
+  menu,
+  size = 'base',
+  dock = true,
+}: Props) {
   const pathName = usePathname();
   const { path, icon } = menu;
 
   return (
     <Link href={path}>
-      <DockButtonWrapper>
+      <DockButtonWrapper dock={dock}>
         <RoundIcon
           name={icon}
           filled={pathName === path ? true : false}
-          style={size}
+          size={size}
         />
       </DockButtonWrapper>
     </Link>

@@ -34,19 +34,25 @@
   &.filled {
     font-variation-settings: 'FILL' 1;
   }
-  &.x-small {
+  &.xsmall {
     font-size: 18px;
   }
   &.small {
     font-size: 20px;
   }
+  &.base {
+    font-size: 22px;
+  }
   &.medium {
-    font-size: 28px;
+    font-size: 24px;
   }
   &.large {
-    font-size: 32px;
+    font-size: 28px;
   }
   &.xlarge {
+    font-size: 32px;
+  }
+  &.xxlarge {
     font-size: 36px;
   }
 }

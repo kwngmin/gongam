@@ -1,18 +1,20 @@
-type Props = {
+import { IconSize } from '@/model/icon';
+
+type Props = IconSize & {
   filled?: boolean;
-  style?: string;
   name: string;
 };
+
 export default function RoundIcon({
   filled = false,
-  style,
+  size = 'base',
   name = 'add',
 }: Props) {
   return (
     <span
       className={`material-symbols-rounded ${
         filled ? 'filled' : ''
-      } ${style} select-none`}
+      } ${size} select-none`}
     >
       {name}
     </span>

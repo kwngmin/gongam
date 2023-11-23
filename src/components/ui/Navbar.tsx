@@ -1,15 +1,20 @@
 'use client';
 import Link from 'next/link';
-import SearchIcon from './icons/SearchIcon';
 import { usePathname } from 'next/navigation';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 import Logotype from '../Logotype';
+import SearchIcon from './icons/SearchIcon';
 import NoteshakerLogo from '../NoteshakerLogo';
+import MenuButton from '../MenuButton';
+import { menuArray } from '@/service/menu';
+import RoundIcon from './icons/RoundIcon';
+import Avatar from '../Avatar';
 
 export default function Navbar() {
   const pathName = usePathname();
   const { data: session } = useSession();
+  const user = session?.user;
   const router = useRouter();
 
   // search, signin 버튼 또는 아무것도 보여줄지 말지 정하는 로직
@@ -25,21 +30,41 @@ export default function Navbar() {
     }
     if (typeof session === 'object') {
       return (
-        <button onClick={() => router.push('/search')}>
-          <div className='flex items-center w-9 h-9 active:bg-gray-100 justify-center rounded-2xl'>
-            <SearchIcon />
+        <div className='flex gap-2'>
+          <button onClick={() => router.push('/search')}>
+            <div className='flex items-center w-9 h-9 active:bg-gray-100 justify-center rounded-2xl'>
+              <SearchIcon />
+            </div>
+          </button>
+          <div className='hidden sm:flex gap-2 items-center '>
+            {/* <MenuButton menu={menuArray.bookmarks} dock={false} size='base' />
+            <MenuButton menu={menuArray.inbox} dock={false} size='base' /> */}
+            {user?.image && user.image !== null ? (
+              <Link href='/account'>
+                <Avatar
+                  image={user.image}
+                  fill={pathName === '/account' ? true : false}
+                />
+              </Link>
+            ) : (
+              <MenuButton menu={menuArray.account} size='medium' dock={false} />
+            )}
+            <button
+              type='button'
+              onClick={() => {}}
+              className='flex justify-center items-center w-9'
+            >
+              <RoundIcon name='add_circle' filled size='large' />
+            </button>
           </div>
-        </button>
+        </div>
       );
     }
     return;
   };
 
-  // signin 화면이면 navbar 안보여주기
-  if (pathName === '/auth/signin') {
-    return true;
-  }
-  if (pathName === '/search') {
+  // signin 또는 search 화면이면 navbar 안보여주기
+  if (pathName === '/auth/signin' || pathName === '/search') {
     return true;
   }
 
@@ -56,9 +81,6 @@ export default function Navbar() {
         <Link href='/'>
           <Logotype />
         </Link>
-        {/* <span className='font-medium absolute top-1/2 left-1/2 -translate-x-1/2  -translate-y-1/2'>
-          New Note
-        </span> */}
         <div className='bg-slate-900 active:bg-slate-700 text-white rounded-full px-4 h-8 flex items-center font-medium text-sm select-none cursor-pointer'>
           Post
         </div>

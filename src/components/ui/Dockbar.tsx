@@ -41,7 +41,7 @@ export default function Dockbar() {
   }
 
   return (
-    <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 dockbar'>
+    <div className='h-12 flex items-center justify-around w-full max-w-screen-md bg-white fixed bottom-0 left-1/2 -translate-x-1/2 sm:hidden dockbar'>
       <MenuButton menu={menuArray.home} size='medium' />
       <MenuButton menu={menuArray.inbox} size='medium' />
       <button
@@ -49,9 +49,9 @@ export default function Dockbar() {
         onClick={() => handleClick()}
         className='flex justify-center items-center w-14'
       >
-        <RoundIcon name='add_circle' filled style='large' />
+        <RoundIcon name='add_circle' filled size={'large'} />
       </button>
-      <MenuButton menu={menuArray.bookmarks} size='medium' />
+      <MenuButton menu={menuArray.bookmarks} size={`medium` as const} />
       {user?.image && user.image !== null ? (
         <Link href='/account'>
           <Avatar

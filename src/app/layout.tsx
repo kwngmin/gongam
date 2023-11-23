@@ -57,9 +57,7 @@ export default function RootLayout({
             <SWRConfigContext>{children}</SWRConfigContext>
           </main>
           <div id='scrollable' />
-          <footer className=''>
-            <Dockbar />
-          </footer>
+          <Dockbar />
           <Analytics />
         </AuthContext>
         <div id='portal' />
