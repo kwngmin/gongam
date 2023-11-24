@@ -62,7 +62,7 @@ export default function NotePost({ note }: Props) {
       <div className='flex justify-between items-center my-3'>
         <div className='flex items-center gap-4'>
           <div className='flex items-center gap-1'>
-            <RoundIcon name='favorite' style='' />
+            <RoundIcon name='favorite' />
             <span className='font-semibold text-black/70 text-sm'>{likes}</span>
           </div>
           <span className='bg-slate-100 active:bg-slate-200 px-2 h-7 flex items-center font-medium rounded text-slate-600 text-xs select-none cursor-pointer'>
@@ -70,7 +70,7 @@ export default function NotePost({ note }: Props) {
           </span>
         </div>
         <div className='flex items-center gap-6 px-2'>
-          <RoundIcon name='bookmark' style='' />
+          <RoundIcon name='bookmark' />
         </div>
       </div>
       <div className='flex flex-col gap-1'>
