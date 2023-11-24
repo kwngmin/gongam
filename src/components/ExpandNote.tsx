@@ -41,8 +41,8 @@ export default function ExpandNote({ note }: Props) {
             </span>
           </div>
           <div className='flex items-center gap-6 px-2'>
-            {/* <RoundIcon name='content_copy' style='' /> */}
-            <RoundIcon name='bookmark' style='' />
+            {/* <RoundIcon name='content_copy'  /> */}
+            <RoundIcon name='bookmark'  />
           </div>
         </div>
         <div className='fixed bottom-0 left-0 right-0 px-4 py-2 bg-white'>
@@ -53,7 +53,7 @@ export default function ExpandNote({ note }: Props) {
             <li key={index} className='py-4 border-t'>
               <p className='break-keep leading-snug text-sm'>{comment}</p>
               <span className='text-sm text-slate-600 flex items-center'>
-                <RoundIcon name='subdirectory_arrow_right' style='small' />
+                <RoundIcon name='subdirectory_arrow_right' size='small' />
                 {translateDate(commentAt)}
                 <Dot />
                 {getDate(commentAt)}
