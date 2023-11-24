@@ -41,7 +41,7 @@ export default function NotePost({ note }: Props) {
       <div className='flex items-start'>
         <h2
           onClick={handleClick}
-          className='leading-snug font-semibold text-black/80 grow break-keep text-lg md:text-base'
+          className='leading-snug font-semibold text-black/80 grow break-keep text-lg md:text-base cursor-pointer'
         >
           {notetitle}
         </h2>

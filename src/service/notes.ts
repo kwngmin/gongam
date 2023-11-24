@@ -15,11 +15,12 @@ export async function getAllNotes() {
     "id":_id,
     "createdAt":_createdAt,
     "updatedAt":_updatedAt,
+    "secret":secret
     `;
   return client
     .fetch(
       `
-    *[_type =="note"] | order(_createdAt desc){${simplePostProjection}}
+    *[_type =="note" && secret != true] | order(_createdAt desc){${simplePostProjection}}
     `
     )
     .then(notes =>

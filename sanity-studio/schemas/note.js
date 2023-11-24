@@ -20,6 +20,11 @@ export default {
       type: 'text',
     },
     {
+      title: 'Secret',
+      name: 'secret',
+      type: 'boolean',
+    },
+    {
       title: 'Likes',
       name: 'likes',
       type: 'array',
