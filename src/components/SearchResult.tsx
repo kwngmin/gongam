@@ -38,12 +38,12 @@ export default function SearchResult({
         </time>
         <div className='flex gap-2 items-center'>
           <div className='flex items-center gap-2 text-gray-300'>
-            <RoundIcon name='favorite' filled style='x-small' />
+            <RoundIcon name='favorite' filled size='xsmall' />
             <span className='font-medium text-black/50 text-sm'>{likes}</span>
           </div>
           <Seperator />
           <div className='flex items-center gap-2 text-gray-300'>
-            <RoundIcon name='comment' filled style='x-small' />
+            <RoundIcon name='comment' filled size='xsmall' />
             <span className='font-medium text-black/50 text-sm'>
               {comments}
             </span>

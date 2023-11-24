@@ -84,7 +84,7 @@ export default function NoteSearch() {
             onSubmit={onSubmit}
             className='grow flex items-center gap-2 rounded bg-white border border-neutral-300 h-10 px-2'
           >
-            <RoundIcon name='search' style='small' />
+            <RoundIcon name='search' size='small' />
             <input
               ref={inputRef}
               onClick={() => handleClick()}
