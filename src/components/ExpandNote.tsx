@@ -33,7 +33,7 @@ export default function ExpandNote({ note }: Props) {
         <div className='flex justify-between items-center my-3'>
           <div className='flex items-center gap-4'>
             <div className='flex items-center gap-1'>
-              <RoundIcon name='favorite' style='' />
+              <RoundIcon name='favorite' />
               <span className='font-semibold text-black/70'>{likes}</span>
             </div>
             <span className='bg-slate-100 active:bg-slate-200 px-2 h-8 flex items-center font-medium rounded text-slate-600 text-sm select-none cursor-pointer'>
