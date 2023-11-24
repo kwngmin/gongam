@@ -27,7 +27,7 @@ export default function InputText({
           ref={inputRef}
         />
         <button className='w-7 h-7 flex justify-center items-center rounded-full text-sm font-medium'>
-          <RoundIcon name='arrow_right_alt' filled style='text-slate-700' />
+          <RoundIcon name='arrow_right_alt' filled />
         </button>
       </div>
     </form>
