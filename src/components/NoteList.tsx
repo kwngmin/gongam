@@ -6,10 +6,12 @@ import { SimpleNote } from '@/model/note';
 import NotePost from './NotePost';
 // import LazySpinner from './lazySpinner';
 
-export default function NoteList() {
-  const { data: notes, isLoading: loading } =
-    useSWR<SimpleNote[]>('/api/notes');
-  console.log(notes);
+type Props = {
+  query: string;
+};
+export default function NoteList({ query }: Props) {
+  const { data: notes, isLoading: loading } = useSWR<SimpleNote[]>(query);
+  // console.log(notes);
   return (
     <ul>
       {loading && (

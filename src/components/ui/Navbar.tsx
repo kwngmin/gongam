@@ -37,8 +37,14 @@ export default function Navbar() {
             </div>
           </button>
           <div className='hidden sm:flex gap-2 items-center '>
-            {/* <MenuButton menu={menuArray.bookmarks} dock={false} size='base' />
-            <MenuButton menu={menuArray.inbox} dock={false} size='base' /> */}
+            <button
+              type='button'
+              onClick={() => {}}
+              className='flex justify-center items-center pr-3 rounded-full gap-1'
+            >
+              <RoundIcon name='add_circle' filled size='large' />
+              <span className='text-sm font-medium'>글쓰기</span>
+            </button>
             {user?.image && user.image !== null ? (
               <Link href='/account'>
                 <Avatar
@@ -49,13 +55,6 @@ export default function Navbar() {
             ) : (
               <MenuButton menu={menuArray.account} size='medium' dock={false} />
             )}
-            <button
-              type='button'
-              onClick={() => {}}
-              className='flex justify-center items-center w-9'
-            >
-              <RoundIcon name='add_circle' filled size='large' />
-            </button>
           </div>
         </div>
       );

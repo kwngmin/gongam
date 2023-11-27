@@ -31,6 +31,67 @@ export async function getAllNotes() {
       }))
     );
 }
+export async function getAllFeeds() {
+  // export async function getAllNotes(username: string) {
+  const simplePostProjection = `
+    ...,
+    "username":author->username,
+    "likes":count(likes),
+    "notetitle":notetitle,
+    "notebody":notebody,
+    "comments":count(comments),
+    "comment":comments[0],
+    "commentAt": comments[0].commentAt,
+    "id":_id,
+    "createdAt":_createdAt,
+    "updatedAt":_updatedAt,
+    "secret":secret
+    `;
+  return client
+    .fetch(
+      `
+    *[_type =="note" && secret != true] | order(_createdAt desc){${simplePostProjection}}
+    `
+    )
+    .then(notes =>
+      notes.map((note: SimpleNote) => ({
+        ...note,
+        comments: note.comments ?? 0,
+        likes: note.likes ?? 0,
+      }))
+    );
+}
+export async function getAllBookmarks() {
+  // export async function getAllNotes(username: string) {
+  const simplePostProjection = `
+    ...,
+    "username":author->username,
+    "likes":count(likes),
+    "notetitle":notetitle,
+    "notebody":notebody,
+    "comments":count(comments),
+    "comment":comments[0],
+    "commentAt": comments[0].commentAt,
+    "id":_id,
+    "createdAt":_createdAt,
+    "updatedAt":_updatedAt,
+    "secret":secret
+    `;
+  return client
+    .fetch(
+      `
+    *[_type =="note" && secret != true] | order(_createdAt desc){${simplePostProjection}}
+    `
+    )
+    .then(notes =>
+      notes.map((note: SimpleNote) => ({
+        ...note,
+        comments: note.comments ?? 0,
+        likes: note.likes ?? 0,
+      }))
+    );
+}
+
 export async function getNoteComments(id: string) {
   return client.fetch(`
     *[_type =="note" && _id == "${id}"][0]{

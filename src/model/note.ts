@@ -9,13 +9,13 @@ export type SimpleNote = Omit<FullNote, 'comments'> & {
 
 export type FullNote = {
   id: string;
-  likes: string[];
   notetitle: string;
   notebody: string;
   username: string;
   createdAt: string;
+  updatedAt: string;
+  likes: string[];
   comments: Comment[];
   comment: { comment: string; commentAt: string };
   commentAt: string;
-  updatedAt: string;
 };
