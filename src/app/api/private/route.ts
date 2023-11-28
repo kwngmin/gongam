@@ -1,5 +1,10 @@
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
-import { getAllBookmarks, getAllFeeds, getAllNotes } from '@/service/notes';
+import {
+  getAllFeeds,
+  getAllNotes,
+  getInboxNotes,
+  getPrivateNotes,
+} from '@/service/notes';
 import { getServerSession } from 'next-auth';
 import { NextResponse } from 'next/server';
 
@@ -11,8 +16,10 @@ export async function GET() {
   if (!user) {
     return new Response('Authentication Error', { status: 401 });
   }
+
   if (username) {
-    return getAllBookmarks(username).then(data => NextResponse.json(data));
+    return getPrivateNotes(username).then(data => NextResponse.json(data));
   }
-  // return getAllNotes(user.username).then(data => NextResponse.json(data));
+  return;
+  // return getAllNotes().then(data => NextResponse.json(data));
 }

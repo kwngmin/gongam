@@ -1,13 +1,9 @@
 'use client';
 import NoteList from '@/components/NoteList';
 import Title from '@/components/ui/Title';
-import { useSession } from 'next-auth/react';
 import { useState } from 'react';
 
 export default function Home() {
-  const { data: session } = useSession();
-  const username = session?.user.username;
-  // console.log(username);
   const mainTitleData = {
     tabs: [
       { title: `Notes`, query: '/api/notes' },

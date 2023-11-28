@@ -1,37 +1,33 @@
-// 'use client';
-import NotePost from '@/components/NotePost';
+'use client';
+import NoteList from '@/components/NoteList';
 import Title from '@/components/ui/Title';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
-import { getServerSession } from 'next-auth';
+import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 import { useState } from 'react';
 
-export default async function InboxPage() {
-  const session = await getServerSession(authOptions);
-  // const titleData = {
-  //   title: `Inbox`,
-  //   subtitle: 'Private',
-  //   description: `128 Note and 12 Private Notes.`,
-  // };
+export default function InboxPage() {
+  const { data: session } = useSession();
   const inboxTitleData = {
     tabs: [
-      { title: `Notes`, query: '/api/notes' },
-      { title: `Feeds`, query: '/api/feeds' },
+      { title: `Inbox`, query: '/api/inbox' },
+      { title: `Private`, query: '/api/private' },
     ],
     description: `Record of thought, moments, feelings that I don't want to forget.`,
   };
   const [selectedTab, setSelectedTab] = useState(inboxTitleData.tabs[0]);
+
   if (!session) {
     redirect('/auth/signin');
   }
+
   return (
     <section className='max-w-screen-md mx-auto px-4 h-fit pb-10'>
-      {/* <Title
+      <Title
         titleData={inboxTitleData}
         selectedTab={selectedTab.title}
         setSelectedTab={setSelectedTab}
-      /> */}
-      {/* <NotePost /> */}
+      />
+      <NoteList query={selectedTab.query} />
     </section>
   );
 }

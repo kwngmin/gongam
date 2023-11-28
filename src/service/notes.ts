@@ -2,7 +2,6 @@ import { SimpleNote } from '@/model/note';
 import { client } from './sanity';
 
 export async function getAllNotes() {
-  // export async function getAllNotes(username: string) {
   const simplePostProjection = `
     ...,
     "username":author->username,
@@ -61,7 +60,7 @@ export async function getAllFeeds(username: string) {
       }))
     );
 }
-export async function getAllBookmarks() {
+export async function getInboxNotes(username: string) {
   // export async function getAllNotes(username: string) {
   const simplePostProjection = `
     ...,
@@ -80,7 +79,67 @@ export async function getAllBookmarks() {
   return client
     .fetch(
       `
-    *[_type =="note" && secret != true] | order(_createdAt desc){${simplePostProjection}}
+    *[_type =="note" && author->username =="${username}"] | order(_createdAt desc){${simplePostProjection}}
+    `
+    )
+    .then(notes =>
+      notes.map((note: SimpleNote) => ({
+        ...note,
+        comments: note.comments ?? 0,
+        likes: note.likes ?? 0,
+      }))
+    );
+}
+export async function getPrivateNotes(username: string) {
+  // export async function getAllNotes(username: string) {
+  const simplePostProjection = `
+    ...,
+    "username":author->username,
+    "likes":count(likes),
+    "notetitle":notetitle,
+    "notebody":notebody,
+    "comments":count(comments),
+    "comment":comments[0],
+    "commentAt": comments[0].commentAt,
+    "id":_id,
+    "createdAt":_createdAt,
+    "updatedAt":_updatedAt,
+    "secret":secret
+    `;
+  return client
+    .fetch(
+      `
+    *[_type =="note" && secret == true && author->username =="${username}"] | order(_createdAt desc){${simplePostProjection}}
+    `
+    )
+    .then(notes =>
+      notes.map((note: SimpleNote) => ({
+        ...note,
+        comments: note.comments ?? 0,
+        likes: note.likes ?? 0,
+      }))
+    );
+}
+export async function getAllBookmarks(username: string) {
+  // export async function getAllNotes(username: string) {
+  const simplePostProjection = `
+    ...,
+    "username":author->username,
+    "likes":count(likes),
+    "notetitle":notetitle,
+    "notebody":notebody,
+    "comments":count(comments),
+    "comment":comments[0],
+    "commentAt": comments[0].commentAt,
+    "id":_id,
+    "createdAt":_createdAt,
+    "updatedAt":_updatedAt,
+    "secret":secret
+    `;
+  return client
+    .fetch(
+      `
+    *[_type =="note" && secret != true && _id in *[_type=='user' && username=="${username}"].bookmarks[]._ref] | order(_createdAt desc){${simplePostProjection}}
     `
     )
     .then(notes =>
