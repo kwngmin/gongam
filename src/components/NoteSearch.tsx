@@ -8,7 +8,6 @@ import SearchResult from './SearchResult';
 import RoundIcon from './ui/icons/RoundIcon';
 import { useRouter } from 'next/navigation';
 import useDebounce from '@/hooks/debounce';
-import InputText from './InputText';
 
 export default function NoteSearch() {
   const [keyword, setKeyword] = useState('');

@@ -11,7 +11,7 @@ type Props = {
 };
 export default function NoteList({ query }: Props) {
   const { data: notes, isLoading: loading } = useSWR<SimpleNote[]>(query);
-  // console.log(notes);
+  console.log(notes);
   return (
     <ul>
       {loading && (

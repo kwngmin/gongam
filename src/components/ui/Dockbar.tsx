@@ -57,6 +57,7 @@ export default function Dockbar() {
           <Avatar
             image={user.image}
             fill={pathName === '/account' ? true : false}
+            dock
           />
         </Link>
       ) : (

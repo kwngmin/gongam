@@ -6,9 +6,15 @@ import { NextResponse } from 'next/server';
 export async function GET() {
   const session = await getServerSession(authOptions);
   const user = session?.user;
-  // if (!user) {
-  //   return new Response('Authentication Error', { status: 401 });
-  // }
-  return getAllFeeds().then(data => NextResponse.json(data));
-  // return getAllNotes(user.username).then(data => NextResponse.json(data));
+  const username = user?.username;
+
+  if (!user) {
+    return new Response('Authentication Error', { status: 401 });
+  }
+
+  if (username) {
+    return getAllFeeds(username).then(data => NextResponse.json(data));
+  }
+  return;
+  // return getAllNotes().then(data => NextResponse.json(data));
 }

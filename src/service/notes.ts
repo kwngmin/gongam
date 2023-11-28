@@ -31,7 +31,7 @@ export async function getAllNotes() {
       }))
     );
 }
-export async function getAllFeeds() {
+export async function getAllFeeds(username: string) {
   // export async function getAllNotes(username: string) {
   const simplePostProjection = `
     ...,
@@ -50,7 +50,7 @@ export async function getAllFeeds() {
   return client
     .fetch(
       `
-    *[_type =="note" && secret != true] | order(_createdAt desc){${simplePostProjection}}
+    *[_type =="note" && secret != true && author._ref in *[_type=='user' && username=="${username}"].following[]._ref] | order(_createdAt desc){${simplePostProjection}}
     `
     )
     .then(notes =>
